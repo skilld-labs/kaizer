@@ -8,7 +8,7 @@
     "node": ">= 18.0"
   },
   "devDependencies": {
-    "@skilld/kaizer-component-generator": "^0.0.1-alpha.0",
+    "@skilld/kaizer-component-generator": "^0.0.1-alpha.1",
     "@faker-js/faker": "^7.6.0",
     "@originjs/vite-plugin-content": "^1.0.3",
     "@storybook/addon-essentials": "^7.0.0-rc.4",

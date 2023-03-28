@@ -1,0 +1,10 @@
+m_checkboxes:
+  use: '@molecules/checkboxes/m-checkboxes.html.twig'
+  label: Molecules/Checkbox
+#  libraries:
+#    - m-checkboxes:
+#        css:
+#          component:
+#            m-checkboxes.css: {}
+#        js:
+#           m-checkboxes.js: {}

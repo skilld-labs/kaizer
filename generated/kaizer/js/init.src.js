@@ -1,0 +1,1 @@
+// Drupal's javascript file.

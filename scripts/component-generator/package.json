@@ -1,0 +1,21 @@
+{
+  "name": "@skilld/kaizer-component-generator",
+  "version": "0.0.1-alpha.0",
+  "description": "Kaizer component generator",
+  "bin": "index.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skilld-labs/kaizer.git",
+    "directory": "scripts/component-generator"
+  },
+  "author": "Skilld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skilld-labs/kaizer/issues"
+  },
+  "homepage": "https://github.com/skilld-labs/kaizer#readme",
+  "dependencies": {
+    "hygen": "^6.2.11"
+  }
+}

@@ -1,0 +1,43 @@
+h_grid:
+  use: '@helpers/grid/h-grid.html.twig'
+  label: Helpers / Grid
+  fields:
+    label:
+      type: render
+      label: Label
+    items:
+      type: render
+      label: Items
+  settings:
+    gap:
+      type: radios
+      label: Gap between columns
+      default_value: default
+      options:
+        default: Default (no gap)
+        h-grid--gap-16: 16px
+    columns:
+      type: radios
+      label: Columns type
+      default_value: default
+      options:
+        default: Default (One column)
+        h-grid--two-columns: Two columns
+        h-grid--three-columns: Three columns
+        h-grid--four-columns: Four columns
+    item_wrapper:
+      type: boolean
+      label: Print item's wrapper
+    label_override:
+      type: textfield
+      label: Override label
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for helpers grid separated by spaces.
+  libraries:
+    - h-grid:
+        css:
+          component:
+            h-grid.css: {}
+#        js:
+#          h-grid.js: {}

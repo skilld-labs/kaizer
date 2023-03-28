@@ -1,0 +1,10 @@
+a_textarea:
+  use: '@atoms/textarea/a-textarea.html.twig'
+  label: Atoms/Textarea
+#  libraries:
+#    - a-textarea:
+#        css:
+#          component:
+#            a-textarea.css: {}
+#        js:
+#          a-textarea.js: {}

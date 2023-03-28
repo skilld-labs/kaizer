@@ -1,0 +1,10 @@
+a_radio:
+  use: '@atoms/radio/a-radio.html.twig'
+  label: Atoms/Radio
+#  libraries:
+#    - a-radio:
+#        css:
+#          component:
+#            a-radio.css: {}
+#        js:
+#          a-radio.js: {}

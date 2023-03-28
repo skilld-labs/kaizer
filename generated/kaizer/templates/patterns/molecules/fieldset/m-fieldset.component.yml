@@ -1,0 +1,10 @@
+m_fieldset:
+  use: '@molecules/fieldset/m-fieldset.html.twig'
+  label: Molecules/Fieldset
+#  libraries:
+#    - m-fieldset:
+#        css:
+#          component:
+#            m-fieldset.css: {}
+#        js:
+#           m-fieldset.js: {}

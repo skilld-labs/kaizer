@@ -1,0 +1,10 @@
+m_radios:
+  use: '@molecules/radios/m-radios.html.twig'
+  label: Molecules/Radios
+#  libraries:
+#    - m-radios:
+#        css:
+#          component:
+#            m-radios.css: {}
+#        js:
+#           m-radios.js: {}

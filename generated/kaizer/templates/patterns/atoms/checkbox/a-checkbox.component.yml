@@ -1,0 +1,10 @@
+a_checkbox:
+  use: '@atoms/checkbox/a-checkbox.html.twig'
+  label: Atoms/Checkbox
+#  libraries:
+#    - a-checkbox:
+#        css:
+#          component:
+#            a-checkbox.css: {}
+#        js:
+#          a-checkbox.js: {}

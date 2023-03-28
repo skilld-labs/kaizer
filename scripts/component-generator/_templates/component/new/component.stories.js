@@ -12,10 +12,6 @@ import { defRender, defArgTypes } from '@<%= h.changeCase.lower(h.inflection.das
 
 import description from './<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.<% if (connection_way === "UI Patterns") { %>ui_patterns<% } else if (connection_way === "Base hook") { %>base_hook<% } else { %>component<% } %>.yml';
 
-import './<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.src.css';
-// Uncomment next line if you need javascript in your component.
-// import './<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.src.js';
-
 const BasicRender = (args) => {
   const { data, template } = defRender(args, description);
   data.content = args.content || 'Lorem ipsum';

@@ -1,7 +1,8 @@
 ---
 to: <%= h.src() %>/templates/patterns/<%= h.changeCase.lower(h.inflection.pluralize(component_type)) %>/<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
 ---
-import { defRender, defArgTypes } from '@<%= h.changeCase.lower(h.inflection.dasherize(theme_name)) %>-storybook/plugins/<%= h.changeCase.lower(h.inflection.dasherize(theme_name)) %>';
+
+import { defRender, defArgTypes } from '@<% if (typeof theme_name != "undefined") { %><%= h.changeCase.lower(h.inflection.dasherize(theme_name)) %><% } else { %><%= h.changeCase.lower(h.inflection.dasherize(h.theme_name)) %><% } %>-storybook-plugin';
 
 // Uncomment next line if you need specific javascript for your component in storybook,
 // which shouldn't be a part of drupal's behavior javascript.

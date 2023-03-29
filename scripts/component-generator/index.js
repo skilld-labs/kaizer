@@ -17,7 +17,7 @@ const config = {
   helpers: {
     relative: (from, to) => path.relative(from, to),
     src: () => process.cwd(),
-    themeName,
+    theme_name: themeName,
   },
 };
 

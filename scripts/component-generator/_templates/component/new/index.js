@@ -21,14 +21,14 @@ module.exports = {
         type: 'select',
         name: 'component_type',
         message: "What's your type of component?",
-        choices: ['Atom', 'Molecule', 'Organism', 'Template', 'Helper'],
+        choices: ['Atom', 'Helper', 'Molecule', 'Organism', 'Template', 'Page'],
         required: true,
       },
       {
         type: 'select',
         name: 'connection_way',
-        message: "How your component will be connected to Drupal?",
-        choices: ['UI Patterns', 'Base hook', 'My component is custom'],
+        message: "How your component will be connected to Drupal? (Choose 'storybook' option if you are not sure yet)",
+        choices: ['storybook', 'layout', 'suggestion', 'theme', 'ui_patterns'],
         required: true,
       },
     ];

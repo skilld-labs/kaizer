@@ -1,0 +1,11 @@
+.m-text-field {
+  &__label {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media (--l) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

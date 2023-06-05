@@ -14,7 +14,7 @@
       {% else %}
         {% set icon = 'add' %}
       {% endif %}
-      {% include '@atoms/icon/a-icon.html.twig' with {
+      {% include '@component/a-icon/a-icon.html.twig' with {
         attributes: create_attribute().addClass('m-status-messages__icon'),
         icon: icon,
         kaizer_svg_sprite: kaizer_svg_sprite,
@@ -30,7 +30,7 @@
           <ul class="m-status-messages__list">
             {% for message in messages %}
               <li class="m-status-messages__item">
-                {% include '@atoms/text/a-text.html.twig' with {
+                {% include '@component/a-text/a-text.html.twig' with {
                   attributes: create_attribute(),
                   content: message,
                   tag: 'div',
@@ -39,7 +39,7 @@
             {% endfor %}
           </ul>
         {% else %}
-          {% include '@atoms/text/a-text.html.twig' with {
+          {% include '@component/a-text/a-text.html.twig' with {
             attributes: create_attribute(),
             content: messages|first,
             tag: 'div',

@@ -1,33 +1,47 @@
 import '../color/colors.css';
 import '../css/styles.src.css';
-import kaizerSvgSprite from '../images/sprite.svg';
+import svgSprite from '../images/sprite.svg';
 import breakpoints from '../kaizer.breakpoints.yml';
 import Twig from 'twig';
 import { addDrupalExtensions } from 'drupal-twig-extensions/twig';
 import DrupalAttributes from 'drupal-attribute';
 import once from '@drupal/once';
+import { importAssets, getYmlData } from './plugins/story-handler';
+
 window.once = once;
 addDrupalExtensions(Twig, {
   // Optionally, set options to configure how the Drupal
 });
 const allTwigPatternTemplates = import.meta.glob(
-  '../templates/patterns/**/*.html.twig',
+  '../templates/components/**/*.html.twig',
   { as: 'raw', import: 'default', eager: true },
 );
 
+importAssets();
+
 // here we initiate all twig templates to save them in cache of Twig.Templates.registry
-// and get by reference in
-// render of kaizer.js
+// and get by reference in render of story-handler.js
+const namespaces = [
+  '../templates/components/layouts',
+  '../templates/components/suggestions',
+  '../templates/components/theme',
+  '../templates/components/ui_patterns',
+  '../templates/components/storybook',
+];
+
 for (const [path, data] of Object.entries(allTwigPatternTemplates)) {
   Twig.twig({
     attributes: new DrupalAttributes(),
-    id: path.replace('../templates/patterns/', '@'),
+    id: path.replace(
+      namespaces.filter((a) => path.includes(a))[0],
+      '@component',
+    ),
     data: data,
     allowInlineIncludes: true,
   });
 }
 
-const kaizerMediaBreakpoints = Object.keys(breakpoints).reduce(
+const kaizerBreakpoints = Object.keys(breakpoints).reduce(
   (a, i) =>
     Object.assign(a, {
       [i.split('.').pop()]: breakpoints[i].mediaQuery,
@@ -37,6 +51,7 @@ const kaizerMediaBreakpoints = Object.keys(breakpoints).reduce(
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
+  AllArgTypes: getYmlData(),
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -45,16 +60,27 @@ export const parameters = {
   },
   // Maybe load only Twig.Template.Registry somehow here.
   Twig: { ...Twig },
+  backgrounds: {
+    values: [{ name: 'grey', value: '#eee' }],
+  },
+  options: {
+    storySort: (a, b) => {
+      if (a.id.startsWith('templates') && b.id.startsWith('pages')) {
+        return -1;
+      }
+      return a.id === b.id
+        ? 0
+        : a.id.localeCompare(b.id, undefined, { numeric: true });
+    },
+  },
 };
-
-// Drupal + drupalSettings
 
 window.Drupal = {
   behaviors: {},
 };
 window.drupalSettings = {
-  kaizerSvgSprite,
-  kaizerMediaBreakpoints,
+  kaizerSvgSprite: svgSprite,
+  kaizerBreakpoints,
 };
 
 ((Drupal, drupalSettings) => {

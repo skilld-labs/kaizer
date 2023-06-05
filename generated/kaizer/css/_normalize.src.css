@@ -15,6 +15,7 @@ svg:not(:root) {
 }
 
 pre {
+  margin: 0;
   white-space: normal;
   word-break: break-all;
 }
@@ -22,4 +23,8 @@ pre {
 [disabled],
 .is-disabled {
   cursor: not-allowed;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }

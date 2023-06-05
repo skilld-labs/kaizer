@@ -1,0 +1,29 @@
+m_card:
+  use: '@component/m-card/m-card.html.twig'
+  label: Molecules / Card
+  hook theme: 'm_card'
+  base hook: 'layout'
+  fields:
+    image:
+      type: render
+      label: Image
+    title:
+      type: render
+      label: Title
+    body:
+      type: render
+      label: Body
+    cta:
+      type: render
+      label: CTA
+  settings:
+    clickable:
+      type: boolean
+      label: Make a whole card clickable based on CTA link href
+  libraries:
+    - m-card:
+        css:
+          component:
+            m-card.css: {}
+#        js:
+#           m-card.js: {}

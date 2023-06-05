@@ -1,0 +1,141 @@
+m_grid_field:
+  use: '@component/m-grid-field/m-grid-field.html.twig'
+  label: Molecule / Grid field
+  fields:
+    label:
+      label: Label
+    items:
+      label: Items
+  # Uncomment settings if your component should have settings
+  settings:
+    gap:
+      type: select
+      label: Gap between columns
+      default_value: default
+      options:
+        default: Default (no gap)
+        h-grid--g-1: 16px on mobile and tablet - 24px on desktop
+        h-grid--g-2: 32px on mobile and tablet - 48px on desktop
+        h-grid--g-3: No gap on mobile - 20px gap and tablet - 24px horizontal and 40px vertical on desktop
+        h-grid--g-4: 32px gap on mobile - 20px horizontal and 32px vertical on tablet - 24px horizontal and 40px vertical on desktop
+        h-grid--g-5: 32px gap on mobile and tablet - 60px on desktop
+        h-grid--g-6: No gap mobile - 24px gap on tablet and desktop
+        h-grid--g-7: No gap mobile - 24px gap between columns on tablet and desktop and 0px gap between rows
+        h-grid--g-8: 8px on mobile and tablet - 4px on desktop
+    columns:
+      type: select
+      label: Columns type
+      default_value: default
+      options:
+        default: Default (One column)
+        h-grid--two-columns: Two columns
+        h-grid--three-columns: Three columns
+        h-grid--four-columns: Four columns
+        h-grid--five-columns: Five columns
+    delimiter:
+      type: select
+      label: Delimiter between rows
+      default_value: default
+      options:
+        default: Default (No delimiter)
+        h-grid--del-1: 1px delimiter on mobile - no delimiter tablet on desktop
+        h-grid--del-2: 1px delimiter on mobile tablet and desktop
+        h-grid--del-3: Smart delimiter based on grid type - added only between rows - exist on mobile tablet and desktop
+    no_item_wrapper:
+      type: boolean
+      label: No items wrappers
+    label_override:
+      type: textfield
+      label: Override label
+    label_type:
+      type: select
+      label: Choose a type of label
+      options:
+        default: Default
+        a-text--x-large: X Large
+        a-text--header-1: Header 1
+        a-text--header-2: Header 2
+        a-text--header-3: Header 3
+        a-text--header-3-cap-bold: Heading 3 Cap Bold
+        a-text--header-4: Header 4
+        a-text--body-1-book: Body 1 Book
+        a-text--body-1-book-italic: Body 1 Book Italic
+        a-text--body-1-book-uppercase: Body 1 Book Uppercase
+        a-text--body-1-demi: Body 1 Demi
+        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
+        a-text--body-2-book: Body 2 Book
+        a-text--body-2-medium: Body 2 Medium
+        a-text--button: Button
+    label_tag:
+      type: select
+      label: Choose element tag for label
+      options:
+        div: div
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+    label_thick_underline:
+      type: boolean
+      label: Add thick underline for label
+    container:
+      type: boolean
+      label: Apply container
+    width:
+      type: select
+      label: Container width
+      options:
+        default: Auto width (Default)
+        h-container--w-1: 1270px width
+    background_color:
+      type: select
+      label: Container background color
+      options:
+        default: No background (Default)
+        h-container--bc-1: Grey Black
+        h-container--bc-2: Yellow Primary
+    horizontal_padding:
+      type: select
+      label: Container horizontal padding
+      options:
+        default: No padding
+        h-container--hp-1: No padding on mobile - 24px on tablet - 48px on desktop
+        h-container--hp-2: 16px on mobile - 24px on tablet - 48px on desktop
+    vertical_padding:
+      type: select
+      label: Container vertical padding
+      options:
+        default: No padding
+        h-container--vp-1: 24px on mobile - 32px on tablet - 40px on desktop
+        h-container--vp-2: 32px on mobile and tablet - 40px on desktop
+        h-container--vp-3: 32px on mobile and tablet - 64px on desktop
+    horizontal_margin:
+      type: select
+      label: Container horizontal margin
+      options:
+        default: No margin
+        h-container--hm-1: No margin on mobile - 24px on tablet - 48px on desktop
+        h-container--hm-2: 16px on mobile - 24px on tablet - 48px on desktop
+    vertical_margin:
+      type: select
+      label: Container vertical margin
+      options:
+        default: No margin
+        h-container--vm-1: 24px on mobile - 32px on tablet - 40px on desktop
+        h-container--vm-2: 32px on mobile and tablet - 40px on desktop
+        h-container--vm-3: 32px on mobile and tablet - 64px on desktop
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for molecule grid field separated by spaces.
+  # Uncomment libraries if your component should have own library declaration
+  libraries:
+    - m-grid-field:
+        css:
+          component:
+            m-grid-field.css: {}
+        #        js:
+        #          m-grid-field.js: {}
+        dependencies:
+          - farecla_theme/h-grid

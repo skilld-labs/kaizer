@@ -1,0 +1,42 @@
+{% set classes = [
+  'm-slider-field',
+  extra_classes ? extra_classes : [],
+] %}
+<div {{ attributes.addClass(classes) }}>
+  {% if container %}
+    {% set container_classes = [
+      'h-container',
+      width and width != 'default' ? width : [],
+      background_color and background_color != 'default' ? background_color : [],
+      horizontal_padding and horizontal_padding != 'default' ? horizontal_padding : [],
+      vertical_padding and vertical_padding != 'default' ? vertical_padding : [],
+      horizontal_margin and horizontal_margin != 'default' ? horizontal_margin : [],
+      vertical_margin and vertical_margin != 'default' ? vertical_margin : [],
+    ] %}
+    <div {{ create_attribute().addClass(container_classes) }}>
+  {% endif %}
+  <div class="m-slider-field__content">
+    {% if label_override %}
+      {% set label = label_override %}
+    {% endif %}
+    {% if label %}
+      {% include '@component/a-text/a-text.html.twig' with {
+        attributes: create_attribute().addClass('m-slider-field__label'),
+        tag: label_tag,
+        type: label_type,
+        content: label,
+        thick_underline: label_thick_underline,
+      } only %}
+    {% endif %}
+    {% if items %}
+      {% include '@component/h-slider/h-slider.html.twig' with {
+        attributes: create_attribute().addClass('m-slider-field__items'),
+        type: slider_type,
+        items: items,
+      } only %}
+    {% endif %}
+  </div>
+  {% if container %}
+    </div>
+  {% endif %}
+</div>

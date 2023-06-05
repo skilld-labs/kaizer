@@ -1,6 +1,7 @@
 js/**/*.js
 !js/**/*.src.js
 node_modules
-templates/patterns/**/*.js
-!templates/patterns/**/*.src.js
+templates/components/**/*.js
+!templates/components/**/*.src.js
 vendor
+storybook-static

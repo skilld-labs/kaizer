@@ -1,0 +1,31 @@
+{% set classes = [
+  'm-text-field',
+  extra_classes ? extra_classes : [],
+] %}
+<div {{ attributes.addClass(classes) }}>
+  {% if custom_label %}
+    {% set label = custom_label %}
+  {% endif %}
+  {% if label %}
+    {% include '@component/a-text/a-text.html.twig' with {
+      attributes: create_attribute().addClass('m-text-field__label'),
+      tag: label_tag,
+      type: label_type,
+      content: label,
+      thick_underline: label_thick_underline,
+      center: label_center,
+    } only %}
+  {% endif %}
+  {% if item %}
+    {% include '@component/a-text/a-text.html.twig' with {
+      attributes: create_attribute().addClass('m-text-field__item', 'm-ckeditor'),
+      tag: item_tag,
+      type: item_type,
+      href: item_href,
+      content: item,
+      thick_underline: item_thick_underline,
+      center: item_center,
+      extra_classes: item_extra_classes,
+    } only %}
+  {% endif %}
+</div>

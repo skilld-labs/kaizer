@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
 
 /**
  * Returns path to svg sprite.
@@ -110,4 +111,5 @@ function kaizer_preprocess(&$variables, $hook) {
  */
 function kaizer_preprocess_menu_local_task(&$variables) {
   $variables['link']['#attributes']['class'][] = 'a-button';
+  $variables['link']['#title'] = Markup::create('<span class="a-button__text a-text a-text--button">' . $variables['link']['#title'] . '</span>');
 }

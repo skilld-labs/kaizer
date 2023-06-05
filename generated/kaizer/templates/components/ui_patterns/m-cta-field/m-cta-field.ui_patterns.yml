@@ -1,0 +1,96 @@
+m_cta_field:
+  use: '@component/m-cta-field/m-cta-field.html.twig'
+  label: Molecule / CTA field
+  fields:
+    label:
+      label: Label
+    item:
+      label: Item content
+    item_href:
+      label: Item href
+  settings:
+    custom_label:
+      type: textfield
+      label: Custom label
+    label_type:
+      type: select
+      label: Choose a type of label
+      options:
+        default: Default
+        a-text--x-large: X Large
+        a-text--header-1: Header 1
+        a-text--header-2: Header 2
+        a-text--header-3: Header 3
+        a-text--header-3-cap-bold: Heading 3 Cap Bold
+        a-text--header-4: Header 4
+        a-text--body-1-book: Body 1 Book
+        a-text--body-1-book-italic: Body 1 Book Italic
+        a-text--body-1-book-uppercase: Body 1 Book Uppercase
+        a-text--body-1-demi: Body 1 Demi
+        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
+        a-text--body-2-book: Body 2 Book
+        a-text--body-2-medium: Body 2 Medium
+        a-text--button: Button
+    label_tag:
+      type: select
+      label: Choose element tag for label
+      options:
+        div: div
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+        span: span
+    label_thick_underline:
+      type: boolean
+      label: Add thick underline for label
+    item_custom_content:
+      type: textfield
+      label: Item custom text content
+    item_type:
+      type: select
+      label: Type
+      options:
+        default: Default
+        a-button--two: Two
+        a-button--three: Three
+        a-button--four: Four
+        a-button--five: Five
+    item_leading_icon:
+      type: select
+      label: Leading icon name
+      options:
+        default: Default
+        chevron: Chevron
+        download: Download
+        done: Done
+        pin: Pin
+        home: Home
+    item_trailing_icon:
+      type: select
+      label: Trailing icon name
+      options:
+        default: Default
+        chevron: Chevron
+        download: Download
+        done: Done
+        pin: Pin
+        home: Home
+        calendar: Calendar
+        mail: Mail
+    cta_attributes:
+      type: attributes
+      label: Item attributes
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for molecule cta field separated by spaces.
+  # Uncomment libraries if your component should have own library declaration
+  libraries:
+    - m-cta-field:
+        css:
+          component:
+            m-cta-field.css: {}
+#        js:
+#          m-cta-field.js: {}

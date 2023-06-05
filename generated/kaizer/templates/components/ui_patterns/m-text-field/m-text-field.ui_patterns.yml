@@ -1,0 +1,103 @@
+m_text_field:
+  use: '@component/m-text-field/m-text-field.html.twig'
+  label: Molecule / Text field
+  fields:
+    label:
+      label: Label
+    item:
+      label: Item content
+    item_href:
+      label: Item href
+  settings:
+    custom_label:
+      type: textfield
+      label: Custom label
+    label_type:
+      type: select
+      label: Choose a type of label
+      options:
+        default: Default
+        a-text--x-large: X Large
+        a-text--header-1: Header 1
+        a-text--header-2: Header 2
+        a-text--header-3: Header 3
+        a-text--header-3-cap-bold: Heading 3 Cap Bold
+        a-text--header-4: Header 4
+        a-text--body-1-book: Body 1 Book
+        a-text--body-1-book-italic: Body 1 Book Italic
+        a-text--body-1-book-uppercase: Body 1 Book Uppercase
+        a-text--body-1-demi: Body 1 Demi
+        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
+        a-text--body-2-book: Body 2 Book
+        a-text--body-2-medium: Body 2 Medium
+        a-text--button: Button
+    label_tag:
+      type: select
+      label: Choose element tag for label
+      options:
+        div: div
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+        span: span
+    label_thick_underline:
+      type: boolean
+      label: Add thick underline for label
+    label_center:
+      type: boolean
+      label: Center text of label
+    item_type:
+      type: select
+      label: Choose a type of item
+      options:
+        default: Default
+        a-text--x-large: X Large
+        a-text--header-1: Header 1
+        a-text--header-2: Header 2
+        a-text--header-3: Header 3
+        a-text--header-3-cap-bold: Heading 3 Cap Bold
+        a-text--header-4: Header 4
+        a-text--body-1-book: Body 1 Book
+        a-text--body-1-book-italic: Body 1 Book Italic
+        a-text--body-1-book-uppercase: Body 1 Book Uppercase
+        a-text--body-1-demi: Body 1 Demi
+        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
+        a-text--body-2-book: Body 2 Book
+        a-text--body-2-medium: Body 2 Medium
+        a-text--button: Button
+    item_tag:
+      type: select
+      label: Choose element tag for item (You can ignore this setting if your field is link)
+      options:
+        div: div
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+        p: p
+        span: span
+    item_thick_underline:
+      type: boolean
+      label: Add thick underline for item
+    item_center:
+      type: boolean
+      label: Center text of item
+    item_extra_classes:
+      type: textfield
+      label: Add extra CSS classes for item separated by spaces.
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for molecule text field separated by spaces.
+  # Uncomment libraries if your component should have own library declaration
+  libraries:
+    - m-text-field:
+        css:
+          component:
+            m-text-field.css: {}
+#        js:
+#          m-text-field.js: {}

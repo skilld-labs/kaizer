@@ -1,0 +1,11 @@
+a_input:
+  use: '@component/a-input/a-input.html.twig'
+  label: Atoms / Input
+  base hook: 'input'
+  libraries:
+    - a-input:
+        css:
+          component:
+            a-input.css: {}
+#        js:
+#          a-input.js: {}

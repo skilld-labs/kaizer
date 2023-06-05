@@ -1,0 +1,59 @@
+a_button:
+  use: '@component/a-button/a-button.html.twig'
+  label: Atoms / Button
+  hook theme: 'input__submit'
+  base hook: 'input'
+  fields:
+    content:
+      type: text
+      label: Text content
+    href:
+      type: string
+      label: Link href
+  settings:
+    custom_content:
+      type: textfield
+      label: Custom text content
+    type:
+      type: select
+      label: Type
+      default_value: default
+      options:
+        default: Default
+        a-button--second: Two
+    leading_icon:
+      type: select
+      label: Leading icon name
+      default_value: default
+      options:
+        default: Default
+        chevron: Chevron
+        download: Download
+        done: Done
+        pin: Pin
+        close: Close
+        home: Home
+        chat: Chat
+    trailing_icon:
+      type: select
+      label: Trailing icon name
+      default_value: default
+      options:
+        default: Default
+        chevron: Chevron
+        download: Download
+        done: Done
+        pin: Pin
+        close: Close
+        home: Home
+        chat: Chat
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for atom button separated by spaces.
+  libraries:
+    - a-button:
+        css:
+          component:
+            a-button.css: {}
+#        js:
+#          a-button.js: {}

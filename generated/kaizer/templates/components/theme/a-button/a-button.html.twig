@@ -1,0 +1,42 @@
+{% set classes = [
+  'a-button',
+  type and type != 'default' ? type : [],
+  extra_classes ? extra_classes : [],
+] %}
+{% if custom_content %}
+  {% set content = custom_content %}
+{% endif %}
+{% if href %}
+  {% set tag = 'a' %}
+  {% set attributes = attributes.setAttribute('href', href) %}
+{% endif %}
+<{{ tag|default('button') }}{{ attributes.addClass(classes) }}>
+  {% if leading_icon and leading_icon != 'default' %}
+    <span class="a-button__icon-container a-button__icon-container--start">
+      {% include '@component/a-icon/a-icon.html.twig' with {
+        attributes: create_attribute().addClass('a-button__icon'),
+        icon: leading_icon,
+        kaizer_svg_sprite: kaizer_svg_sprite,
+      } only %}
+    </span>
+  {% endif %}
+  {% set button_content = content %}
+  {% if attributes.value %}
+    {% set button_content = attributes.value %}
+  {% endif %}
+  {% include '@component/a-text/a-text.html.twig' with {
+    attributes: create_attribute().addClass('a-button__text'),
+    tag: 'span',
+    type: 'a-text--button',
+    content: button_content,
+  } only %}
+   {% if trailing_icon and trailing_icon != 'default' %}
+     <span class="a-button__icon-container a-button__icon-container--end">
+      {% include '@component/a-icon/a-icon.html.twig' with {
+        attributes: create_attribute().addClass('a-button__icon'),
+        icon: trailing_icon,
+        kaizer_svg_sprite: kaizer_svg_sprite,
+      } only %}
+    </span>
+   {% endif %}
+</{{ tag|default('button') }}>

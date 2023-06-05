@@ -1,13 +1,13 @@
-import { defRender, defArgTypes } from '@kaizer-storybook/plugins/kaizer';
-import { useEffect } from '@storybook/client-api';
-import DrupalAttribute from 'drupal-attribute';
-import description from './m-status-messages.component.yml';
-import './m-status-messages.src.css';
-// import './m-status-messages.src.js';
+import {
+  defRender,
+  renderComponent as r,
+  faker,
+  DrupalAttribute,
+  useEffect,
+} from '@story-handler';
 
-const BasicRender = (args) => {
-  const storyDefaultRender = defRender(args, description);
-  const { data, template } = storyDefaultRender;
+const BasicRender = (args, context) => {
+  const { data, template } = defRender(args, context);
   if (args.type === 'Information') {
     data.type = 'info';
   } else {
@@ -26,12 +26,16 @@ const BasicRender = (args) => {
 };
 
 export default {
-  title: 'Molecules/Status messages',
-  // parameters: { layout: 'fullscreen' },
+  title: 'Molecules / Status messages',
+  parameters: {
+    // parameters: {
+    //   layout: 'fullscreen',
+    // },
+  },
   argTypes: {
-    ...defArgTypes(description),
     type: {
       name: 'Chosee a type of message',
+      defaultValue: 'Status',
       options: ['Status', 'Warning', 'Error', 'Information'],
       control: {
         type: 'radio',
@@ -41,16 +45,16 @@ export default {
 };
 
 export const Basic = {
-  render: (args = {}) => BasicRender(args),
+  render: (args = {}, context) => BasicRender(args, context),
 };
 
 export const Multiple = {
-  render: (args = {}) => {
+  render: (args = {}, context) => {
     args.list = args.list || [
       'Lorem ipsum dolor 1',
       'Lorem ipsum dolor 2',
       'Lorem ipsum dolor 3',
     ];
-    return BasicRender(args);
+    return BasicRender(args, context);
   },
 };

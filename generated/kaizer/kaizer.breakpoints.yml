@@ -1,7 +1,15 @@
-kaizer.xs:
-  label: xs
+kaizer.xxs:
+  label: xxs
   mediaQuery: '(min-width: 320px)'
   weight: 0
+  group: kaizer
+  multipliers:
+    - 1x
+    - 2x
+kaizer.xs:
+  label: xs
+  mediaQuery: '(min-width: 361px)'
+  weight: 10
   group: kaizer
   multipliers:
     - 1x
@@ -9,7 +17,7 @@ kaizer.xs:
 kaizer.s:
   label: s
   mediaQuery: '(min-width: 481px)'
-  weight: 10
+  weight: 20
   group: kaizer
   multipliers:
     - 1x
@@ -17,7 +25,7 @@ kaizer.s:
 kaizer.m:
   label: m
   mediaQuery: '(min-width: 769px)'
-  weight: 20
+  weight: 30
   group: kaizer
   multipliers:
     - 1x
@@ -25,7 +33,7 @@ kaizer.m:
 kaizer.l:
   label: l
   mediaQuery: '(min-width: 1025px)'
-  weight: 30
+  weight: 40
   group: kaizer
   multipliers:
     - 1x
@@ -33,15 +41,15 @@ kaizer.l:
 kaizer.xl:
   label: xl
   mediaQuery: '(min-width: 1441px)'
-  weight: 40
+  weight: 50
   group: kaizer
   multipliers:
     - 1x
     - 2x
 kaizer.xxl:
   label: xxl
-  mediaQuery: 'all and (min-width: 1921px)'
-  weight: 50
+  mediaQuery: '(min-width: 1921px)'
+  weight: 60
   group: kaizer
   multipliers:
     - 1x

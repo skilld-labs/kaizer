@@ -11,6 +11,7 @@ dependencies:
   - ui_patterns_field_formatters:ui_patterns_field_formatters
   - ui_patterns_layouts:ui_patterns_layouts
   - components:components
+#  - storybook_connector:storybook_connector
 
 regions:
   branding: 'Branding'
@@ -22,25 +23,33 @@ regions:
   copyright: 'Copyright'
   secondary_navigation: 'Secondary navigation'
 
+stylesheets-remove:
+  - core/assets/vendor/jquery.ui/themes/base/autocomplete.css
+  - core/assets/vendor/jquery.ui/themes/base/menu.css
+  - core/assets/vendor/jquery.ui/themes/base/core.css
+  - core/assets/vendor/jquery.ui/themes/base/theme.css
+
 libraries:
   - kaizer/base
 
 libraries-extend:
+  core/drupal.ajax:
+    - kaizer/ajax
   toolbar/toolbar:
     - kaizer/toolbar
 
 libraries-override:
   core/normalize: false
+  system/base:
+    css:
+      component:
+        css/components/fieldgroup.module.css: false
 
 components:
   namespaces:
-    helpers:
-      - templates/patterns/helpers
-    atoms:
-      - templates/patterns/atoms
-    molecules:
-      - templates/patterns/molecules
-    organisms:
-      - templates/patterns/organisms
-    templates:
-      - templates/patterns/templates
+    component:
+      - templates/components/layouts
+      - templates/components/suggestions
+      - templates/components/theme
+      - templates/components/ui_patterns
+      - templates/components/storybook

@@ -1,10 +1,22 @@
 import content from '@originjs/vite-plugin-content';
+
 const path = require('path');
 const { mergeConfig } = require('vite');
+import { sync } from 'glob';
+
+let aliases = {};
+sync(`templates/components/**/*.stories.js`).forEach((component) => {
+  aliases[`@${component.split('/').pop().replace('.stories.js', '')}`] =
+    path.join(__dirname, '../', component);
+  const split = component.split('/');
+  split.pop();
+  aliases[`@${component.split('/').pop().replace('.stories.js', '')}-folder`] =
+    path.join(__dirname, '../', split.join('/'));
+});
 
 module.exports = {
-  stories: ['./', '../templates/patterns/'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  stories: ['../templates/components/**/*.stories.js'],
+  addons: ['@storybook/addon-essentials', './plugins/controls/manager.js'],
   framework: {
     name: '@storybook/html-vite',
     options: {},
@@ -17,14 +29,15 @@ module.exports = {
       plugins: [content()],
       resolve: {
         alias: {
+          '@root': path.join(__dirname, '../'),
           '@images': path.join(__dirname, '../', 'images'),
           '@fonts': path.join(__dirname, '../', 'fonts'),
-          '@kaizer-storybook': __dirname,
-          '@kaizer-components': path.join(
+          '@story-handler': path.join(
             __dirname,
-            '../',
-            'templates/patterns',
+            '/',
+            'plugins/story-handler.js',
           ),
+          ...aliases,
         },
       },
     });

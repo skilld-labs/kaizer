@@ -1,11 +1,11 @@
 body[class*='toolbar'] {
-  /* stylelint-disable-next-line unit-case */
-  --toolbar-height: 39px;
+  /* prettier-ignore */
+  --toolbar-height: 39PX;
 }
 
 body[class*='toolbar'].toolbar-tray-open:not(.toolbar-vertical) {
-  /* stylelint-disable-next-line unit-case */
-  --toolbar-height: 79px;
+  /* prettier-ignore */
+  --toolbar-height: 79PX;
 }
 
 .toolbar-oriented .toolbar-bar {

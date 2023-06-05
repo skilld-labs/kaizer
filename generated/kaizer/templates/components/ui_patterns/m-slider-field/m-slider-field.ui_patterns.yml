@@ -1,0 +1,122 @@
+m_slider_field:
+  use: '@component/m-slider-field/m-slider-field.html.twig'
+  label: Molecule / Slider field
+  fields:
+    label:
+      label: Label
+    items:
+      label: Items
+  # Uncomment settings if your component should have settings
+  settings:
+    slider_type:
+      type: select
+      label: Type of slider
+      default_value: h-slider--banner
+      options:
+        h-slider--banner: Banner
+        h-slider--cards-a: Cards A
+        h-slider--cards-regular: Cards regular
+        h-slider--cards-fluid: Cards regular slider on mobile and tablet - fluid grid on desktop
+        h-slider--history: History
+        h-slider--block-quote: Block quote
+        h-slider--product-media: Product media
+        h-slider--documents-grid: Documents grid
+        h-slider--anchors: Anchors
+    label_override:
+      type: textfield
+      label: Override label
+    label_type:
+      type: select
+      label: Choose a type of label
+      options:
+        default: Default
+        a-text--x-large: X Large
+        a-text--header-1: Header 1
+        a-text--header-2: Header 2
+        a-text--header-3: Header 3
+        a-text--header-3-cap-bold: Heading 3 Cap Bold
+        a-text--header-4: Header 4
+        a-text--body-1-book: Body 1 Book
+        a-text--body-1-book-italic: Body 1 Book Italic
+        a-text--body-1-book-uppercase: Body 1 Book Uppercase
+        a-text--body-1-demi: Body 1 Demi
+        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
+        a-text--body-2-book: Body 2 Book
+        a-text--body-2-medium: Body 2 Medium
+        a-text--button: Button
+    label_tag:
+      type: select
+      label: Choose element tag for label
+      options:
+        div: div
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+    label_thick_underline:
+      type: boolean
+      label: Add thick underline for label
+    container:
+      type: boolean
+      label: Apply container
+    width:
+      type: select
+      label: Container width
+      options:
+        default: Auto width (Default)
+        h-container--w-1: 1270px width
+        h-container--w-2: 1054px width
+    background_color:
+      type: select
+      label: Container background color
+      options:
+        default: No background (Default)
+        h-container--bc-1: Grey Black
+        h-container--bc-2: Yellow Primary
+        h-container--bc-3: Grey Ghost Grey
+        h-container--bc-4: Grey white
+    horizontal_padding:
+      type: select
+      label: Container horizontal padding
+      options:
+        default: No padding
+        h-container--hp-1: No padding on mobile - 24px on tablet - 48px on desktop
+        h-container--hp-2: 16px on mobile - 24px on tablet - 48px on desktop
+    vertical_padding:
+      type: select
+      label: Container vertical padding
+      options:
+        default: No padding
+        h-container--vp-1: 24px on mobile - 32px on tablet - 40px on desktop
+        h-container--vp-2: 32px on mobile and tablet - 40px on desktop
+        h-container--vp-3: 32px on mobile and tablet - 64px on desktop
+    horizontal_margin:
+      type: select
+      label: Container horizontal margin
+      options:
+        default: No margin
+        h-container--hm-1: No margin on mobile - 24px on tablet - 48px on desktop
+        h-container--hm-2: 16px on mobile - 24px on tablet - 48px on desktop
+    vertical_margin:
+      type: select
+      label: Container vertical margin
+      options:
+        default: No margin
+        h-container--vm-1: 24px on mobile - 32px on tablet - 40px on desktop
+        h-container--vm-2: 32px on mobile and tablet - 40px on desktop
+        h-container--vm-3: 32px on mobile and tablet - 64px on desktop
+    extra_classes:
+      type: textfield
+      label: Add extra CSS classes for molecule slider field separated by spaces.
+  # Uncomment libraries if your component should have own library declaration
+  libraries:
+    - m-slider-field:
+        css:
+          component:
+            m-slider-field.css: {}
+        #        js:
+        #          m-slider-field.js: {}
+        dependencies:
+          - farecla_theme/h-slider

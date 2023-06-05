@@ -7,6 +7,7 @@ export const cssBuild = (inputPrefixPath = '') => {
     resolve: {
       alias: {
         '@images': resolve(__dirname, '/images'),
+        '@components': resolve(__dirname, '/templates/components'),
         '@fonts': resolve(__dirname, '/fonts'),
       },
     },
@@ -25,7 +26,7 @@ export const cssBuild = (inputPrefixPath = '') => {
               return sync(`${inputPrefixPath}/**/*.src.css`, {
                 ignore: `${inputPrefixPath}/**/_*.src.css`,
               })
-                .find((a) => a.includes(basename(name)))
+                .find((a) => a.split('/').pop() === basename(name))
                 .replace('.src', '');
             }
             if (['.woff2', '.woff', '.ttf', '.otf', '.eot'].includes(ext)) {
@@ -42,6 +43,14 @@ export const cssBuild = (inputPrefixPath = '') => {
                 '.webp',
               ].includes(ext)
             ) {
+              if (
+                sync(`${inputPrefixPath}/**/${name}`)[0].includes(
+                  'templates/components',
+                )
+              ) {
+                return sync(`${inputPrefixPath}/**/${name}`)[0];
+              }
+
               return sync(`images/**/${name}`)[0];
             }
             return 'dist/[name].[ext]';
@@ -71,7 +80,7 @@ export const jsBuild = (inputPrefixPath = '') => {
         `,
           entryFileNames: ({ name }) =>
             sync(`${inputPrefixPath}/**/*.src.js`)
-              .find((a) => a.includes(basename(name)))
+              .find((a) => a.split('/').pop() === `${basename(name)}.js`)
               .replace('.src', ''),
         },
       },

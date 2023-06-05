@@ -1,0 +1,14 @@
+.m-icon-text-field {
+  &__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+  }
+
+  &__item {
+    display: inline-flex;
+    gap: 13px;
+    vertical-align: top;
+  }
+}

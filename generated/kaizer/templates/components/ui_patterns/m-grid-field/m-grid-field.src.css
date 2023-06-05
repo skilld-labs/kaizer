@@ -1,0 +1,11 @@
+.m-grid-field {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (--l) {
+      gap: 32px;
+    }
+  }
+}

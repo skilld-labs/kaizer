@@ -1,0 +1,10 @@
+o_branding:
+  use: '@component/o-branding/o-branding.html.twig'
+  label: Organism / Branding
+  libraries:
+    - o-branding:
+        css:
+          component:
+            o-branding.css: {}
+#        js:
+#           o-branding.js: {}

@@ -9,6 +9,15 @@ import {
   useEffect,
 } from '@story-handler';
 
+export default {
+  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  parameters: {
+    // layout: 'fullscreen',
+    // backgrounds: { default: 'grey' },
+  },
+  // argTypes: {},
+};
+
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.content = 'Lorem ipsum';
@@ -16,13 +25,6 @@ const BasicRender = (args, context) => {
   //   place-your-js-code-here
   // }, [args]);
   return template.render(data);
-};
-
-export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
-  // parameters: {
-  //   layout: 'fullscreen',
-  // },
 };
 
 export const Basic = {

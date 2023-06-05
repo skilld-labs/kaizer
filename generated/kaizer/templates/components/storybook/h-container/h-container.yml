@@ -1,0 +1,50 @@
+h_container:
+  use: '@component/h-container/h-container.html.twig'
+  label: Helper / Container
+  fields:
+    content:
+      type: render
+      label: Content
+  settings:
+    width:
+      type: select
+      label: Width
+      default_value: default
+      options:
+        default: Auto width (Default)
+        w-1: Width 1
+    horizontal_padding:
+      type: select
+      label: Horizontal padding
+      default_value: default
+      options:
+        default: No horizontal padding
+        hp-1: 16px on mobile - 40px on desktop
+    vertical_padding:
+      type: select
+      label: Vertical padding
+      default_Value: default
+      options:
+        default: No vertical padding
+        vp-1: 16px on mobile - 40px on desktop
+    horizontal_margin:
+      type: select
+      label: Horizontal margin
+      default_value: default
+      options:
+        default: No horizontal margin
+        hm-1: 16px on mobile - 40px on desktop
+    vertical_margin:
+      type: select
+      label: Vertical margin
+      default_value: default
+      options:
+        default: No vertical margin
+        h-container--vm-1: 16px on mobile - 40px on desktop
+  libraries:
+    - h-container:
+        css:
+          component:
+            h-container.css: {}
+#        js:
+#          h-container.js: {}

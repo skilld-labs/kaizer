@@ -2,6 +2,19 @@ a_textarea:
   use: '@component/a-textarea/a-textarea.html.twig'
   label: Atoms / Textarea
   base hook: 'textarea'
+  settings:
+    placeholder:
+      type: textfield
+      label: 'Placeholder'
+    value:
+      type: textfield
+      label: 'Value'
+    disabled:
+      type: boolean
+      label: 'Disabled'
+    error:
+      type: boolean
+      label: 'Error'
   libraries:
     - a-textarea:
         css:

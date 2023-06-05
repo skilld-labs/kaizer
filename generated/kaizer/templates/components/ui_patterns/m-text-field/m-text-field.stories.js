@@ -8,15 +8,12 @@ import {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  if (args.showLabel) {
-    data.label = 'Lorem ipsum';
-  }
   if (args.label) {
-    data.label = args.label;
+    data.label = args.label === true ? 'Lorem ipsum' : args.label;
   }
   data.item = args.item || faker.lorem.sentences();
   if (args.link) {
-    data.item_href = '#';
+    data.item_href = args.link === true ? '#' : args.link;
   }
   // useEffect(() => {
   //   place-your-js-code-here
@@ -30,7 +27,7 @@ export default {
   //   layout: 'fullscreen',
   // },
   argTypes: {
-    showLabel: {
+    label: {
       name: 'Show label',
       control: {
         type: 'boolean',

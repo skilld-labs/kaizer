@@ -9,7 +9,7 @@
   width: 100%;
   min-height: 10rem;
   max-height: 20rem;
-  padding: 1rem;
+  padding: 0.625rem 1rem;
   resize: vertical;
   cursor: pointer;
   color: var(--color-black);

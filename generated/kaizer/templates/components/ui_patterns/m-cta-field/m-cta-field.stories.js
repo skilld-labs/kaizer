@@ -9,10 +9,7 @@ import {
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   if (args.label) {
-    data.label = args.label;
-  }
-  if (args.showLabel) {
-    data.label = 'Lorem ipsum';
+    data.label = args.label === true ? 'Lorem ipsum' : args.label;
   }
   data.item = args.item || 'Lorem ipsum';
   data.item_href = args.href || '#';
@@ -31,7 +28,7 @@ export default {
     },
   },
   argTypes: {
-    showLabel: {
+    label: {
       name: 'Show label',
       control: {
         type: 'boolean',

@@ -12,21 +12,24 @@ const BasicRender = (args, context) => {
   if (args.link) {
     data.href = args.href || '#';
   }
-  if (args.disabled) {
+  if (args.disabled || args.ajax) {
     args.link
       ? data.attributes.addClass('is-disabled')
       : data.attributes.setAttribute('disabled', '');
   }
   useEffect(() => {
+    // Simulation of ajax throbber.
     if (args.ajax) {
       const throbber = (type = 'full') => `
         ${
           type === 'full'
-            ? `<span class="a-button__icon-container a-button__icon-container--ajax-full">`
+            ? `<span class="a-button__icon-container a-button__icon-container--throbber-full">`
             : ''
         }
         <svg class="a-button__icon ${
-          type !== 'full' ? 'a-button__icon--ajax ' : ''
+          type !== 'full'
+            ? 'a-button__icon--throbber a-throbber a-throbber--circle '
+            : ''
         }a-icon a-icon--throbber-circle" aria-hidden="true">
           <use xlink:href="${data.kaizerSvgSprite}#svg-throbber-circle"></use>
         </svg>
@@ -57,30 +60,10 @@ const BasicRender = (args, context) => {
 export default {
   title: 'Atoms / Button',
   parameters: {
-    // parameters: {
-    //   layout: 'fullscreen',
-    // },
+    // layout: 'fullscreen',
+    // backgrounds: { default: 'grey' },
   },
-  argTypes: {
-    disabled: {
-      name: 'Disabled',
-      control: {
-        type: 'boolean',
-      },
-    },
-    link: {
-      name: 'Link',
-      control: {
-        type: 'boolean',
-      },
-    },
-    ajax: {
-      name: 'Ajax',
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
+  // argTypes: {},
 };
 
 export const Basic = {

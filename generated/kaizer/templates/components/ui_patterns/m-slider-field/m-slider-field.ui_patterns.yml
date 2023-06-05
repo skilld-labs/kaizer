@@ -6,47 +6,34 @@ m_slider_field:
       label: Label
     items:
       label: Items
-  # Uncomment settings if your component should have settings
   settings:
-    slider_type:
+    type:
       type: select
-      label: Type of slider
-      default_value: h-slider--banner
+      label: Slider type
+      default_value: type-1
       options:
-        h-slider--banner: Banner
-        h-slider--cards-a: Cards A
-        h-slider--cards-regular: Cards regular
-        h-slider--cards-fluid: Cards regular slider on mobile and tablet - fluid grid on desktop
-        h-slider--history: History
-        h-slider--block-quote: Block quote
-        h-slider--product-media: Product media
-        h-slider--documents-grid: Documents grid
-        h-slider--anchors: Anchors
+        type-1: Type 1
+        type-2: Type 2
     label_override:
       type: textfield
-      label: Override label
+      label: Label custom content
     label_type:
       type: select
-      label: Choose a type of label
+      label: Label type
+      default_value: regular
       options:
-        default: Default
-        a-text--x-large: X Large
-        a-text--header-1: Header 1
-        a-text--header-2: Header 2
-        a-text--header-3: Header 3
-        a-text--header-3-cap-bold: Heading 3 Cap Bold
-        a-text--header-4: Header 4
-        a-text--body-1-book: Body 1 Book
-        a-text--body-1-book-italic: Body 1 Book Italic
-        a-text--body-1-book-uppercase: Body 1 Book Uppercase
-        a-text--body-1-demi: Body 1 Demi
-        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
-        a-text--body-2-book: Body 2 Book
-        a-text--body-2-medium: Body 2 Medium
-        a-text--button: Button
+        h1: Heading 1
+        h2: Heading 2
+        h3: Heading 3
+        h4: Heading 4
+        h5: Heading 5
+        h6: Heading 6
+        regular: Regular
+        small: Small
     label_tag:
       type: select
-      label: Choose element tag for label
+      label: Label tag
+      default_value: div
       options:
         div: div
         h1: h1
@@ -55,68 +42,48 @@ m_slider_field:
         h4: h4
         h5: h5
         h6: h6
-    label_thick_underline:
-      type: boolean
-      label: Add thick underline for label
     container:
       type: boolean
-      label: Apply container
-    width:
+      label: Container apply
+    container_width:
       type: select
       label: Container width
+      default_value: default
       options:
         default: Auto width (Default)
-        h-container--w-1: 1270px width
-        h-container--w-2: 1054px width
-    background_color:
-      type: select
-      label: Container background color
-      options:
-        default: No background (Default)
-        h-container--bc-1: Grey Black
-        h-container--bc-2: Yellow Primary
-        h-container--bc-3: Grey Ghost Grey
-        h-container--bc-4: Grey white
-    horizontal_padding:
+        w-1: Width 1
+    container_horizontal_padding:
       type: select
       label: Container horizontal padding
+      default_value: default
       options:
-        default: No padding
-        h-container--hp-1: No padding on mobile - 24px on tablet - 48px on desktop
-        h-container--hp-2: 16px on mobile - 24px on tablet - 48px on desktop
-    vertical_padding:
+        default: No horizontal padding
+        hp-1: 16px on mobile - 40px on desktop
+    container_vertical_padding:
       type: select
       label: Container vertical padding
+      default_Value: default
       options:
-        default: No padding
-        h-container--vp-1: 24px on mobile - 32px on tablet - 40px on desktop
-        h-container--vp-2: 32px on mobile and tablet - 40px on desktop
-        h-container--vp-3: 32px on mobile and tablet - 64px on desktop
-    horizontal_margin:
+        default: No vertical padding
+        vp-1: 16px on mobile - 40px on desktop
+    container_horizontal_margin:
       type: select
       label: Container horizontal margin
+      default_value: default
       options:
-        default: No margin
-        h-container--hm-1: No margin on mobile - 24px on tablet - 48px on desktop
-        h-container--hm-2: 16px on mobile - 24px on tablet - 48px on desktop
-    vertical_margin:
+        default: No horizontal margin
+        hm-1: 16px on mobile - 40px on desktop
+    container_vertical_margin:
       type: select
       label: Container vertical margin
+      default_value: default
       options:
-        default: No margin
-        h-container--vm-1: 24px on mobile - 32px on tablet - 40px on desktop
-        h-container--vm-2: 32px on mobile and tablet - 40px on desktop
-        h-container--vm-3: 32px on mobile and tablet - 64px on desktop
-    extra_classes:
-      type: textfield
-      label: Add extra CSS classes for molecule slider field separated by spaces.
-  # Uncomment libraries if your component should have own library declaration
+        default: No vertical margin
+        h-container--vm-1: 16px on mobile - 40px on desktop
   libraries:
     - m-slider-field:
         css:
           component:
             m-slider-field.css: {}
-        #        js:
-        #          m-slider-field.js: {}
-        dependencies:
-          - farecla_theme/h-slider
+        js:
+          m-slider-field.js: {}

@@ -1,33 +1,18 @@
 .m-flex-field {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  &__label {
+    margin-bottom: 20px;
 
     @media (--l) {
-      gap: 32px;
-    }
-
-    .m-flex-field--internal-gap-1 & {
-      gap: 12px;
-
-      @media (--l) {
-        gap: 4px;
-      }
-    }
-
-    .m-flex-field--inline & {
-      flex-direction: row;
+      margin-bottom: 32px;
     }
   }
 
-  &__label {
-    .m-flex-field--inline & {
-      flex-shrink: 0;
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
 
-      &::after {
-        content: ':';
-      }
+    .m-flex-field--g-1 & {
+      gap: 10px;
     }
   }
 }

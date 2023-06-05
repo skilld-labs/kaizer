@@ -1,3 +1,11 @@
-<div class="a-input">
-  <input{{ attributes.addClass('a-input__element') }} />{{ children }}
+<div class="a-input{% if attributes.type == 'search' %} a-input--with-icons{% endif %}">
+  <input{{ attributes.addClass('a-input__element') }} />
+  {% if attributes.type == 'search' %}
+    {% include '@component/a-icon/a-icon.html.twig' with {
+      attributes: create_attribute().addClass('a-input__icon', 'a-input__icon--leading'),
+      icon: 'search',
+      kaizer_svg_sprite: kaizer_svg_sprite,
+    } only %}
+  {% endif %}
+  {{- children }}
 </div>

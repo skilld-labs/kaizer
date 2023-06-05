@@ -21,6 +21,13 @@ export default {
   // },
 };
 
-export const Basic = {
+export const Circle = {
+  render: (args = {}, context) => {
+    args.circle = true;
+    return BasicRender(args, context);
+  },
+};
+
+export const Fullscreen = {
   render: (args = {}, context) => BasicRender(args, context),
 };

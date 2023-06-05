@@ -1,11 +1,19 @@
 .m-text-field {
   &__label {
-    &:not(:last-child) {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
 
-      @media (--l) {
-        margin-bottom: 32px;
-      }
+    @media (--l) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__item {
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
     }
   }
 }

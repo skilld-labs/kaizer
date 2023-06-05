@@ -17,11 +17,11 @@
 }
 
 .m-status-messages--status {
-  --m-status-messages-background-color: var(--color-green);
+  --m-status-messages-background-color: var(--color-success);
 }
 
 .m-status-messages--warning {
-  --m-status-messages-background-color: var(--color-yellow);
+  --m-status-messages-background-color: var(--color-warning);
 }
 
 .m-status-messages--error {

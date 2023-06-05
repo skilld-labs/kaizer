@@ -91,7 +91,7 @@ export const Basic = {
           )}`} ${multiplier}`;
         });
         data.sources.push(
-          `storybook-breakpoint-name="${breakpoint}" ${help} srcset="${srcset}" media="${window.drupalSettings.fareclaThemeBreakpoints[breakpoint]}"`,
+          `storybook-breakpoint-name="${breakpoint}" ${help} srcset="${srcset}" media="${window.drupalSettings.kaizerBreakpoints[breakpoint]}"`,
         );
       });
     }

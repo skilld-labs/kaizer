@@ -70,13 +70,13 @@ export const Basic = {
     if (args.alt) {
       data.attributes.setAttribute('alt', args.alt);
     }
-
     return template.render(data);
   },
   argTypes: {
     style: {
       name: 'Image styles',
       options: Object.values(imageStyles).map((e) => e.label),
+      defaultValue: Object.values(imageStyles)[0].label,
       control: {
         type: 'radio',
       },

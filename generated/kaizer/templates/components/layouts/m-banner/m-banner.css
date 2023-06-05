@@ -18,4 +18,5 @@
   left: 1rem;
   display: grid;
   gap: 0.625rem;
+  color: var(--color-white);
 }

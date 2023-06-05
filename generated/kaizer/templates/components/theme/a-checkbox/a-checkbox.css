@@ -48,6 +48,10 @@
   opacity: 0.5;
 }
 
+.a-checkbox__icon--throbber ~ * {
+  display: none;
+}
+
 .a-checkbox__element.error ~ .a-checkbox__icon {
   fill: var(--color-danger);
 }

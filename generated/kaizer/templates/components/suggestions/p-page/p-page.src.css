@@ -38,12 +38,61 @@
     z-index: 500;
     top: var(--toolbar-height);
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     height: var(--header-height);
     background-color: var(--color-white);
+  }
+
+  &__header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__controls {
+    @media (--l) {
+      display: none;
+    }
+  }
+
+  &__control {
+    &--menu-close {
+      html:not(.p-page-menu-shown) & {
+        display: none;
+      }
+    }
+
+    &--menu-open {
+      .p-page-menu-shown & {
+        display: none;
+      }
+    }
+  }
+
+  &__main-navigation {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    height: calc(var(--viewport-height) - var(--header-height));
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--color-white);
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    @media (--l) {
+      overflow: visible;
+      background-color: transparent;
+      position: static;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+
+    .p-page-menu-shown & {
+      display: block;
+    }
   }
 
   &__main {

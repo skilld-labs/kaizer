@@ -4,34 +4,19 @@
  * @preserve
  */
 
-.m-flex-field__content {
+.m-flex-field__label {
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 1025px) {
+  .m-flex-field__label {
+    margin-bottom: 2rem;
+  }
+}
+.m-flex-field__items {
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex-wrap: wrap;
 }
-
-@media (min-width: 1025px) {
-  .m-flex-field__content {
-    gap: 2rem;
-  }
-}
-
-.m-flex-field--internal-gap-1 .m-flex-field__content {
-  gap: 0.75rem;
-}
-
-@media (min-width: 1025px) {
-  .m-flex-field--internal-gap-1 .m-flex-field__content {
-    gap: 0.25rem;
-  }
-}
-
-.m-flex-field--inline .m-flex-field__content {
-  flex-direction: row;
-}
-.m-flex-field--inline .m-flex-field__label {
-  flex-shrink: 0;
-}
-.m-flex-field--inline .m-flex-field__label::after {
-  content: ':';
+.m-flex-field--g-1 .m-flex-field__items {
+  gap: 0.625rem;
 }

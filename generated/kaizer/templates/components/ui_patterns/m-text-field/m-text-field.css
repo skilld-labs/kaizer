@@ -4,12 +4,18 @@
  * @preserve
  */
 
-.m-text-field__label:not(:last-child) {
+.m-text-field__label {
   margin-bottom: 1.25rem;
 }
 
 @media (min-width: 1025px) {
-  .m-text-field__label:not(:last-child) {
+  .m-text-field__label {
     margin-bottom: 2rem;
   }
+}
+.m-text-field__item > *:first-child {
+  margin-top: 0;
+}
+.m-text-field__item > *:last-child {
+  margin-bottom: 0;
 }

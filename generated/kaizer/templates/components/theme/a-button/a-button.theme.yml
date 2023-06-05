@@ -20,36 +20,46 @@ a_button:
       default_value: default
       options:
         default: Default
-        a-button--second: Two
+        second: Second
     leading_icon:
       type: select
       label: Leading icon name
       default_value: default
       options:
-        default: Default
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
         chevron: Chevron
-        download: Download
-        done: Done
-        pin: Pin
-        close: Close
-        home: Home
-        chat: Chat
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
     trailing_icon:
       type: select
       label: Trailing icon name
       default_value: default
       options:
-        default: Default
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
         chevron: Chevron
-        download: Download
-        done: Done
-        pin: Pin
-        close: Close
-        home: Home
-        chat: Chat
-    extra_classes:
-      type: textfield
-      label: Add extra CSS classes for atom button separated by spaces.
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
+    disabled:
+      type: boolean
+      label: 'Disabled'
+    link:
+      type: boolean
+      label: 'Link'
+    ajax:
+      type: boolean
+      label: 'Ajax'
   libraries:
     - a-button:
         css:

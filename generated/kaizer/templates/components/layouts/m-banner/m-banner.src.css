@@ -13,5 +13,6 @@
     left: 16px;
     display: grid;
     gap: 10px;
+    color: var(--color-white);
   }
 }

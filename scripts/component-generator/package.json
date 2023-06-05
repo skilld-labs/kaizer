@@ -1,6 +1,6 @@
 {
   "name": "@skilld/kaizer-component-generator",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.6",
   "description": "Kaizer component generator",
   "bin": "index.js",
   "main": "index.js",

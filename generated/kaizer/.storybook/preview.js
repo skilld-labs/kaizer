@@ -61,7 +61,7 @@ export const parameters = {
   // Maybe load only Twig.Template.Registry somehow here.
   Twig: { ...Twig },
   backgrounds: {
-    values: [{ name: 'grey', value: '#eee' }],
+    values: [{ name: 'grey', value: '#ddd' }],
   },
   options: {
     storySort: (a, b) => {
@@ -111,7 +111,6 @@ window.drupalSettings = {
         }
       });
     };
-
     Drupal.attachBehaviors(document, drupalSettings);
   });
 })(Drupal, window.drupalSettings);

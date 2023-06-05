@@ -11,17 +11,16 @@ const BasicRender = (args, context) => {
   data.image = r('m-responsive-image', {
     group: 'machine_name_of_responsive_image_group_2',
   });
-  data.title = r('a-text', {
-    content: 'Card title',
-    tag: 'h3',
-    type: 'a-text--h3',
+  data.title = r('m-text-field', {
+    item: 'Card title',
+    item_tag: 'h3',
+    item_type: 'h3',
   });
-  data.body = r('a-text', {
-    content: 'Card body',
+  data.body = r('m-text-field', {
+    item: 'Card body',
   });
-  data.cta = r('a-text', {
-    content: 'Click me',
-    link: true,
+  data.cta = r('m-cta-field', {
+    item: 'Card CTA',
   });
   // useEffect(() => {
   //   place-your-js-code-here

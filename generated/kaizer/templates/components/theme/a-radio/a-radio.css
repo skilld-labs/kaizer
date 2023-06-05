@@ -49,6 +49,10 @@
   opacity: 0.5;
 }
 
+.a-radio__icon--throbber ~ * {
+  display: none;
+}
+
 .a-radio__element.error ~ .a-radio__icon {
   fill: var(--color-danger);
 }
@@ -59,4 +63,14 @@
 
 .a-radio__element:not(:checked) ~ .a-radio__icon--filled {
   display: none;
+}
+
+@keyframes a-radio-ajax-circle-animation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

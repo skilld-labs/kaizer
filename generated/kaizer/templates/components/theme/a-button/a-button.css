@@ -9,36 +9,56 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  cursor: pointer;
+  padding: 0.625rem 1rem;
   transition-timing-function: var(--transition-timing-function-cubic-bezier);
   transition-duration: var(--transition-duration-0-25);
   transition-property: border-color, background-color, color;
   text-align: center;
   text-decoration: none;
-  color: var(--color-black);
-  border: 0.125rem solid var(--color-black);
+  color: var(--color-dark-grey);
+  border: 0.125rem solid currentColor;
   background-color: var(--color-white);
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
   -webkit-appearance: none;
   appearance: none;
   gap: 0.625rem;
 }
 
+.a-button:not([disabled], .is-disabled) {
+  cursor: pointer;
+}
+
 .a-button:not([disabled], .is-disabled):hover,
-[container-as-link-built]:hover .a-button {
-  color: var(--color-white);
-  background-color: var(--color-black);
+[wrapper-as-link-built]:hover .a-button {
+  color: var(--color-black);
 }
 
 .a-button[disabled],
 .a-button.is-disabled {
-  opacity: 0.5;
+  color: var(--color-grey);
 }
 
 .a-button--second {
   color: var(--color-white);
+  border-color: var(--color-black);
   background-color: var(--color-black);
+}
+
+.a-button--second:not([disabled], .is-disabled):hover,
+[wrapper-as-link-built]:hover .a-button--second {
+  border-color: var(--color-dark-grey);
+  background-color: var(--color-dark-grey);
+  color: var(--color-white);
+}
+
+.a-button--second[disabled],
+.a-button--second.is-disabled {
+  border-color: var(--color-grey);
+  background-color: var(--color-grey);
+  color: var(--color-white);
 }
 
 .a-button__icon-container {
@@ -50,7 +70,7 @@
   height: 1rem;
 }
 
-.a-button__icon-container--ajax-full {
+.a-button__icon-container--throbber-full {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,7 +79,7 @@
     linear infinite;
 }
 
-.a-button__icon-container--ajax-full ~ * {
+.a-button__icon-container--throbber-full ~ * {
   opacity: 0;
 }
 
@@ -69,23 +89,8 @@
   fill: currentColor;
 }
 
-.a-button__icon--ajax {
-  animation: a-button-ajax-circle-animation var(--transition-duration-0-25)
-    linear infinite;
-}
-
-.a-button__icon--ajax + * {
+.a-button__icon--throbber + * {
   display: none;
-}
-
-@keyframes a-button-ajax-circle-animation {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes a-button-ajax-circle-full-animation {

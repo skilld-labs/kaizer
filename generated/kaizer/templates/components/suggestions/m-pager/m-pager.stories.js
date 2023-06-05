@@ -11,7 +11,7 @@ const buildObject = (elements = []) => {
     href: '#',
     attributes: new DrupalAttribute(),
   };
-  if (!elements) {
+  if (!elements.length) {
     return constructor;
   }
   let pages = {};
@@ -26,6 +26,7 @@ const BasicRender = (args, context) => {
   data.current = args.current;
   data.items = {};
   if (args.items) {
+    data.items = args.items;
     if (args.items.first) {
       data.items.first = buildObject();
     }
@@ -42,7 +43,7 @@ const BasicRender = (args, context) => {
       data.items.last = buildObject();
     }
   }
-  data.items = args.items;
+  console.log(data);
   data.ellipses = args.ellipses;
   // useEffect(() => {
   //   place-your-js-code-here

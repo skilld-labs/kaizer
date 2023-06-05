@@ -17,27 +17,6 @@
   }
 
   &__text {
-    position: relative;
-    max-width: 194px;
-    margin-left: 10px;
-    padding-left: 11px;
-    letter-spacing: 0.335em;
-    text-transform: uppercase;
-    line-height: 1.16;
-
-    @media (--l) {
-      margin-left: 13px;
-      padding-left: 14px;
-    }
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      height: 23px;
-      content: '';
-      transform: translateY(-50%);
-      border-left: 1px solid var(--color-yellow-primary);
-    }
+    padding-left: 10px;
   }
 }

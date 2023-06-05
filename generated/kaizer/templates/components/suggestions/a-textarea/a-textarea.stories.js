@@ -41,32 +41,7 @@ export default {
   // parameters: {
   //   layout: 'fullscreen',
   // },
-  argTypes: {
-    placeholder: {
-      name: 'Placeholder',
-      control: {
-        type: 'boolean',
-      },
-    },
-    value: {
-      name: 'Value',
-      control: {
-        type: 'boolean',
-      },
-    },
-    disabled: {
-      name: 'Disabled',
-      control: {
-        type: 'boolean',
-      },
-    },
-    error: {
-      name: 'Error',
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
+  // argTypes: {},
 };
 
 export const Basic = {

@@ -3,34 +3,54 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  cursor: pointer;
+  padding: 10px 16px;
   transition-timing-function: var(--transition-timing-function-cubic-bezier);
   transition-duration: var(--transition-duration-0-25);
   transition-property: border-color, background-color, color;
   text-align: center;
   text-decoration: none;
-  color: var(--color-black);
-  border: 2px solid var(--color-black);
+  color: var(--color-dark-grey);
+  border: 2px solid currentColor;
   background-color: var(--color-white);
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
   appearance: none;
   gap: 10px;
 
+  &:not([disabled], .is-disabled) {
+    cursor: pointer;
+  }
+
   &:not([disabled], .is-disabled):hover,
-  [container-as-link-built]:hover & {
-    color: var(--color-white);
-    background-color: var(--color-black);
+  [wrapper-as-link-built]:hover & {
+    color: var(--color-black);
   }
 
   &[disabled],
   &.is-disabled {
-    opacity: 0.5;
+    color: var(--color-grey);
   }
 
   &--second {
     color: var(--color-white);
+    border-color: var(--color-black);
     background-color: var(--color-black);
+
+    &:not([disabled], .is-disabled):hover,
+    [wrapper-as-link-built]:hover & {
+      border-color: var(--color-dark-grey);
+      background-color: var(--color-dark-grey);
+      color: var(--color-white);
+    }
+
+    &[disabled],
+    &.is-disabled {
+      border-color: var(--color-grey);
+      background-color: var(--color-grey);
+      color: var(--color-white);
+    }
   }
 
   &__icon-container {
@@ -41,7 +61,7 @@
     width: 16px;
     height: 16px;
 
-    &--ajax-full {
+    &--throbber-full {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -60,24 +80,11 @@
     height: inherit;
     fill: currentColor;
 
-    &--ajax {
-      animation: a-button-ajax-circle-animation var(--transition-duration-0-25)
-        linear infinite;
-
+    &--throbber {
       & + * {
         display: none;
       }
     }
-  }
-}
-
-@keyframes a-button-ajax-circle-animation {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
 

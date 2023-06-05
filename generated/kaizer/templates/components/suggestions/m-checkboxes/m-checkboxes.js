@@ -3,15 +3,3 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  **/
-(({ behaviors }) => {
-  behaviors.kaizerMoleculeCheckboxes = {
-    attach: (context) => {
-      once('m-checkboxes', '.m-checkboxes', context).forEach((el) => {
-        behaviors.kaizerMoleculeCheckboxes.handler(el);
-      });
-    },
-    handler: (el) => {
-      console.log(el);
-    },
-  };
-})(Drupal);

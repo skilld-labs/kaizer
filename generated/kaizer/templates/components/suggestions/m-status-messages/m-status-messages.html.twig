@@ -8,17 +8,17 @@
       {% if type == 'status' %}
         {% set icon = 'checkbox-filled' %}
       {% elseif type == 'warning' %}
-        {% set icon = 'radio-empty' %}
+        {% set icon = 'warning' %}
       {% elseif type == 'error' %}
-        {% set icon = 'remove' %}
-      {% else %}
-        {% set icon = 'add' %}
+        {% set icon = 'close' %}
       {% endif %}
-      {% include '@component/a-icon/a-icon.html.twig' with {
-        attributes: create_attribute().addClass('m-status-messages__icon'),
-        icon: icon,
-        kaizer_svg_sprite: kaizer_svg_sprite,
-      } only %}
+      {% if icon %}
+        {% include '@component/a-icon/a-icon.html.twig' with {
+          attributes: create_attribute().addClass('m-status-messages__icon'),
+          icon: icon,
+          kaizer_svg_sprite: kaizer_svg_sprite,
+        } only %}
+      {% endif %}
       <div class="m-status-messages__content">
         {% if type == 'error' %}
           <div role="alert">
@@ -33,7 +33,6 @@
                 {% include '@component/a-text/a-text.html.twig' with {
                   attributes: create_attribute(),
                   content: message,
-                  tag: 'div',
                 } %}
               </li>
             {% endfor %}
@@ -42,7 +41,6 @@
           {% include '@component/a-text/a-text.html.twig' with {
             attributes: create_attribute(),
             content: messages|first,
-            tag: 'div',
           } %}
         {% endif %}
         {% if type == 'error' %}

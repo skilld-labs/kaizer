@@ -15,8 +15,8 @@
     </select>
   {% endapply %}
   {% include '@component/a-icon/a-icon.html.twig' with {
-    attributes: create_attribute().addClass('a-select__chevron'),
-    icon: 'add',
+    attributes: create_attribute().addClass('a-select__icon', 'a-select__chevron'),
+    icon: 'chevron',
     kaizer_svg_sprite: kaizer_svg_sprite,
   } only %}
 </div>

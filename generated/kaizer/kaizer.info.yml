@@ -16,12 +16,10 @@ dependencies:
 regions:
   branding: 'Branding'
   main_navigation: 'Main navigation'
-  user_actions: 'User actions'
   system: 'System'
   breadcrumb: 'Breadcrumb'
   main_content: 'Main content'
   copyright: 'Copyright'
-  secondary_navigation: 'Secondary navigation'
 
 stylesheets-remove:
   - core/assets/vendor/jquery.ui/themes/base/autocomplete.css

@@ -8,7 +8,6 @@ import {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.summary_attributes = new DrupalAttribute();
   data.title = args.title || 'Lorem ipsum';
   data.children = args.children || faker.lorem.sentences();
   // useEffect(() => {

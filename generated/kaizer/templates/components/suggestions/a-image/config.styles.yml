@@ -25,16 +25,16 @@
 #
 # The following examples are "default" - just to show you how you can use this
 # config file.
-1000_x_1000_scale_and_crop:
-  label: 1000 x 1000 (Scale and crop)
+1000_x_400_scale_and_crop:
+  label: 1000 x 400 (Scale and crop)
   effect: image_scale_and_crop
   width: 1000
-  height: 1000
-500_x_500_scale_and_crop:
-  label: 500 x 500 (Scale and crop)
+  height: 400
+500_x_200_scale_and_crop:
+  label: 500 x 200 (Scale and crop)
   effect: image_scale_and_crop
   width: 500
-  height: 500
+  height: 200
 auto_x_120_scale:
   label: Auto x 120 (Scale)
   effect: image_scale

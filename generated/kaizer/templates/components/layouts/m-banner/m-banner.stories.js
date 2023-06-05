@@ -11,14 +11,13 @@ const BasicRender = (args, context) => {
   data.media = r('m-responsive-image', {
     group: 'machine_name_of_responsive_image_group_1',
   });
-  data.title = r('a-text', {
-    content: 'Banner title',
-    tag: 'h3',
-    type: 'a-text--h3',
+  data.title = r('m-text-field', {
+    item: 'Banner title',
+    item_tag: 'h3',
+    item_type: 'h3',
   });
-  data.cta = r('a-text', {
-    content: 'Click me',
-    link: true,
+  data.cta = r('m-cta-field', {
+    item_content: 'Click me',
   });
   // useEffect(() => {
   //   place-your-js-code-here

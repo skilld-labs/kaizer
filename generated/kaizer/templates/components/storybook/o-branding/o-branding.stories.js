@@ -10,7 +10,7 @@ import LogoPath from '@root/logo.svg';
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.site_logo = LogoPath;
-  data.site_slogan = 'Surface finishing specialists';
+  data.site_slogan = 'Site slogan';
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

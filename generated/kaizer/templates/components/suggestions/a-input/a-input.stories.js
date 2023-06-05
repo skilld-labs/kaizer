@@ -33,6 +33,7 @@ const BasicRender = (args, context) => {
     );
   }
   data.attributes.setAttribute('type', args.type || 'text');
+  data.attributes.type = args.type || 'text';
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);
@@ -44,48 +45,7 @@ export default {
   // parameters: {
   //   layout: 'fullscreen',
   // },
-  argTypes: {
-    type: {
-      name: 'Type',
-      options: [
-        'text',
-        'email',
-        'search',
-        'password',
-        'number',
-        'tel',
-        'date',
-        'time',
-      ],
-      control: {
-        type: 'radio',
-      },
-    },
-    placeholder: {
-      name: 'Placeholder',
-      control: {
-        type: 'boolean',
-      },
-    },
-    value: {
-      name: 'Value',
-      control: {
-        type: 'boolean',
-      },
-    },
-    disabled: {
-      name: 'Disabled',
-      control: {
-        type: 'boolean',
-      },
-    },
-    error: {
-      name: 'Error',
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
+  // argTypes: {},
 };
 
 export const Basic = {

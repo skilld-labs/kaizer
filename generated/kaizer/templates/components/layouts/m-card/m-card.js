@@ -3,15 +3,3 @@
  * It's generated automatically by 'yarn build' command.
  * @preserve
  **/
-(({ behaviors }) => {
-  behaviors.kaizerMoleculeCard = {
-    attach: (context) => {
-      once('m-card', '.m-card', context).forEach((el) => {
-        behaviors.kaizerMoleculeCard.handler(el);
-      });
-    },
-    handler: (el) => {
-      console.log(el);
-    },
-  };
-})(Drupal);

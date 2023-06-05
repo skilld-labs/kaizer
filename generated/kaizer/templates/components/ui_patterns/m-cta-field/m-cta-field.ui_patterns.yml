@@ -9,31 +9,26 @@ m_cta_field:
     item_href:
       label: Item href
   settings:
-    custom_label:
+    label_override:
       type: textfield
-      label: Custom label
+      label: Label custom content
     label_type:
       type: select
-      label: Choose a type of label
+      label: Label type
+      default_value: regular
       options:
-        default: Default
-        a-text--x-large: X Large
-        a-text--header-1: Header 1
-        a-text--header-2: Header 2
-        a-text--header-3: Header 3
-        a-text--header-3-cap-bold: Heading 3 Cap Bold
-        a-text--header-4: Header 4
-        a-text--body-1-book: Body 1 Book
-        a-text--body-1-book-italic: Body 1 Book Italic
-        a-text--body-1-book-uppercase: Body 1 Book Uppercase
-        a-text--body-1-demi: Body 1 Demi
-        a-text--body-1-demi-uppercase: Body 1 Demi Uppercase
-        a-text--body-2-book: Body 2 Book
-        a-text--body-2-medium: Body 2 Medium
-        a-text--button: Button
+        h1: Heading 1
+        h2: Heading 2
+        h3: Heading 3
+        h4: Heading 4
+        h5: Heading 5
+        h6: Heading 6
+        regular: Regular
+        small: Small
     label_tag:
       type: select
-      label: Choose element tag for label
+      label: Label tag
+      default_value: div
       options:
         div: div
         h1: h1
@@ -43,50 +38,49 @@ m_cta_field:
         h5: h5
         h6: h6
         span: span
-    label_thick_underline:
-      type: boolean
-      label: Add thick underline for label
-    item_custom_content:
+    item_override:
       type: textfield
-      label: Item custom text content
+      label: CTA custom content
     item_type:
       type: select
-      label: Type
+      label: CTA type
+      default_value: default
       options:
         default: Default
-        a-button--two: Two
-        a-button--three: Three
-        a-button--four: Four
-        a-button--five: Five
+        second: Two
     item_leading_icon:
       type: select
-      label: Leading icon name
+      label: CTA Leading icon name
+      default_value: default
       options:
-        default: Default
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
         chevron: Chevron
-        download: Download
-        done: Done
-        pin: Pin
-        home: Home
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
     item_trailing_icon:
       type: select
-      label: Trailing icon name
+      label: CTA Trailing icon name
+      default_value: default
       options:
-        default: Default
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
         chevron: Chevron
-        download: Download
-        done: Done
-        pin: Pin
-        home: Home
-        calendar: Calendar
-        mail: Mail
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
     cta_attributes:
       type: attributes
       label: Item attributes
-    extra_classes:
-      type: textfield
-      label: Add extra CSS classes for molecule cta field separated by spaces.
-  # Uncomment libraries if your component should have own library declaration
   libraries:
     - m-cta-field:
         css:

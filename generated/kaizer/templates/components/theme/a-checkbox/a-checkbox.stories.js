@@ -15,7 +15,7 @@ const BasicRender = (args, context) => {
   if (args.name) {
     data.attributes.setAttribute('name', args.name);
   }
-  if (args.disabled) {
+  if (args.disabled || args.ajax) {
     data.attributes.setAttribute('disabled', '');
   }
   if (args.required) {
@@ -27,9 +27,19 @@ const BasicRender = (args, context) => {
   if (args.checked) {
     data.attributes.setAttribute('checked', '');
   }
-  // useEffect(() => {
-  //   place-your-js-code-here
-  // }, [args]);
+  useEffect(() => {
+    // Simulation of ajax throbber.
+    if (args.ajax) {
+      document.querySelector('.a-checkbox__element').insertAdjacentHTML(
+        'afterend',
+        `
+        <svg class="a-checkbox__icon a-checkbox__icon--throbber a-throbber a-throbber--circle" aria-hidden="true">
+          <use xlink:href="${data.kaizerSvgSprite}#svg-throbber-circle"></use>
+        </svg>
+      `,
+      );
+    }
+  }, [args]);
   return template.render(data);
 };
 
@@ -38,26 +48,7 @@ export default {
   // parameters: {
   //   layout: 'fullscreen',
   // },
-  argTypes: {
-    disabled: {
-      name: 'Disabled',
-      control: {
-        type: 'boolean',
-      },
-    },
-    checked: {
-      name: 'Checked',
-      control: {
-        type: 'boolean',
-      },
-    },
-    error: {
-      name: 'Error',
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
+  // argTypes: {},
 };
 
 export const Basic = {

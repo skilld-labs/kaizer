@@ -10,7 +10,7 @@ const defContent = () => {
   const items = [];
   for (let i = 1; i <= 10; i++) {
     items.push(
-      `<div style="text-align: center; padding: 30px 16px; background-color: var(--color-grey-light-grey); color: var(--color-grey-black);">Slide ${i}</div>`,
+      `<div style="text-align: center; padding: 30px 16px; background-color: var(--color-grey-light);">Slide ${i}</div>`,
     );
   }
   return items;

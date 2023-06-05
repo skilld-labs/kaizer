@@ -9,7 +9,7 @@ import {
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.content = args.content || 'Lorem ipsum';
-  if (args.tag === 'a' || args.link) {
+  if (args.tag === 'a' || args.link || args.href) {
     data.attributes.setAttribute('href', args.href || '#');
   }
   // useEffect(() => {

@@ -1,11 +1,21 @@
 .m-grid-field {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  &__label {
+    margin-bottom: 20px;
 
     @media (--l) {
-      gap: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__items {
+    display: grid;
+
+    .m-grid-field--type-1 & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .m-grid-field--g-1 & {
+      gap: 10px;
     }
   }
 }

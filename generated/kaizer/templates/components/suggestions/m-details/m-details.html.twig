@@ -6,14 +6,14 @@
     ] %}
     <summary {{ summary_attributes.addClass(summary_classes) }}>
       <span class="m-details__summary-span">
-        {% include '@compoment/a-text/a-text.html.twig' with {
+        {% include '@component/a-text/a-text.html.twig' with {
           attributes: create_attribute().addClass('m-details__title'),
           tag: 'span',
           content: title,
         } only %}
         {% include '@component/a-icon/a-icon.html.twig' with {
           attributes: create_attribute().addClass('m-details__icon'),
-          icon: 'add',
+          icon: 'chevron',
           kaizer_svg_sprite: kaizer_svg_sprite,
         } only %}
       </span>

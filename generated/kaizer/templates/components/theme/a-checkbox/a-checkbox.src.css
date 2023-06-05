@@ -39,6 +39,12 @@
       opacity: 0.5;
     }
 
+    &--throbber {
+      & ~ * {
+        display: none;
+      }
+    }
+
     .a-checkbox__element.error ~ & {
       fill: var(--color-danger);
     }

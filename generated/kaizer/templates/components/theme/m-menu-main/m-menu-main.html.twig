@@ -1,95 +1,40 @@
+{% set icon %}
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('m-menu-main__icon'),
+    icon: 'chevron',
+    kaizer_svg_sprite: kaizer_svg_sprite,
+  } only %}
+{% endset %}
+
 {% import _self as menus %}
 
-{% macro menu_links(items, attributes, menu_level, kaizer_svg_sprite) %}
+<div class="m-menu-main">
+  {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
-  {% if items %}
-    {% if menu_level == 1 %}
-      <div {{ attributes.addClass('m-menu-main') }}>
-      <ul class="m-menu-main__list m-menu-main__list--{{ menu_level }}-level">
-    {% else %}
-      {% if menu_level == 2 or menu_level == 3 %}
-        <div class="m-menu-main__sub-menu m-menu-main__sub-menu--{{ menu_level - 1 }}-level">
-        {% if menu_level == 3 %}
-          <button class="m-menu-main__close a-button a-button--five" aria-expanded="true" aria-label="{{ 'Close main navigation'|t }}">
-            <span class="a-button__text a-text a-text--button" aria-hidden="true">{{ 'Close'|t }}</span>
-            <span class="a-button__icon-container a-button__icon-container--end">
-              <svg class="a-button__icon a-icon a-icon--close" aria-hidden="true">
-                <use xlink:href="{{ kaizer_svg_sprite }}#svg-close"></use>
-              </svg>
-            </span>
-          </button>
-        {% endif %}
+    {% if items %}
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('m-menu-main__list', 'm-menu-main__list--level-' ~ (menu_level + 1)) }}>
+      {% else %}
+        <ul class="m-menu-main__list m-menu-main__list--level-{{ menu_level + 1 }}">
       {% endif %}
-      {% if menu_level == 3 %}
-        {% set first_item = items|first %}
-        {% if first_item.attributes['custom_display'] %}
-          {% set custom_display = first_item.attributes['custom_display'] %}
-        {% endif %}
-      {% endif %}
-      {% set sub_menu_classes = [
-        'm-menu-main__list',
-        'm-menu-main__list--' ~  menu_level ~ '-level',
-        custom_display ? 'm-menu-main__list--' ~ custom_display : [],
-      ] %}
-      <ul {{ create_attribute().addClass(sub_menu_classes ) }}>
-    {% endif %}
-    {% for item in items %}
-      {% set item_classes = [
-        'm-menu-main__item',
-        menu_level == 2 and item.attributes.highlighted ? 'm-menu-main__item--need-help-block' : [],
-      ] %}
-      <li{{ item.attributes.addClass(item_classes) }}>
-        {% if menu_level == 2 and item.attributes.highlighted %}
-          <div class="m-cta-field">
-            {% if item.attributes.highlighted_text %}
-              <div class="a-text a-text--body-1-demi-uppercase m-cta-field__label">
-                {{- item.attributes.highlighted_text -}}
-              </div>
-            {% endif %}
-            {% if item.title %}
-              <a{{ create_attribute().addClass('a-button', 'm-cta-field__item').setAttribute('href', item.url.toString) }}>
-                <span class="a-text a-text--button">
-                  {{- item.title -}}
-                </span>
-              </a>
-            {% endif %}
-          </div>
-        {% else %}
+      {% for item in items %}
+        <li{{ item.attributes.addClass('m-menu-main__item', item.below ? 'm-menu-main__item--has-menu' : []) }}>
           {% set title %}
-            {% if menu_level == 1 %}
-              <span class="m-menu-main__link-focus">
-            {% endif %}
-            <span class="{% if menu_level < 3 %}m-menu-main__thin-link-text {% endif %}a-text{% if menu_level < 4 %} a-text--header-4{% endif %}">{{ item.title }}</span>
-            {% if menu_level < 3 %}
-              <span class="m-menu-main__bold-link-text a-text {% if menu_level == 1 %}a-text--body-1-demi-uppercase{% else %}a-text--body-1-demi{% endif %}" aria-hidden="true">{{ item.title }}</span>
-            {% endif %}
-            {% if item.below %}
-              <svg class="m-menu-main__icon a-icon" aria-hidden="true">
-                <use xlink:href="{{ kaizer_svg_sprite }}#svg-chevron"></use>
-              </svg>
-            {% endif %}
-            {% if menu_level == 1 %}
-              </span>
-            {% endif %}
+            <span class="m-menu-main__link-content">
+              {{ item.title }}
+              {% if item.below and menu_level == 0 %}
+                {{ icon }}
+              {% endif %}
+            </span>
           {% endset %}
-          {{ link(title, item.url, { 'class': ['m-menu-main__link'], 'data-menu-level': menu_level }) }}
+          {{ link(title, item.url, { 'class': ['m-menu-main__link', ]}) }}
           {% if item.below %}
-            {{ menus.menu_links(item.below, attributes, menu_level + 1, kaizer_svg_sprite) }}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
           {% endif %}
-        {% endif %}
-      </li>
-    {% endfor %}
+        </li>
+      {% endfor %}
     </ul>
-    {% if menu_level == 1 %}
-      </div>
     {% endif %}
-    {% if menu_level == 2 or menu_level == 3 %}
-      </div>
-    {% endif %}
-    {% if menu_level == 2 %}
-      <div class="m-menu-main__overlay"></div>
-    {% endif %}
-  {% endif %}
-{% endmacro %}
-
-{{ menus.menu_links(items, attributes, 1, kaizer_svg_sprite) }}
+  {% endmacro %}
+  {{ menus.menu_links(items, attributes, 0) }}
+</div>

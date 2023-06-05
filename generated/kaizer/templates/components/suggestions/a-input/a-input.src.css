@@ -3,21 +3,20 @@
 
   &__icon {
     position: absolute;
-    top: 50%;
+    top: 14px;
     width: 16px;
     height: 16px;
-    transform: translateY(-50%);
     pointer-events: none;
     fill: var(--color-black);
 
-    &--start {
+    &--leading {
       left: 16px;
     }
   }
 
   &__element {
     width: 100%;
-    padding: 16px;
+    padding: 10px 16px;
     cursor: pointer;
     color: var(--color-black);
     border: 1px solid var(--color-grey);
@@ -25,8 +24,8 @@
     font: inherit;
     appearance: none;
 
-    .a-input__icon ~ & {
-      padding-left: 48px;
+    .a-input--with-icons & {
+      padding-left: 44px;
     }
 
     &::placeholder {
@@ -48,6 +47,10 @@
       &::placeholder {
         color: currentColor;
       }
+
+      & ~ .a-input__icon {
+        fill: var(--color-grey-light);
+      }
     }
 
     &.error {
@@ -56,6 +59,10 @@
 
       &::placeholder {
         color: currentColor;
+      }
+
+      & ~ .a-input__icon {
+        fill: var(--color-danger);
       }
     }
   }

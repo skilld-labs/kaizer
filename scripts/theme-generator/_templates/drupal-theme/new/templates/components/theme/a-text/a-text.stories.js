@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-text/a-text.stories.js
 ---
 import {
   defRender,
@@ -10,7 +10,7 @@ import {
 } from '@story-handler';
 
 export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  title: 'Atoms / Text',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
@@ -20,7 +20,10 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.content = 'Lorem ipsum';
+  data.content = args.content || 'Lorem ipsum';
+  if (args.tag === 'a' || args.link || args.href) {
+    data.attributes.setAttribute('href', args.href || '#');
+  }
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

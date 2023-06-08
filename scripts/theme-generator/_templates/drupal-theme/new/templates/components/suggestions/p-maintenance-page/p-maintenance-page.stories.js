@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/p-maintenance-page/p-maintenance-page.stories.js
 ---
 import {
   defRender,
@@ -8,11 +8,12 @@ import {
   DrupalAttribute,
   useEffect,
 } from '@story-handler';
+import LogoPath from '@root/logo.svg';
 
 export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  title: 'Pages / Maintenance page',
   parameters: {
-    // layout: 'fullscreen',
+    layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
   },
   // argTypes: {},
@@ -20,7 +21,12 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.content = 'Lorem ipsum';
+  data.page = {};
+  data.front_page = '/';
+  data.logo = LogoPath;
+  data.site_name = '<%= h.changeCase.sentenceCase(name) %>';
+  data.page.content =
+    'Site is currently under maintenance. We should be back shortly. Thank you for your patience.';
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

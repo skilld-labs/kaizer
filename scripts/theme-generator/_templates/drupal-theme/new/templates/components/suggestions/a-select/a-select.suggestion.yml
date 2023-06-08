@@ -1,0 +1,23 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/a-select/a-select.suggestion.yml
+---
+a_select:
+  use: '@component/a-select/a-select.html.twig'
+  label: Atoms / Select
+  settings:
+    disabled:
+      type: boolean
+      label: 'Disabled'
+    error:
+      type: boolean
+      label: 'Error'
+    ajax:
+      type: boolean
+      label: 'Ajax'
+  libraries:
+    - a-select:
+        css:
+          component:
+            a-select.css: {}
+        js:
+          a-select.js: {}

@@ -1,0 +1,14 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-local-task/m-local-task.suggestion.yml
+---
+m_local_task:
+  use: '@component/m-local-task/m-local-task.html.twig'
+  label: Molecule / Local task
+  base hook: 'menu_local_task'
+  libraries:
+    - m-local-task:
+        css:
+          component:
+            m-local-task.css: {}
+#        js:
+#           m-local-task.js: {}

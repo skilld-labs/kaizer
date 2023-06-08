@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/storybook/o-branding/o-branding.stories.js
 ---
 import {
   defRender,
@@ -8,9 +8,10 @@ import {
   DrupalAttribute,
   useEffect,
 } from '@story-handler';
+import LogoPath from '@root/logo.svg';
 
 export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  title: 'Organisms / Branding',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
@@ -20,7 +21,8 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.content = 'Lorem ipsum';
+  data.site_logo = LogoPath;
+  data.site_slogan = 'Site slogan';
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

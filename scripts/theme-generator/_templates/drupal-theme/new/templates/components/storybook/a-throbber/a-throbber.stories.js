@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/storybook/a-throbber/a-throbber.stories.js
 ---
 import {
   defRender,
@@ -10,7 +10,7 @@ import {
 } from '@story-handler';
 
 export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  title: 'Atoms / Throbber',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
@@ -20,13 +20,19 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.content = 'Lorem ipsum';
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);
   return template.render(data);
 };
 
-export const Basic = {
+export const Circle = {
+  render: (args = {}, context) => {
+    args.circle = true;
+    return BasicRender(args, context);
+  },
+};
+
+export const Fullscreen = {
   render: (args = {}, context) => BasicRender(args, context),
 };

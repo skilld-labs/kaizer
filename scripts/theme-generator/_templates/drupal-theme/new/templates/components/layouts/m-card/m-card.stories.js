@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/m-card/m-card.stories.js
 ---
 import {
   defRender,
@@ -10,7 +10,7 @@ import {
 } from '@story-handler';
 
 export default {
-  title: '<%= component_type %>s / <%= h.changeCase.sentenceCase(name) %>',
+  title: 'Molecules / Card',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
@@ -20,7 +20,20 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.content = 'Lorem ipsum';
+  data.image = r('m-responsive-image', {
+    group: 'machine_name_of_responsive_image_group_2',
+  });
+  data.title = r('m-text-field', {
+    item: 'Card title',
+    item_tag: 'h3',
+    item_type: 'h3',
+  });
+  data.body = r('m-text-field', {
+    item: 'Card body',
+  });
+  data.cta = r('m-cta-field', {
+    item: 'Card CTA',
+  });
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

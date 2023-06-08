@@ -1,0 +1,14 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/a-image/a-image.suggestion.yml
+---
+a_image:
+  use: '@component/a-image/a-image.html.twig'
+  label: Atom / Image
+  base hook: 'image'
+  libraries:
+    - a-image:
+        css:
+          component:
+            a-image.css: {}
+#        js:
+#          a-image.js: {}

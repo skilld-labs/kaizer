@@ -1,6 +1,6 @@
 {
   "name": "@skilld/kaizer-theme-generator",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.2",
   "description": "Kaizer theme generator",
   "bin": "index.js",
   "main": "index.js",

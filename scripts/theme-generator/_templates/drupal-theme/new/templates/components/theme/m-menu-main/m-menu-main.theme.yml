@@ -1,0 +1,24 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/m-menu-main/m-menu-main.theme.yml
+---
+m_menu_main:
+  use: '@component/m-menu-main/m-menu-main.html.twig'
+  label: Molecule / Menu main
+  hook theme: 'menu__main'
+  base hook: 'menu'
+  #  fields:
+  #    content:
+  #      label: Content
+  # Uncomment settings if your component should have settings
+  #  settings:
+  #    extra_classes:
+  #      type: textfield
+  #      label: Add extra CSS classes for molecule menu main separated by spaces.
+  # Uncomment libraries if your component should have own library declaration
+  libraries:
+    - m-menu-main:
+        css:
+          component:
+            m-menu-main.css: {}
+        js:
+          m-menu-main.js: {}

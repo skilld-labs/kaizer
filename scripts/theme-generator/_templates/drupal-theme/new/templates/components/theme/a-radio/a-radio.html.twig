@@ -1,0 +1,17 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-radio/a-radio.html.twig
+---
+<div class="a-radio">
+  <input {{ attributes.addClass('a-radio__element') }}/>
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-radio__icon', 'a-radio__icon--empty'),
+    icon: 'radio-empty',
+    <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
+  } only %}
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-radio__icon', 'a-radio__icon--filled'),
+    icon: 'radio-filled',
+    <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
+  } only %}
+  {{- children }}
+</div>

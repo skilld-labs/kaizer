@@ -1,0 +1,42 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/a-input/a-input.suggestion.yml
+---
+a_input:
+  use: '@component/a-input/a-input.html.twig'
+  label: Atoms / Input
+  base hook: 'input'
+  settings:
+    type:
+      type: radios
+      label: 'Type'
+      options:
+        text: text
+        email: email
+        search: search
+        password: password
+        number: number
+        tel: tel
+        date: date
+        time: time
+    placeholder:
+      type: textfield
+      label: 'Placeholder'
+    value:
+      type: textfield
+      label: 'Value'
+    required:
+      type: boolean
+      label: 'Required'
+    disabled:
+      type: boolean
+      label: 'Disabled'
+    error:
+      type: boolean
+      label: 'Error'
+  libraries:
+    - a-input:
+        css:
+          component:
+            a-input.css: {}
+#        js:
+#          a-input.js: {}

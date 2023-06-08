@@ -1,9 +1,0 @@
-.m-page-title {
-  &__content {
-    padding-block: 8px 16px;
-
-    @media (--l) {
-      padding-bottom: 8px;
-    }
-  }
-}

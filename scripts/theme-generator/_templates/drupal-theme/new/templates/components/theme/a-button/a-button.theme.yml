@@ -1,0 +1,72 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-button/a-button.theme.yml
+---
+a_button:
+  use: '@component/a-button/a-button.html.twig'
+  label: Atoms / Button
+  hook theme: 'input__submit'
+  base hook: 'input'
+  fields:
+    content:
+      type: text
+      label: Text content
+    href:
+      type: string
+      label: Link href
+  settings:
+    custom_content:
+      type: textfield
+      label: Custom text content
+    type:
+      type: select
+      label: Type
+      default_value: default
+      options:
+        default: Default
+        second: Second
+    leading_icon:
+      type: select
+      label: Leading icon name
+      default_value: default
+      options:
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
+        chevron: Chevron
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
+    trailing_icon:
+      type: select
+      label: Trailing icon name
+      default_value: default
+      options:
+        default: No icon
+        add: Add
+        checkbox-empty: Checkbox empty
+        checkbox-filled: Checkbox filled
+        chevron: Chevron
+        radio-empty: Radio empty
+        radio-filled: Radio filled
+        remove: Remove
+        search: Search
+        throbber-circle: Throbber circle
+    disabled:
+      type: boolean
+      label: 'Disabled'
+    link:
+      type: boolean
+      label: 'Link'
+    ajax:
+      type: boolean
+      label: 'Ajax'
+  libraries:
+    - a-button:
+        css:
+          component:
+            a-button.css: {}
+#        js:
+#          a-button.js: {}

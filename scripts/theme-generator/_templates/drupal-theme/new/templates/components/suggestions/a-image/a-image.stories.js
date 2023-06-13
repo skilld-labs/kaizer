@@ -45,9 +45,9 @@ const loadImageStyleData = (current, all) => {
       const random = Math.round(Math.random());
       if (random === 0) {
         width = all[current].width;
-        height = randomDimension(all[current].width, 1);
+        height = randomDimension(all[current].height, 1);
       } else {
-        width = randomDimension(all[current].height, 1);
+        width = randomDimension(all[current].width, 1);
         height = all[current].height;
       }
     }

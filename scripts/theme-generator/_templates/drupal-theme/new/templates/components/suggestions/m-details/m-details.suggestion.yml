@@ -5,19 +5,6 @@ m_details:
   use: '@component/m-details/m-details.html.twig'
   label: Molecules / Details
   base hook: 'details'
-  fields:
-    title:
-      label: Title
-    children:
-      label: Children
-    errors:
-      label: Errors
-    description:
-      label: Description
-  settings:
-    summary_attributes:
-      type: attributes
-      label: Summary attributes
   libraries:
     - m-details:
         css:

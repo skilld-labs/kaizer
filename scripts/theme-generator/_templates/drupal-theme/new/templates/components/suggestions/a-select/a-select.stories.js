@@ -15,7 +15,32 @@ export default {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },
   },
-  // argTypes: {},
+  argTypes: {
+    error: {
+      name: 'Error',
+      control: {
+        type: 'boolean',
+      },
+    },
+    disabled: {
+      name: 'Disabled',
+      control: {
+        type: 'boolean',
+      },
+    },
+    ajax: {
+      name: 'Ajax',
+      control: {
+        type: 'boolean',
+      },
+    },
+    required: {
+      name: 'Required',
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
 };
 
 const BasicRender = (args, context) => {

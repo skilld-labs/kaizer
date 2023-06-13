@@ -36,7 +36,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
   appearance: none;
 }
 
-.a-input--with-icons .a-input__element {
+.a-input--leading-icon .a-input__element {
   padding-left: 2.75rem;
 }
 

@@ -54,15 +54,6 @@ a_button:
         remove: Remove
         search: Search
         throbber-circle: Throbber circle
-    disabled:
-      type: boolean
-      label: 'Disabled'
-    link:
-      type: boolean
-      label: 'Link'
-    ajax:
-      type: boolean
-      label: 'Ajax'
   libraries:
     - a-button:
         css:

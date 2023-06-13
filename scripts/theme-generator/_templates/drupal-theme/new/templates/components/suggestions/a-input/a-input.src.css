@@ -27,7 +27,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
     font: inherit;
     appearance: none;
 
-    .a-input--with-icons & {
+    .a-input--leading-icon & {
       padding-left: 44px;
     }
 

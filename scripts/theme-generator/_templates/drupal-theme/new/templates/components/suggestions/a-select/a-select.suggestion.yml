@@ -4,16 +4,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
 a_select:
   use: '@component/a-select/a-select.html.twig'
   label: Atoms / Select
-  settings:
-    disabled:
-      type: boolean
-      label: 'Disabled'
-    error:
-      type: boolean
-      label: 'Error'
-    ajax:
-      type: boolean
-      label: 'Ajax'
+  base hook: 'select'
   libraries:
     - a-select:
         css:

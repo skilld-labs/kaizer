@@ -22,6 +22,7 @@ const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.title = args.title || 'Lorem ipsum';
   data.children = args.children || faker.lorem.sentences();
+  data.summary_attributes = new DrupalAttribute();
   // useEffect(() => {
   //   place-your-js-code-here
   // }, [args]);

@@ -2,14 +2,16 @@
 
 This is theme generator for [Drupal](https://www.drupal.org/).
 
-## Hey btw! A massive integration of storybook components in drupal using this generator.
+## Hey btw! We have created a very nice integration of components in drupal.
 
-We have built an awesome integration of storybook's components in drupal. [Read more](lesha_link!!)
+[Read more](lesha_link!!)
 
-(Soon) Video tutorial explaining this <strong>theme generator</strong>, 
+Soon - video tutorial explaining this <strong>theme generator</strong>, 
 [Component generator](https://www.npmjs.com/package/@skilld/kaizer-component-generator), 
 and [Component connector](https://www.drupal.org/sandbox/gaydabura/3361207) module
 
+
+### Navigation
 - [Why you need this theme generator](#why-you-need-this-theme-generator)
 - [Goals](#goals-and-why-we-sure-you-were-trying-to-find-such-theme-generator-your-entire-career)
 - [Features](#features-your-generated-theme-will-have)
@@ -22,6 +24,8 @@ and [Component connector](https://www.drupal.org/sandbox/gaydabura/3361207) modu
 - [Generation of svg sprite](#how-to-generate-svg-sprite)
 - [Optimisations of source svg files](#how-to-remove-unnecessary-trash-from-source-svg-files)
 - [Generataion of favicon](#how-to-generate-new-favicon)
+- [Components, what you have to know](#components)
+- [License](#license)
 
 ### Why you need this theme generator?
 
@@ -239,6 +243,50 @@ Wait a big and new favicons will be added into `favicon` folder.
 Then clear cache in drupal new favicons will be automatically applied in drupal
 because of `page_attachments_alter` drupal hook in `themename.theme` file.
 
-# License
+## Components
+
+In components we are using [Atomic design](https://bradfrost.com/blog/post/atomic-web-design/) approach.
+
+Component folder and files inside has atomic prefixes:
+- `a` - Atom
+- `h` - Helper
+- `m` - Molecule
+- `o` - Organism
+- `t` - Template
+- `p` - Page
+
+These prefixes allows us:
+- To be sure our custom component will never override drupal's native twig suggestions. For example if drupal's twig suggestion is `select.html.twig` - twig in our component will have name `a-select.html.twig`. So there is no collisions.
+- To better group components. It's an natural awareness when you know that molecule contains atoms for example, but not vice versa. And in storybook we have sidebar where components are grouped per their atomic type.
+- To understand which order should be in DOM tree for css and js assets. For example if `a-component-name` is loaded in DOM tree after some molecule or organism - probably it shouldn't be like this, because high risk styles of atom will override styles of more high-level component. And by the way loading of assets in storybook is built by this principle.
+
+Every component folder contains several files inside:
+- `.src.css` and it's compiled version `.css`
+- `.src.js` and it's compiled version `.js`. By the way in these js files we initially have code wrapped by Drupal's behavior. Drupal's `settings` are also available and `context`.
+- `.yml` - configuration of component. [Read more](lesha_link!!) about our integration to understand what should be in `.yml` files. After installaion you also will have multiple pre-installed components, so it will simplify process of learning for you.
+- `.stories.js` - for storybook needs. Initially such files contains everything you will need to build any component.
+- `.html.twig` - twig of component. By the way `attributes` variable is always available in any component by default. Other fields and settings you can declare in `.yml` file or describe them in `.stories.js`
+
+Read more about [component generator](https://www.npmjs.com/package/@skilld/kaizer-component-generator) and explanation of each file in component.
+
+If you are not too much familiar with Drupal or just don't know what your current component will be in 
+Drupal - just put your component in `templates/components/storybook` folder. And later when functionality
+of your component will be confirmed in Drupal - backender can fix `.yml` file and drag'n'drop your component from `storybook` 
+folder into some other folder (depending on type of integration will be taken).
+
+Goal of any project - is to build maximum amount of re-usable components. Which means - in the end of 
+project `storybook` folder should be empty. So each component should be somehow associated with the specific
+type of integration. However you will always have unclear and/or complicated components, like dialogs
+or autocompletes or ajax throbbers which will be partially integrated in drupal (for example only css 
+file of component will be re-used by drupal only), because drupal is huge and it's not so easy
+sometimes to override its stuff (especially make it accessible in storybook).
+
+We also using [Components](https://www.drupal.org/project/components) drupal module for namespaces.
+Our goal was to build such namespaces ones that any component will be drag'n'droped from any to any
+folders - and you won't need to change twig names or change paths in twig and yml configuration, etc.
+So after moving your component through `layouts`, `storybook`, `suggestions`, `theme`, `ui_patterns` 
+folders you don't need to change anything (except of `.yml` files of course).
+
+## License
 
 This project is licensed under the MIT open source license.

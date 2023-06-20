@@ -90,7 +90,7 @@ However, `UI Patterns` and `SDC` can't solve several issues:
 2. With `SDC` it's possible using render arrays or twig overrides. But wait, with `UI Patterns` we can declare simple `.yml` file inside of component and Drupal can see it and apply. Is there a way to avoid overriding of drupal twig templates, writing preprocess hooks, defining custom layouts, etc. with a single `.yml` file in every component, describing what this component is and how and where Drupal should apply it? This is what we've done - [read more](lesha_link!!) about integration.
 
 As a result of all these - we took care about massive integration of components in drupal. Now you can put `.yml` file with small description into your component and drupal will see your component immediately! It will load your custom twig file where you need, it will load all the css/js related assets you will declare, component settings, fields (aka. layout's regions), etc. The structure of yml configuration is similar to [UI Patterns documentation](https://ui-patterns.readthedocs.io/en/8.x-1.x/).
-Moreover - in this theme generator you will find a lot of base components (or examples, up to you) which exist on every single project, [more details below](BELOW).
+Moreover - in this theme generator you will find a lot of base components which exist on every single project, [more details below](BELOW).
 
 
 ### Features your generated theme will have
@@ -122,8 +122,8 @@ After execution of one of those commands - just follow instructions in console.
 
 Then you have to:
 1. `cd themename/`
-2. `yarn install` or via docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn install`
-3. `yarn build` or via docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn build`
+2. `yarn install` or via docker `make install`
+3. `yarn build` or via docker `make build`
 
 ### Explanation of generated theme
 
@@ -173,40 +173,40 @@ regular drupal practice to develop themes (so as usual).
 
 ### How to create new component
 
-Run `yarn cc` or via docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn cc`
+Run `yarn cc` or via docker `make cc`
 and follow instructions in console.
 
 New component will be added in `templates/components/**` folder. Read more about [component generator](https://www.npmjs.com/package/@skilld/kaizer-component-generator).
 
 ### How to compile styles and scripts
 
-Simply run `yarn build` or via docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn build`
+Simply run `yarn build` or via docker `make build`
 
 It will compile all assets from all components and `css` and `js` folders in root of theme. Compiled assets
 are living near to sources. So we don't have `dist` or `app` folder.
 
 If you are not using storybook and store your assets only in `css` and `js` folders in root of theme, 
 you can speed up build by using `yarn build:theme` command or via docker 
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn build:theme`.
+`make build:theme`.
 
 If you want to compile only components you can use command `yarn build:components` or via docker
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn build:components`.
+`make build:components`.
 
 ### How to run and compile storybook
 
 To run storybook on local port run `yarn storybook` or via docker 
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn storybook`
+`make storybook`
 
 To compile storybook in the static assets run `yarn build:storybook`
 
 ### Linting
 
 Linting and auto-fixers are already included in `build` command. So normally if you are using 
-`yarn build` or `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn build`
+`yarn build` or `make build`
 commands - it's already enough. But if for some reason you want to just lint assets without `build` task
-simply run `yarn lint` command (or via docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn lint`).
+simply run `yarn lint` command (or via docker `make lint`).
 And if you want to auto-fix linting errors, run `yarn lint:fix` (or via docker 
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn lint:fix`)
+`make lint:fix`)
 
 All warnings are interpreting by all kind of linters as errors, because everyone want to have clear theme.
 So if you are using CI or some custom scripts before `git commit` or something, which are linting sources - you
@@ -217,7 +217,7 @@ will get failed results in case of `warnings`.
 Source svg icons should be stored in `images/svg` folder. Compiled svg sprite lives in `images/sprite.svg`.
 
 To generate svg sprite from source icons just run `yarn sprite` or via docker 
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn sprite`
+`make sprite`
 
 Svg sprite generation is a rare task, so it's not included in `build` command, because it takes time,
 and probably you will need to generate or re-generate svg sprite just only several times for entire project.
@@ -228,16 +228,16 @@ and probably you will need to generate or re-generate svg sprite just only sever
 
 Sometimes source icons can have weird structure inside and many useless attributes and techniques 
 for web usage. If you need to tidy up svg file - simply run `FILE=icon-name.svg yarn svg-fix` or via
-docker `docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine FILE=icon-name.svg yarn svg-fix`
+docker `FILE=icon-name.svg make svg-fix`
 
 If you need to manage them all - run `yarn svg-fix:all` or via docker 
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn svg-fix:all`
+`make svg-fix:all`
 
 ### How to generate new favicon
 
 You have to have your favicon in vector graphic format named `favicon.svg`. Put this file in
 the root of theme and just run `yarn favicon` or via docker
-`docker run -it --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app node:lts-alpine yarn favicon`
+`make favicon`
 
 Wait a big and new favicons will be added into `favicon` folder.
 Then clear cache in drupal new favicons will be automatically applied in drupal
@@ -256,23 +256,23 @@ Component folder and files inside has atomic prefixes:
 - `p` - Page
 
 These prefixes allows us:
-- To be sure our custom component will never override drupal's native twig suggestions. For example if drupal's twig suggestion is `select.html.twig` - twig in our component will have name `a-select.html.twig`. So there is no collisions.
+- To be sure our custom component will never override drupal's native twig suggestions. For example if drupal's twig suggestion is `select.html.twig` - twig in our component will have name `a-select.html.twig`. So there is no collisions. If you are disabled component connector module - these twig will be nothing in drupal.
 - To better group components. It's an natural awareness when you know that molecule contains atoms for example, but not vice versa. And in storybook we have sidebar where components are grouped per their atomic type.
 - To understand which order should be in DOM tree for css and js assets. For example if `a-component-name` is loaded in DOM tree after some molecule or organism - probably it shouldn't be like this, because high risk styles of atom will override styles of more high-level component. And by the way loading of assets in storybook is built by this principle.
 
 Every component folder contains several files inside:
 - `.src.css` and it's compiled version `.css`
 - `.src.js` and it's compiled version `.js`. By the way in these js files we initially have code wrapped by Drupal's behavior. Drupal's `settings` are also available and `context`.
-- `.yml` - configuration of component. [Read more](lesha_link!!) about our integration to understand what should be in `.yml` files. After installaion you also will have multiple pre-installed components, so it will simplify process of learning for you.
 - `.stories.js` - for storybook needs. Initially such files contains everything you will need to build any component.
 - `.html.twig` - twig of component. By the way `attributes` variable is always available in any component by default. Other fields and settings you can declare in `.yml` file or describe them in `.stories.js`
+- `.yml` - configuration of component. [Read more](lesha_link!!) about our integration to understand what should be in `.yml` files. After installation you also will have multiple pre-installed components, so it will simplify process of learning for you. Use hook or base hook and read more integration.
 
 Read more about [component generator](https://www.npmjs.com/package/@skilld/kaizer-component-generator) and explanation of each file in component.
 
 If you are not too much familiar with Drupal or just don't know what your current component will be in 
 Drupal - just put your component in `templates/components/storybook` folder. And later when functionality
-of your component will be confirmed in Drupal - backender can fix `.yml` file and drag'n'drop your component from `storybook` 
-folder into some other folder (depending on type of integration will be taken).
+of your component will be confirmed in Drupal - backender can fix `.yml` file and move your component from `storybook` 
+folder to specific folder (depending on type of integration will be taken).
 
 Goal of any project - is to build maximum amount of re-usable components. Which means - in the end of 
 project `storybook` folder should be empty. So each component should be somehow associated with the specific

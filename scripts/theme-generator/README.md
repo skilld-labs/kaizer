@@ -139,9 +139,7 @@ from your unique design system, spending only ~10-20% of the project's budget an
 in the beginning of its project. But that's not all, because with our integration almost all components from storybook will be 
 fully re-used by Drupal, so `Storybook` becomes not a standalone tool. Methodology of doing storybook is well described [below](Below).
 
-3. Fast growing drupal experience of front-end developers.
-
-Before creating one or another component front-end develop should understand what its component will be in Drupal.
+3. Fast growing drupal experience of drupal developers.
 
 #### For a regular drupal developer
 
@@ -172,7 +170,7 @@ How to use `Component generator` is described [below](#how-to-create-new-compone
 - SVG sprite generator and optimizer of SVG assets. [Why svg sprite?](#why-svg-sprite)
 - [Favicon generator](https://www.npmjs.com/package/cli-real-favicon)
 - Integration with [Color](https://www.drupal.org/project/color) module to be able to customize palette of colours on web-site through admin back office.
-- Multiple base components pre-installed in theme with minimal styles and scripts with two reasons: base components are exist on every single project, so you would anyway create them and pre-installed base components will help you to understand/try/learn approach with integration of components in drupal we made.
+- Multiple base components pre-installed in theme with minimal styles and scripts.
 
 ## Installation of [ECOSYSTEM_NAME] theme generator
 

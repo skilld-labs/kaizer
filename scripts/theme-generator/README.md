@@ -9,7 +9,7 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and it will help you to
 - - [Ways of delivering of components in drupal today](#ways-of-delivering-of-components-in-drupal-today)
 - [Our native integration](#our-native-integration)
 - - [What's the benefits of using [ECOSYSTEM_NAME] initiative](#whats-the-benefits-of-using-ecosystem_name-initiative)
-- [Features generated theme will have](#features-generated-theme-will-have))
+- [Features generated theme will have](#features-generated-theme-will-have)
 - [Installation of ECOSYSTEM_NAME theme generator](#installation-of-ecosystem_name-theme-generator)
 - [Explanation of generated theme](#explanation-of-generated-theme)
 - - [Purposes of generated theme](#purposes-of-generated-theme)
@@ -614,6 +614,8 @@ r('m-responsive-image', {
 
 ### Helper "Root variables"
 
+This component is living in `templates/components/storybook/h-root-variables` folder.
+
 Sometimes `100vw` or `100vh` CSS values may return incorrect dimensions of visible area in viewport (especially on iOS devices).
 This is where this helper can help you.
 
@@ -636,6 +638,8 @@ Example of usage:
 3. etc.
 
 ### Helper "Wrapper as link"
+
+This component is living in `templates/components/storybook/h-wrapper-as-link` folder.
 
 This component helps you to simulate link on the entire wrapper. For example if in your entity only title is a link in Drupal,
 but you want to have a whole entity clickable - you can use this helper.

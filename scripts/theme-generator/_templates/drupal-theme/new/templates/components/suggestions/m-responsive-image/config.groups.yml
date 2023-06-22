@@ -26,8 +26,8 @@ machine_name_of_responsive_image_group_1:
   label: Teaser
   breakpoints:
     l:
-      1x: 1000_x_400_scale_and_crop
-      2x: 500_x_200_scale_and_crop
+      1x: 500_x_200_scale_and_crop
+      2x: 1000_x_400_scale_and_crop
     xxs:
       1x: 500_x_200_scale_and_crop
   fallback: 500_x_200_scale_and_crop

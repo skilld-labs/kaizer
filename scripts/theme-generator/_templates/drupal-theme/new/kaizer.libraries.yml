@@ -7,34 +7,35 @@ base:
       color/colors.css: {}
     base:
       css/styles.css: {}
+    component:
+      templates/components/uncategorized/h-button/h-button.css: {}
   js:
-    templates/components/storybook/h-root-variables/h-root-variables.js: {}
+    templates/components/uncategorized/h-root-variables/h-root-variables.js: {}
   dependencies:
     - core/drupal
     - core/once
     - <%= h.changeCase.lower(name) %>/a-text
     - <%= h.changeCase.lower(name) %>/a-icon
-    - <%= h.changeCase.lower(name) %>/a-button
     - <%= h.changeCase.lower(name) %>/h-container
 
 a-throbber:
   css:
     component:
-      templates/components/storybook/a-throbber/a-throbber.css: {}
+      templates/components/uncategorized/a-throbber/a-throbber.css: {}
   js:
     js/ajax-throbber.js: {}
 
 h-wrapper-as-link:
   css:
     component:
-      templates/components/storybook/h-wrapper-as-link/h-wrapper-as-link.css: {}
+      templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.css: {}
   js:
-    templates/components/storybook/h-wrapper-as-link/h-wrapper-as-link.js: {}
+    templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.js: {}
 
 o-dialog:
   css:
     component:
-      templates/components/storybook/o-dialog/o-dialog.css: {}
+      templates/components/uncategorized/o-dialog/o-dialog.css: {}
 
 color.preview:
   css:

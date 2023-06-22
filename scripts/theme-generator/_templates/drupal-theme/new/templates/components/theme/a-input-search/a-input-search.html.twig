@@ -1,0 +1,12 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-input-search/a-input-search.html.twig
+---
+<div {{ create_attribute().addClass('a-input-search', 'h-input', 'h-input--leading-icon') }}>
+  <input{{ attributes.addClass('h-input__element') }} />
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('h-input__icon', 'h-input__icon--leading'),
+    icon: 'search',
+    <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
+  } only %}
+  {{- children }}
+</div>

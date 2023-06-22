@@ -20,7 +20,7 @@ export default {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.link = r('a-button', {
+  data.link = r('a-link-button', {
     content: args.link || 'View',
     link: true,
   });

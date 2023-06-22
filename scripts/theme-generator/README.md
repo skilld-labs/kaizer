@@ -678,7 +678,7 @@ What you can do today is:
 1. Declare assets of third party libraries in Storybook separately in `theme_name/.storybook/preview-head.html` file. 
 After theme installation you already have `jQuery` and `Splide` (for carousels) libraries declared out there.
 So when you will run Storybook there will be already accessible libraries in DOM, and then in your javascript of components you
-have to write same code as it's done in Drupal code.
+have to write same code as it's done in Drupal core.
 
 For example if we are talking about `Splide` library, then JS code in your component should be like this:
 
@@ -698,7 +698,7 @@ For example if we are talking about `Splide` library, then JS code in your compo
 
 2. In the root `composer` you have to add `Splide` library again exclusively for Drupal. So once `composer require <some_library>`
 will be executed - third party library will be downloaded into root `/libraries` folder.
-3. Declare a new drupal library in `themename.libraries.yml` with the optional paths to css and js assets of your third party library, like:
+3. Declare a new drupal library in `theme_name.libraries.yml` with the paths to CSS and JS assets of your third party library, like:
 
 ```
 splide:
@@ -711,7 +711,7 @@ splide:
 
 4. And then link this drupal library as a dependency in your `component-name.[type_of_integration].yml`
 
-Other solutions are currently unstable, so it's recommended only solution described above.
+Other solutions are currently unstable.
 
 We are working on this subject and will try to find a good and simple solution which will make everyone happy.
 

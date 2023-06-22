@@ -16,14 +16,17 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/ui_patte
       } only %}
     {% endif %}
     {% if item %}
-      {% include '@component/a-button/a-button.html.twig' with {
+      {% set content = item %}
+      {% if item_override %}
+        {% set content = item_override %}
+      {% endif %}
+      {% include '@component/a-link-button/a-link-button.html.twig' with {
         attributes: cta_attributes.addClass('m-cta-field__item'),
         trailing_icon: item_trailing_icon,
         leading_icon: item_leading_icon,
         type: item_type,
         href: item_href,
-        content: item,
-        custom_content: item_override,
+        content: content,
         <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
       } only %}
     {% endif %}

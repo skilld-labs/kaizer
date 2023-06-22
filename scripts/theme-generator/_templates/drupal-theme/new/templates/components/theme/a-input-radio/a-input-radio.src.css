@@ -1,0 +1,78 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-input-radio/a-input-radio.src.css
+---
+.a-input-radio {
+  position: relative;
+  width: 16px;
+  height: 16px;
+
+  &__element {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    border: 0;
+    appearance: none;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-black);
+    border-radius: 50%;
+
+    .a-input-radio__element:focus-visible ~ & {
+      outline: var(--outline-size) solid var(--outline-color);
+      outline-offset: var(--outline-offset);
+    }
+
+    [disabled] ~ & {
+      opacity: 0.5;
+    }
+
+    &--throbber {
+      & ~ * {
+        display: none;
+      }
+    }
+
+    .a-input-radio__element.error ~ & {
+      fill: var(--color-danger);
+    }
+
+    &--empty {
+      .a-input-radio__element:checked ~ & {
+        display: none;
+      }
+    }
+
+    &--filled {
+      .a-input-radio__element:not(:checked) ~ & {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes a-input-radio-ajax-circle-animation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

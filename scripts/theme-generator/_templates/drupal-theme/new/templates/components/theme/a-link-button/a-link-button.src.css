@@ -1,0 +1,4 @@
+---
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-link-button/a-link-button.src.css
+---
+/* .a-link-button {} */

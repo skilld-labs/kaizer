@@ -53,9 +53,7 @@ const BasicRender = (args, context) => {
             ? 'h-button__icon--throbber a-throbber a-throbber--circle '
             : ''
         }a-icon a-icon--throbber-circle" aria-hidden="true">
-          <use xlink:href="${
-            data.<%= h.changeCase.camelCase(name) %>SvgSprite
-          }#svg-throbber-circle"></use>
+          <use xlink:href="${data.<%= h.changeCase.camelCase(name) %>SvgSprite}#svg-throbber-circle"></use>
         </svg>
         ${type === 'full' ? '</span>' : ''}
       `;

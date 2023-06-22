@@ -1,5 +1,0 @@
-/* .a-input-search {} */
-
-input[type='search' i]::-webkit-search-cancel-button {
-  display: none;
-}

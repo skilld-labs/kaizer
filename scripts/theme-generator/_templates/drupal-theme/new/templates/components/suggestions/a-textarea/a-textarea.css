@@ -6,7 +6,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
-
 .a-textarea__element {
   display: block;
   min-height: 10rem;

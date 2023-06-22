@@ -1,0 +1,9 @@
+.m-cta-field {
+  &__label {
+    margin-bottom: 12px;
+
+    @media (--l) {
+      margin-bottom: 8px;
+    }
+  }
+}

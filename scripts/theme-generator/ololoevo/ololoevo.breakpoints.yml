@@ -1,0 +1,56 @@
+ololoevo.xxs:
+  label: xxs
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.xs:
+  label: xs
+  mediaQuery: '(min-width: 361px)'
+  weight: 10
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.s:
+  label: s
+  mediaQuery: '(min-width: 481px)'
+  weight: 20
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.m:
+  label: m
+  mediaQuery: '(min-width: 769px)'
+  weight: 30
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.l:
+  label: l
+  mediaQuery: '(min-width: 1025px)'
+  weight: 40
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.xl:
+  label: xl
+  mediaQuery: '(min-width: 1441px)'
+  weight: 50
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x
+ololoevo.xxl:
+  label: xxl
+  mediaQuery: '(min-width: 1921px)'
+  weight: 60
+  group: ololoevo
+  multipliers:
+    - 1x
+    - 2x

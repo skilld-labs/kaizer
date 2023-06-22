@@ -1,0 +1,14 @@
+<div class="a-input-radio">
+  <input {{ attributes.addClass('a-input-radio__element') }}/>
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-input-radio__icon', 'a-input-radio__icon--empty'),
+    icon: 'radio-empty',
+    ololoevo_svg_sprite: ololoevo_svg_sprite,
+  } only %}
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-input-radio__icon', 'a-input-radio__icon--filled'),
+    icon: 'radio-filled',
+    ololoevo_svg_sprite: ololoevo_svg_sprite,
+  } only %}
+  {{- children }}
+</div>

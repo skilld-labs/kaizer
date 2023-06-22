@@ -1,14 +1,14 @@
 # [ECOSYSTEM_NAME] Theme generator
 
-This is a part of [ECOSYSTEM_NAME](some_link) initiative and it will help you to generate your custom theme for 
+This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will help you to generate your custom theme for 
 [Drupal](https://www.drupal.org/).
 
 #### Navigation
 - [About [ECOSYSTEM_NAME] initiative](#about-ecosystem_name-initiative)
-- - [What we actually call a component?](#what-we-actually-call-a-component)
-- - [Ways of delivering of components in drupal today](#ways-of-delivering-of-components-in-drupal-today)
-- [Our native integration](#our-native-integration)
-- - [What's the benefits of using [ECOSYSTEM_NAME] initiative](#whats-the-benefits-of-using-ecosystem_name-initiative)
+- - [What we actually call a component](#what-we-actually-call-a-component)
+- - [Ways of components delivering in drupal today](#ways-of-components-delivering-in-drupal-today)
+- - [Our native integration](#our-native-integration)
+- - [What's the benefits](#whats-the-benefits)
 - [Features generated theme will have](#features-generated-theme-will-have)
 - [Installation of ECOSYSTEM_NAME theme generator](#installation-of-ecosystem_name-theme-generator)
 - [Explanation of generated theme](#explanation-of-generated-theme)
@@ -24,31 +24,31 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and it will help you to
 - - [How to generate SVG sprite](#how-to-generate-svg-sprite)
 - - [How to use SVG sprite](#how-to-use-svg-sprite)
 - - [How to optimize source SVG files](#how-to-optimize-source-svg-files)
-- [How to generate new favicon](#how-to-generate-new-favicon)
-- [Structure of components](#structure-of-components)
+- [How to generate favicon](#how-to-generate-favicon)
+- [About components](#about-components)
 - - [Atomic design](#atomic-design)
 - - [Component structure](#component-structure)
 - - [Principle of building components](#principle-of-building-components)
 - - [Namespaces](#namespaces)
-- [Pre-defined components](#pre-defined-components)
-- - [Atom "Image"](#atom-image)
-- - [Molecule "Responsive Image"](#molecule-responsive-image)
-- - [Helper "Root variables"](#helper-root-variables)
-- - [Helper "Wrapper as link"](#helper-wrapper-as-link)
+- - [Pre-defined components](#pre-defined-components)
+- - - [Atom "Image"](#atom-image)
+- - - [Molecule "Responsive Image"](#molecule-responsive-image)
+- - - [Helper "Root variables"](#helper-root-variables)
+- - - [Helper "Wrapper as link"](#helper-wrapper-as-link)
 - [License](#license)
 
-## About ECOSYSTEM_NAME initiative.
+## About ECOSYSTEM_NAME initiative
 
 The process of delivering of modern component approach in Drupal is not so easy thing. Drupal 
 is having own [Render API](https://www.drupal.org/docs/drupal-apis/render-api) which is a bit out of component approach. However, component approach
 turn out to be very popular and we want to promote delivering of front-end components in Drupal.
 
-### What we actually call a component?
+### What we actually call a component
 
 Definitely when we are saying `component` - we are talking about `UI Component`. So it should have
 some html markup, optional styles and scripts required by this component only.
 
-### Ways of delivering of components in drupal today
+### Ways of components delivering in drupal today
 
 To date, how you actually can deliver your front-end component in Drupal?
 Initially you have many different ways to do that. For example:
@@ -116,12 +116,12 @@ and configure them via admin back-office.
 
 However, it's not a `native` integration. It's a large ecosystem with a lot of custom code.
 
-## Our native integration
+### Our native integration
                 
 We wanted to get rid of all the extra layers to connect components in Drupal and stay native and flexible
 at the same time. You have to [check this](some_link) about our integration before read on.
 
-### What's the benefits of using [ECOSYSTEM_NAME] initiative?
+### What's the benefits
 
 #### For a company in long term strategy.
 
@@ -401,7 +401,7 @@ You don't need to write full path to icon in those commands. It's supposed your 
 If you need to optimize all of the icons - run `yarn svg-fix:all` or via docker 
 `make svg-fix:all`
 
-## How to generate new favicon
+## How to generate favicon
 
 You have to have your favicon in vector graphic format named `favicon.svg`. Put this file in
 the root of theme and just run `yarn favicon` or via docker
@@ -411,7 +411,7 @@ Wait a bit and new favicons will be added into `favicon` folder.
 Then clear cache in Drupal and new favicons will be automatically applied in drupal
 because of `page_attachments_alter` Drupal hook in `your_theme.theme` file.
 
-## Structure of components
+## About components
 
 ### Atomic design
 
@@ -478,7 +478,7 @@ You can find several examples of such usage in pre-defined components.
 If component was moved from one folder to another - normally
 all you have to do is to change `yml` file only. [Read more]() about how `yml` file should be organized.
 
-## Pre-defined components
+### Pre-defined components
 
 In generated theme you will get a big list of pre-defined components. It is base components which are exist on
 every single project. Every pre-defined component has minimal twig with minimal styles and scripts. Also components are
@@ -488,7 +488,7 @@ design system.
 
 Now several words about some "specific" pre-defined components.
 
-### Atom "Image"
+#### Atom "Image"
 
 This component is living in `templates/components/suggestions/a-image` folder. It is applied to the core theme hook `image`. 
 But you can find also `config.styles.yml` file in this component. This file is supposed to be for documenting all the image
@@ -566,7 +566,7 @@ hidden image on some media breakpoint. Not everyone knows, but image is still do
 `display: none;`. For browser it doesn't matter if it's hidden or not. So for such cases to improve performance one the page - you 
 can use this image style in your responsive image group for specific breakpoint (on which your image is supposed to be hidden).
 
-### Molecule "Responsive Image"
+#### Molecule "Responsive Image"
 
 This component is living in `templates/components/suggestions/m-responsive-image` folder. It is applied to the core theme hook
 `responsive_image`. You can also find `config.groups.yml` file in the folder of this component. This file is supposed to be for
@@ -610,7 +610,7 @@ r('m-responsive-image', {
 });
 ```
 
-### Helper "Root variables"
+#### Helper "Root variables"
 
 This component is living in `templates/components/storybook/h-root-variables` folder.
 
@@ -635,7 +635,7 @@ Example of usage:
 2. Dialogs which should be senseting to max-height of the viewport.
 3. etc.
 
-### Helper "Wrapper as link"
+#### Helper "Wrapper as link"
 
 This component is living in `templates/components/storybook/h-wrapper-as-link` folder.
 

@@ -3,7 +3,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/
 ---
 m_banner:
   use: '@component/m-banner/m-banner.html.twig'
-  label: Molecules / Banner
+  label: Layouts / Banner
   hook theme: 'm_banner'
   base hook: 'layout'
   fields:

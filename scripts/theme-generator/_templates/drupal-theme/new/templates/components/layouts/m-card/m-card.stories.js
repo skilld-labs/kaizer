@@ -10,7 +10,7 @@ import {
 } from '@story-handler';
 
 export default {
-  title: 'Molecules / Card',
+  title: 'Layouts / Card',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },

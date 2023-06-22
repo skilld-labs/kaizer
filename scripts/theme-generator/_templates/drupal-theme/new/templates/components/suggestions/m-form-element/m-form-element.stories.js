@@ -23,10 +23,6 @@ export default {
         'email',
         'search',
         'password',
-        'number',
-        'tel',
-        'date',
-        'time',
         'textarea',
         'select',
         'checkbox',
@@ -126,7 +122,7 @@ const BasicRender = (args, context) => {
       });
       break;
     case 'checkbox':
-      data.children = r('a-checkbox', {
+      data.children = r('a-input-checkbox', {
         name,
         required,
         checked,
@@ -136,7 +132,7 @@ const BasicRender = (args, context) => {
       });
       break;
     case 'radio':
-      data.children = r('a-radio', {
+      data.children = r('a-input-radio', {
         name,
         required,
         checked,
@@ -145,8 +141,12 @@ const BasicRender = (args, context) => {
         disabled,
       });
       break;
+    case 'email':
+    case 'text':
+    case 'password':
+    case 'search':
     default:
-      data.children = r('a-input', {
+      data.children = r(`a-input-${type}`, {
         required,
         placeholder,
         value,

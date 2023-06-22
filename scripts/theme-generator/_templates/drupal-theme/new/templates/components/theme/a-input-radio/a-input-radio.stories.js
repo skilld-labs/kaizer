@@ -34,12 +34,6 @@ export default {
         type: 'boolean',
       },
     },
-    link: {
-      name: 'Link',
-      control: {
-        type: 'boolean',
-      },
-    },
     ajax: {
       name: 'Ajax',
       control: {

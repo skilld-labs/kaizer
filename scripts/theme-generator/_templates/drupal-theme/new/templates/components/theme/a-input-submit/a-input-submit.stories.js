@@ -22,12 +22,6 @@ export default {
         type: 'boolean',
       },
     },
-    link: {
-      name: 'Link',
-      control: {
-        type: 'boolean',
-      },
-    },
     ajax: {
       name: 'Ajax',
       control: {
@@ -40,6 +34,7 @@ export default {
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.attributes.setAttribute('value', args.value || 'Lorem ipsum');
+  data.attributes.value = args.value || 'Lorem ipsum';
   if (args.disabled || args.ajax) {
     data.attributes.setAttribute('disabled', '');
   }

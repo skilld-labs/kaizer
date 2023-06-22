@@ -9,6 +9,7 @@ base:
       css/styles.css: {}
     component:
       templates/components/uncategorized/h-button/h-button.css: {}
+      templates/components/uncategorized/h-text-input/h-text-input.css: {}
   js:
     templates/components/uncategorized/h-root-variables/h-root-variables.js: {}
   dependencies:
@@ -16,7 +17,6 @@ base:
     - core/once
     - <%= h.changeCase.lower(name) %>/a-text
     - <%= h.changeCase.lower(name) %>/a-icon
-    - <%= h.changeCase.lower(name) %>/h-container
 
 a-throbber:
   css:
@@ -45,6 +45,13 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+
+slider-library:
+  css:
+    component:
+      /libraries/splide/dist/css/splide-core.min.css: { minified: true }
+  js:
+    /libraries/splide/dist/js/splide.min.js: { minified: true }
 
 toolbar:
   css:

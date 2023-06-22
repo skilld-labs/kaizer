@@ -29,7 +29,7 @@ const namespaces = [
   '../templates/components/suggestions',
   '../templates/components/theme',
   '../templates/components/ui_patterns',
-  '../templates/components/storybook',
+  '../templates/components/uncategorized',
 ];
 
 for (const [path, data] of Object.entries(allTwigPatternTemplates)) {

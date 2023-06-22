@@ -41,6 +41,19 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
       outline: none;
     }
 
+    &.error {
+      color: var(--color-danger);
+      border-color: currentColor;
+
+      &::placeholder {
+        color: currentColor;
+      }
+
+      & ~ .h-input__icon {
+        fill: var(--color-danger);
+      }
+    }
+
     &[disabled],
     &.is-disabled {
       cursor: not-allowed;
@@ -53,19 +66,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
 
       & ~ .h-input__icon {
         fill: var(--color-grey-light);
-      }
-    }
-
-    &.error {
-      color: var(--color-danger);
-      border-color: currentColor;
-
-      &::placeholder {
-        color: currentColor;
-      }
-
-      & ~ .h-input__icon {
-        fill: var(--color-danger);
       }
     }
   }

@@ -6,4 +6,9 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-
  * It's generated automatically by 'yarn build' command.
  * @preserve
  */
+
 /* .a-input-search {} */
+
+input[type='search' i]::-webkit-search-cancel-button {
+  display: none;
+}

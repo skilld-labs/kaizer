@@ -1,8 +1,6 @@
-/*
 ---
 to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncategorized/h-button/h-button.src.css
 ---
-*/
 .h-button {
   position: relative;
   display: inline-flex;

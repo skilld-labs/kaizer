@@ -28,6 +28,15 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
   outline: none;
 }
 
+.a-select__element.error {
+  color: var(--color-danger);
+  border-color: currentColor;
+}
+
+.a-select__element.error ~ .a-select__icon {
+  fill: var(--color-danger);
+}
+
 .a-select__element[disabled],
 .a-select__element.is-disabled {
   color: var(--color-grey-light);
@@ -37,15 +46,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
 .a-select__element[disabled] ~ .a-select__icon,
 .a-select__element.is-disabled ~ .a-select__icon {
   fill: var(--color-grey-light);
-}
-
-.a-select__element.error {
-  color: var(--color-danger);
-  border-color: currentColor;
-}
-
-.a-select__element.error ~ .a-select__icon {
-  fill: var(--color-danger);
 }
 
 .a-select__icon {

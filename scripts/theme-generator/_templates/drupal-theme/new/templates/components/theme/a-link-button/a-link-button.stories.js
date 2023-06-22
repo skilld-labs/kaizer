@@ -16,12 +16,6 @@ export default {
     // backgrounds: { default: 'grey' },
   },
   argTypes: {
-    link: {
-      name: 'Link',
-      control: {
-        type: 'boolean',
-      },
-    },
     ajax: {
       name: 'Ajax',
       control: {
@@ -34,11 +28,11 @@ export default {
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
   data.content = args.content || 'Lorem ipsum';
-  if (args.link) {
-    data.href = args.href || '#';
+  if (!args.href) {
+    data.href = '#';
   }
   if (args.ajax) {
-    data.attributes.addClass('is-disabled')
+    data.attributes.addClass('is-disabled');
   }
   if (context.componentId) {
     useEffect(() => {

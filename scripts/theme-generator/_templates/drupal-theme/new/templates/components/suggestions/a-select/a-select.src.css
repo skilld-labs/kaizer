@@ -19,6 +19,15 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
       outline: none;
     }
 
+    &.error {
+      color: var(--color-danger);
+      border-color: currentColor;
+
+      & ~ .a-select__icon {
+        fill: var(--color-danger);
+      }
+    }
+
     &[disabled],
     &.is-disabled {
       color: var(--color-grey-light);
@@ -26,15 +35,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
 
       & ~ .a-select__icon {
         fill: var(--color-grey-light);
-      }
-    }
-
-    &.error {
-      color: var(--color-danger);
-      border-color: currentColor;
-
-      & ~ .a-select__icon {
-        fill: var(--color-danger);
       }
     }
   }

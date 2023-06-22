@@ -35,6 +35,7 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - - [Molecule "Responsive Image"](#molecule-responsive-image)
 - - - [Helper "Root variables"](#helper-root-variables)
 - - - [Helper "Wrapper as link"](#helper-wrapper-as-link)
+- - [Third party libraries](#third-party-libraries)
 - [License](#license)
 
 ## About ECOSYSTEM_NAME initiative
@@ -663,6 +664,56 @@ only title is clickable. But once script has been added & executed on the page -
 use `wrapper-as-link-target-built` attribute to improve visual styling.
 
 Be careful, if in your entity you have several links with different `href`, probably you shouldn't use this script in that case.
+
+### Third party libraries
+
+We want to follow drupal core principle in terms of third party libraries. So libraries should live in `/libraries/library-folder/`
+in the root of project and been manageable via root `composer`. This is recommended process of managing and delivering 
+third party libraries in Drupal.
+
+However front-end world loves `package.json` and want to have control on used third party libraries in there. This topic is still
+WIP and there is no "good" solution at this moment. 
+
+What you can do today is:
+1. Declare assets of third party libraries in Storybook separately in `theme_name/.storybook/preview-head.html` file. 
+After theme installation you already have `jQuery` and `Splide` (for carousels) libraries declared out there.
+So when you will run Storybook there will be already accessible libraries in DOM, and then in your javascript of components you
+have to write same code as it's done in Drupal code.
+
+For example if we are talking about `Splide` library, then JS code in your component should be like this:
+
+```
+(({ behaviors }, Splide) => {
+  behaviors.someDrupalBehaviorName = {
+    attach: (context) => {
+      if (!Splide) {
+        return;
+      }
+      
+      // otherwise process the code.
+    }
+  }
+})(Drupal, window.Splide);
+```
+
+2. In the root `composer` you have to add `Splide` library again exclusively for Drupal. So once `composer require <some_library>`
+will be executed - third party library will be downloaded into root `/libraries` folder.
+3. Declare a new drupal library in `themename.libraries.yml` with the optional paths to css and js assets of your third party library, like:
+
+```
+splide:
+  css:
+    component:
+      /libraries/splide/dist/css/splide-core.min.css: { minified: true }
+  js:
+    /libraries/splide/dist/js/splide.min.js: { minified: true }
+```
+
+4. And then link this drupal library as a dependency in your `component-name.[type_of_integration].yml`
+
+Other solutions are currently unstable, so it's recommended only solution described above.
+
+We are working on this subject and will try to find a good and simple solution which will make everyone happy.
 
 ## License
 

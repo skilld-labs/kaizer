@@ -1,0 +1,10 @@
+m_form_element_label:
+  use: '@component/m-form-element-label/m-form-element-label.html.twig'
+  label: Molecules / Form element label
+  libraries:
+    - m-form-element-label:
+        css:
+          component:
+            m-form-element-label.css: {}
+#        js:
+#           m-form-element-label.js: {}

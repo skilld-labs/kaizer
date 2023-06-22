@@ -1,0 +1,13 @@
+// (({ behaviors }) => {
+//   behaviors.trololoMoleculeRadios = {
+//     attach: (context) => {
+//       once('m-radios', '.m-radios', context).forEach((el) => {
+//         behaviors.trololoMoleculeRadios.handler(el);
+//       });
+//     },
+//     handler: (el) => {
+//       // eslint-disable-next-line no-console
+//       console.log(el);
+//     },
+//   };
+// })(Drupal);

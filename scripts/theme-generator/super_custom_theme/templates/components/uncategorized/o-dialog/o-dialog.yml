@@ -1,3 +1,0 @@
-o_dialog:
-  use: '@component/o-dialog/o-dialog.html.twig'
-  label: Organism / Dialog

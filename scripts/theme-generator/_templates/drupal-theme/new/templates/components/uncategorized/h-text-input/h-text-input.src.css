@@ -1,7 +1,7 @@
 ---
 to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncategorized/h-text-input/h-text-input.src.css
 ---
-.h-input {
+.h-text-input {
   position: relative;
 
   &__icon {
@@ -27,7 +27,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
     font: inherit;
     appearance: none;
 
-    .h-input--leading-icon & {
+    .h-text-input--leading-icon & {
       padding-left: 44px;
     }
 
@@ -49,7 +49,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
         color: currentColor;
       }
 
-      & ~ .h-input__icon {
+      & ~ .h-text-input__icon {
         fill: var(--color-danger);
       }
     }
@@ -64,13 +64,9 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
         color: currentColor;
       }
 
-      & ~ .h-input__icon {
+      & ~ .h-text-input__icon {
         fill: var(--color-grey-light);
       }
     }
   }
-}
-
-input[type='search' i]::-webkit-search-cancel-button {
-  display: none;
 }

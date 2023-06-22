@@ -43,10 +43,7 @@ const generateRows = (rows) => {
 
 const BasicRender = (args, context) => {
   const { data, template } = defRender(args, context);
-  data.header = generateRow(
-    ['Head 1', 'Head 2', 'Head 3', 'Head 4'],
-    'th',
-  );
+  data.header = generateRow(['Head 1', 'Head 2', 'Head 3', 'Head 4'], 'th');
   data.rows = generateRows([
     {
       labels: ['Body 1', 'Body 2', 'Body 3', 'Body 3'],

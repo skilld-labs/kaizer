@@ -70,7 +70,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
       left: 50%;
       transform: translate(-50%, -50%);
       animation: h-button-ajax-circle-full-animation
-      var(--transition-duration-0-25) linear infinite;
+        var(--transition-duration-0-25) linear infinite;
 
       & ~ * {
         opacity: 0;

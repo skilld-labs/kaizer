@@ -1,9 +1,0 @@
-.m-slider-field {
-  &__label {
-    margin-bottom: 20px;
-
-    @media (--l) {
-      margin-bottom: 32px;
-    }
-  }
-}

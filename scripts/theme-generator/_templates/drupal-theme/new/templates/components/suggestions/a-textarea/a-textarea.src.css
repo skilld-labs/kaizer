@@ -4,8 +4,8 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
 .a-textarea {
   &__element {
     display: block;
-    min-height: 160px;
-    max-height: 320px;
+    min-height: 10rem;
+    max-height: 20rem;
     resize: vertical;
   }
 }

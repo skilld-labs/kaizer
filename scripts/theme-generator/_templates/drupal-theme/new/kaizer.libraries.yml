@@ -8,6 +8,7 @@ base:
     base:
       css/styles.css: {}
     component:
+      templates/components/uncategorized/h-boolean/h-boolean.css: {}
       templates/components/uncategorized/h-button/h-button.css: {}
       templates/components/uncategorized/h-text-input/h-text-input.css: {}
   js:
@@ -28,9 +29,11 @@ a-throbber:
 h-wrapper-as-link:
   css:
     component:
-      templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.css: {}
+      templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.css:
+        {}
   js:
-    templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.js: {}
+    templates/components/uncategorized/h-wrapper-as-link/h-wrapper-as-link.js:
+      {}
 
 o-dialog:
   css:

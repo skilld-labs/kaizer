@@ -9,6 +9,10 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/ui_patte
 (({ behaviors }, Splide) => {
   behaviors.<%= h.changeCase.camelCase(name) %>MoleculeSliderField = {
     attach: (context) => {
+      if (!Splide) {
+        return;
+      }
+
       once('m-slider-field', '.m-slider-field', context).forEach((el) => {
         const sliderEl = el.querySelector('.m-slider-field__slider');
         if (sliderEl) {

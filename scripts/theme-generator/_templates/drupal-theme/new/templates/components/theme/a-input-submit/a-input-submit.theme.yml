@@ -20,30 +20,34 @@ a_input_submit:
       default_value: default
       options:
         default: No icon
-        add: Add
         checkbox-empty: Checkbox empty
         checkbox-filled: Checkbox filled
         chevron: Chevron
+        chevron-end: Chevron end
+        close: Close
+        menu: Menu
         radio-empty: Radio empty
         radio-filled: Radio filled
-        remove: Remove
         search: Search
         throbber-circle: Throbber circle
+        warning: Warning
     trailing_icon:
       type: select
       label: Trailing icon name
       default_value: default
       options:
         default: No icon
-        add: Add
         checkbox-empty: Checkbox empty
         checkbox-filled: Checkbox filled
         chevron: Chevron
+        chevron-end: Chevron end
+        close: Close
+        menu: Menu
         radio-empty: Radio empty
         radio-filled: Radio filled
-        remove: Remove
         search: Search
         throbber-circle: Throbber circle
+        warning: Warning
 #  libraries:
 #    - a-input-submit:
 #        css:

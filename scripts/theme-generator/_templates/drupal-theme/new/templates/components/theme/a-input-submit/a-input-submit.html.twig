@@ -6,6 +6,11 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-
   'h-button',
   type and type != 'default' ? 'h-button--' ~ type : [],
 ] %}
+{% set content = attributes.value %}
+{% if value %}
+  {% set attributes = attributes.setAttribute('value', value) %}
+  {% set content = value %}
+{% endif %}
 <button {{ attributes.addClass(classes) }}>
   {% if leading_icon and leading_icon != 'default' %}
     <span class="h-button__icon-container h-button__icon-container--start">
@@ -20,7 +25,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-
     attributes: create_attribute().addClass('h-button__text'),
     tag: 'span',
     type: 'small',
-    content: attributes.value,
+    content: content,
   } only %}
   {% if trailing_icon and trailing_icon != 'default' %}
     <span class="h-button__icon-container h-button__icon-container--end">

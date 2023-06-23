@@ -31,11 +31,13 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - [Principle of building components](#principle-of-building-components)
 - - [Namespaces](#namespaces)
 - - [Pre-defined components](#pre-defined-components)
+- - - [Buttons and inputs](#buttons-and-inputs)
 - - - [Atom "Image"](#atom-image)
 - - - [Molecule "Responsive Image"](#molecule-responsive-image)
 - - - [Helper "Root variables"](#helper-root-variables)
 - - - [Helper "Wrapper as link"](#helper-wrapper-as-link)
 - - [Third party libraries](#third-party-libraries)
+- [Methodology of doing Storybook](#methodology-of-doing-storybook)
 - [License](#license)
 
 ## About ECOSYSTEM_NAME initiative
@@ -165,6 +167,7 @@ How to use `Component generator` is described [below](#how-to-create-new-compone
 - PostCSS v8.4
 - Javascript ES6+ (No need for ES5 anymore, because all major browsers already [supporting](https://caniuse.com/?search=es6) ES6)
 - Drupal's breakpoints in CSS and JS. [Read more](some_link)
+- Rems everywhere. Write your source css styles in pixels, but on the `build` it will be converted to `rems` automatically.
 - [Storybook](https://storybook.js.org/docs/react/builders/vite) v7.0
 - [ECOSYSTEM_NAME] component generator - [learn more](https://www.npmjs.com/package/@skilld/kaizer-component-generator)
 - Linting and auto-fixer of CSS, JS, YML files using Stylelint, Eslint and Prettier
@@ -491,6 +494,44 @@ design system.
 
 Now several words about some "specific" pre-defined components.
 
+#### Buttons and inputs
+
+Keep in mind that with our native integration we are not recommending to create abstract components which can not be
+applicable to Drupal, like `button` component for example (which means
+UI component `Button`). In terms of Drupal - there is no simple integration of UI component `button`. But Drupal have 
+for example `input` theme hook. So we can be sure that `input [type="submit"]` should look like a button. For that
+we have added in our theme generator in the list of pre-defined components - `a-input-submit` component, which is living in
+`templates/components/theme/a-input-submit`. So this component is applied always to `input__submit` hook in Drupal.
+
+Ok, where else we should have buttons? Well - it can be some links, which are visually looking like a button. But in Drupal
+there is no theme hooks like `link-button` or at least just `link`. So we have added a new component `a-link-button` where we 
+have declared a new theme hook `a_link_button`. Now from PHP back-end developers can use this hook.
+
+What about Drupal admin back-office? Well - there is another component which is `ui_pattern` called `m-cta-field` which can be 
+applied to the `link` field type, and its visual display will be just like a `button`.
+
+So as you can see by default you have 3 different pre-installed components for buttons in theme generator, which are integrated in Drupal
+differently. But where to store styles for buttons in that case?
+
+For styles - there is fourth component, called `h-button` and it lives in `templates/components/uncategorized/h-button`. This component
+doesn't have any `twig` or `stories.js` file. It's just a CSS styles for buttons. This component is already attached globally in Drupal,
+so it's available on any page. If you will open components `a-input-submit`, `a-link-button`, `m-cta-field` - you will notice its 
+templates contains `h-button` classnames as a reference to the base styles.
+
+Regarding other input types, like `checkbox`, `radio`, `text`, `email`, `password` and other - for some of them there is already
+pre-defined components and it's living in `templates/components/theme/a-input-*` folders. Each such component already integrated 
+in Drupal for its specific input type. If you need other types in your design system - just create one more component and integrate
+it in Drupal same way.
+
+For the textable inputs - there is helper component called `h-text-input` which contains base styles for textable inputs, like 
+`text`, `email`, etc. Even `templates/components/suggestions/a-textarea` component is related to `h-text-input`.
+
+For the boolean inputs (checkbox and radio) - same situation. Since visual difference between those two components usually is a 
+CSS `border-radius` only - we have added one more helper `h-boolean` which contains base styles for `radio` and `checkbox` input type.
+It's integrated same way as other input types described above.
+
+So such integration of buttons and inputs is logically substantiated and we are recommending to follow same principal.
+
 #### Atom "Image"
 
 This component is living in `templates/components/suggestions/a-image` folder. It is applied to the core theme hook `image`. 
@@ -714,6 +755,86 @@ splide:
 Other solutions are currently unstable.
 
 We are working on this subject and will try to find a good and simple solution which will make everyone happy.
+
+## Methodology of doing Storybook
+
+Storybook is a great specification of the current front-end state on project. Even after several years of development
+if newcomer will join the project - he can just open Storybook to see the latest state of all components.
+
+We are highly recommending to keep Storybook updated so it should be always aligned with the actual state
+of Drupal web-site. <strong>Once you lose at least several minor updates - potentially you can lose a whole Storybook.</strong>
+
+If architecture of some blocks was changed in Drupal, if new features are planning to appear - always provide them in Storybook
+and then integrate in Drupal.
+
+### How to split design system on components
+
+Sometimes designers already can do this job by itself, so it will simplify a bit work for developer. However, keep in mind
+that designer is not Drupal developer. If designer have provided a list of components on figma or somewhere else - 
+it doesn't really mean same components should be added in web. There is only one important thing for you before creation 
+of components - is <strong>how this component will be integrated in Drupal !<strong>
+
+Of course there is always common components on any design system, like `checkbox`, `radio`, `logo`, and so on.
+But keep in mind that even component `button` is not so easy to integrate. 
+Please [see above](#buttons-and-inputs) to understand why even button.
+
+Here is several good practices regarding splitting design system on components:
+- Try to use as much as possible same namings from your design system (if your design system have it). It's about everything:
+naming of components, naming of modifiers of components, naming of colors and so on.
+- Don't use unclear namings. For example if color name on design is `color-yellow` - ask designer to change such naming on something more
+neutral and abstract, like `color-primary` for example, or at least `color-1`. Same for modifiers - no modifier namings like
+`button-green`, instead -> `button-primary` or `button-second`, etc.
+- Following naming principal your components will be aligned with design, which will save you a lot of time during development.
+- If your design is not splitted on components, then you have to do it by yourself. For that - start to integrate `atoms` first, then
+more high-level components. Even if you are not familiar with Drupal too much - you anyway can integrate simple components like: buttons,
+icons, texts, form elements, cards, teasers, etc.
+- Don't create monster components with a lot of modifiers. Practice shows it will be impossible to support them in future. For example
+if you have two or three similar cards with the only one or two little difference - it can be same component with modifiers. But if 
+components requires different markup -> split them on different components.
+- Communicate with the lead back-end developer on the project. If you don't clearly understand how exactly you have to split some elements
+on components from your design - just postpone this subject if no solution at this moment, or just put your component in `uncategorized`
+folder. So later, when back-end developer will start to work on this subject, you all together can re-do such component if need and 
+integrate this in Drupal by the one of available types of integration.
+
+Normally Storybook is supposed to be finished only when a whole design is embodied in components.
+
+Here is an example of the tree of components:
+
+Atoms
+- `a-link-button`
+- `a-text`
+- `a-image`
+
+Molecules
+- `m-cta-field`
+- - `a-link-button`
+- `m-text-field`
+- - `a-text`
+- `m-responsive-image`
+- - `a-image`
+- `m-card`
+- - `m-responsive-image`
+- - `m-text-field`
+- - `m-cta-field`
+
+Organisms
+- `o-view-items`
+- - `m-card`
+- - `m-card`
+- - `m-card`
+
+Templates
+- `t-homepage`
+- - `o-view-items`
+- - `o-something-else`
+
+Pages
+- Header
+- - `o-some-organisms`
+- Main content
+- - `t-homepage`
+- Footer
+- - `o-some-organisms`
 
 ## License
 

@@ -27,8 +27,8 @@ module.exports = {
       {
         type: 'select',
         name: 'connection_way',
-        message: "How your component will be connected to Drupal? (Choose 'storybook' option if you are not sure yet)",
-        choices: ['storybook', 'layout', 'suggestion', 'theme', 'ui_patterns'],
+        message: "How your component will be integrated in Drupal? (Choose 'uncategorized' option if you are not sure yet)",
+        choices: ['uncategorized', 'layout', 'suggestion', 'theme', 'ui_patterns'],
         required: true,
       },
     ];

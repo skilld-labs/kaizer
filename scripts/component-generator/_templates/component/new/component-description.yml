@@ -20,7 +20,7 @@ to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_w
 #    extra_classes:
 #      type: textfield
 #      label: Add extra CSS classes for <%= h.changeCase.lower(component_type) %> <%= h.changeCase.noCase(name) %> separated by spaces.
-<% if (connection_way === 'storybook') { -%>
+<% if (connection_way === 'uncategorized') { -%>
 #  libraries:
 #    - <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>:
 #        css:

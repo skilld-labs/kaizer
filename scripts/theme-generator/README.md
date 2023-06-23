@@ -457,7 +457,7 @@ where you can find more information about every file in component.
 ### Principle of building components
 
 If you are not too much familiar with Drupal or just don't know what your current component will be in 
-Drupal - just put your component in `templates/components/storybook` folder. And later when back-end developer will start
+Drupal - just put your component in `templates/components/uncategorized` folder. And later when back-end developer will start
 to work on such component in Drupal - he can change `.yml` 
 file and move your component from `storybook` 
 folder to some other specific folder (depending on the type of integration will be taken).
@@ -660,7 +660,7 @@ r('m-responsive-image', {
 
 #### Helper "Root variables"
 
-This component is living in `templates/components/storybook/h-root-variables` folder.
+This component is living in `templates/components/uncategorized/h-root-variables` folder.
 
 Sometimes `100vw` or `100vh` CSS values may return incorrect dimensions of visible area in viewport (especially on iOS devices).
 This is where this helper can help you.
@@ -685,7 +685,7 @@ Example of usage:
 
 #### Helper "Wrapper as link"
 
-This component is living in `templates/components/storybook/h-wrapper-as-link` folder.
+This component is living in `templates/components/uncategorized/h-wrapper-as-link` folder.
 
 This component helps you to simulate link on the entire wrapper using little javascript. For example if in your entity only title is a link in Drupal,
 but you want to have a whole entity clickable - you can use this helper.

@@ -11,4 +11,4 @@ p_page:
           component:
             p-page.css: {}
         js:
-           p-page.js: {}
+          p-page.js: {}

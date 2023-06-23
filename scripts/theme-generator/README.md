@@ -38,6 +38,7 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - - [Helper "Wrapper as link"](#helper-wrapper-as-link)
 - - [Third party libraries](#third-party-libraries)
 - [Methodology of doing Storybook](#methodology-of-doing-storybook)
+- - [How to split design system on components](#how-to-split-design-system-on-components)
 - [License](#license)
 
 ## About ECOSYSTEM_NAME initiative
@@ -769,7 +770,7 @@ and then integrate in Drupal.
 
 ### How to split design system on components
 
-Sometimes designers already can do this job by itself, so it will simplify a bit work for developer. However, keep in mind
+Sometimes designers already can do this job on design, so it will simplify a bit work for developer. However, keep in mind
 that designer is not Drupal developer. If designer have provided a list of components on figma or somewhere else - 
 it doesn't really mean same components should be added in web. There is only one important thing for you before creation 
 of components - is <strong>how this component will be integrated in Drupal !</strong>
@@ -781,7 +782,7 @@ Please [see above](#buttons-and-inputs) to understand why even button.
 Here is several good practices regarding splitting design system on components:
 - Try to use as much as possible same namings from your design system (if your design system have it). It's about everything:
 naming of components, naming of modifiers of components, naming of colors and so on.
-- Don't use unclear namings. For example if color name on design is `color-yellow` - ask designer to change such naming on something more
+- Don't use unclear namings. For example if color name on design is `color-yellow` - ask designer to change such naming onto something more
 neutral and abstract, like `color-primary` for example, or at least `color-1`. Same for modifiers - no modifier namings like
 `button-green`, instead -> `button-primary` or `button-second`, etc.
 - Following naming principal your components will be aligned with design, which will save you a lot of time during development.

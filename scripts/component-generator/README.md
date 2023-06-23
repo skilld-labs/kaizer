@@ -23,7 +23,7 @@ required files with some pre-defined "template" content inside.
 
 ## Installation
 
-Run from generated theme `yarn cc` or `make cc`. Component generator is smart, so it will ask you several questions in console
+Run from generated theme `yarn cc` or via docker `make cc`. Component generator is smart, so it will ask you several questions in console
 once you have executed one of those commands. Once script execution is finished - you will find your newly created component in
 `templates/components/[type of integration]/` folder.
 
@@ -42,6 +42,10 @@ will be compiled into `*.css` file <- use this compiled file in Drupal.
 
 It's recommended to use [BEM methodology](https://getbem.com/naming/) of writing styles. Also you can use drupal's breakpoints in CSS,
 see [here](https://www.npmjs.com/package/@skilld/kaizer-theme-generator#drupals-breakpoints-in-css-and-js) how to do that.
+
+If you need images in CSS - put them into `your-component-name/images` folder and call normally from CSS like this for example:
+
+`background-image: url('./images/name-of-image.jpg);`
 
 ### js
 
@@ -77,7 +81,7 @@ This file normally contains already everything you will potentially need for any
 - If you need fullscreen component - uncomment property `fullscreen`
 - If you don't need white background (which is default in story) - uncomment `backgrounds` property and your background will be grey.
 - If you need to set custom `argTypes` - just uncomment it. By the way - all `settings` from `*.yml` file are automatically
-added `argTypes`.
+added into `argTypes`.
  
 ### yml
 
@@ -86,7 +90,7 @@ This is the main file required by our integration with Drupal. But also it's req
 Based on type of integration, `yml` file should also have prefix with type of integration in its filename. Available types of integration are: `theme` for layouts or as a theme hook integration, 
 `suggestion` and `ui_patterns`. If your component isn't integrated - it shouldn't have any prefix in filename.
 
-Structure of this file is based on `UI Patterns`(https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html)
+Structure of this file is based on [UI Patterns](https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html)
 
 You should always have in this file:
 - `use` setting with path to `twig` of component

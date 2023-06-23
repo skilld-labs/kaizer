@@ -772,7 +772,7 @@ and then integrate in Drupal.
 Sometimes designers already can do this job by itself, so it will simplify a bit work for developer. However, keep in mind
 that designer is not Drupal developer. If designer have provided a list of components on figma or somewhere else - 
 it doesn't really mean same components should be added in web. There is only one important thing for you before creation 
-of components - is <strong>how this component will be integrated in Drupal !<strong>
+of components - is <strong>how this component will be integrated in Drupal !</strong>
 
 Of course there is always common components on any design system, like `checkbox`, `radio`, `logo`, and so on.
 But keep in mind that even component `button` is not so easy to integrate. 

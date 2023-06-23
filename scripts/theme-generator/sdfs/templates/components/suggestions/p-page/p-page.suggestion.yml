@@ -1,0 +1,11 @@
+p_page:
+  use: '@component/p-page/p-page.html.twig'
+  label: Pages / Page
+  base hook: 'page'
+  libraries:
+    - p-page:
+        css:
+          component:
+            p-page.css: {}
+        js:
+           p-page.js: {}

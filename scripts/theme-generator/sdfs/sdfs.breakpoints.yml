@@ -1,0 +1,56 @@
+sdfs.xxs:
+  label: xxs
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.xs:
+  label: xs
+  mediaQuery: '(min-width: 361px)'
+  weight: 10
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.s:
+  label: s
+  mediaQuery: '(min-width: 481px)'
+  weight: 20
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.m:
+  label: m
+  mediaQuery: '(min-width: 769px)'
+  weight: 30
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.l:
+  label: l
+  mediaQuery: '(min-width: 1025px)'
+  weight: 40
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.xl:
+  label: xl
+  mediaQuery: '(min-width: 1441px)'
+  weight: 50
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x
+sdfs.xxl:
+  label: xxl
+  mediaQuery: '(min-width: 1921px)'
+  weight: 60
+  group: sdfs
+  multipliers:
+    - 1x
+    - 2x

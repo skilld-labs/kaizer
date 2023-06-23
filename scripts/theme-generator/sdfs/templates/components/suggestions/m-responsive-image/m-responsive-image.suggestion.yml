@@ -1,0 +1,11 @@
+m_responsive_image:
+  use: '@component/m-responsive-image/m-responsive-image.html.twig'
+  label: Molecule / Responsive image
+  base hook: 'responsive_image'
+  libraries:
+    - m-responsive-image:
+        css:
+          component:
+            m-responsive-image.css: {}
+#        js:
+#          m-responsive-image.js: {}

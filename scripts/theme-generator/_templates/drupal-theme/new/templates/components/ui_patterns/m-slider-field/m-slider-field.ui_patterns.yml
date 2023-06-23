@@ -85,7 +85,6 @@ m_slider_field:
         vm-1: Vertical margin type 1
   libraries:
     - <%= h.changeCase.lower(name) %>/slider-library
-    - <%= h.changeCase.lower(name) %>/h-container
     - m-slider-field:
         css:
           component:

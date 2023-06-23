@@ -10,5 +10,5 @@ p_page:
         css:
           component:
             p-page.css: {}
-#        js:
-#           p-page.js: {}
+        js:
+           p-page.js: {}

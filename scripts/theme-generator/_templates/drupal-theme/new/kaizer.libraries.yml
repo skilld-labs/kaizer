@@ -10,6 +10,7 @@ base:
     component:
       templates/components/uncategorized/h-boolean/h-boolean.css: {}
       templates/components/uncategorized/h-button/h-button.css: {}
+      templates/components/layouts/h-container/h-container.css: {}
       templates/components/uncategorized/h-text-input/h-text-input.css: {}
   js:
     templates/components/uncategorized/h-root-variables/h-root-variables.js: {}

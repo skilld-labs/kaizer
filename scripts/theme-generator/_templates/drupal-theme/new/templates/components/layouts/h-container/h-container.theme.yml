@@ -5,6 +5,7 @@ h_container:
   use: '@component/h-container/h-container.html.twig'
   label: Layout / Container
   hook theme: 'h_container'
+  base hook: 'layout'
   fields:
     content:
       type: render
@@ -45,10 +46,10 @@ h_container:
       options:
         default: No vertical margin
         vm-1: Vertical margin type 1
-  libraries:
-    - h-container:
-        css:
-          component:
-            h-container.css: {}
+#  libraries:
+#    - h-container:
+#        css:
+#          component:
+#            h-container.css: {}
 #        js:
 #          h-container.js: {}

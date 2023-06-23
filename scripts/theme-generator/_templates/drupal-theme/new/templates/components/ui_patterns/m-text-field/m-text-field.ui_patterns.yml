@@ -106,7 +106,6 @@ m_text_field:
         default: No vertical margin
         vm-1: Vertical margin type 1
   libraries:
-    - <%= h.changeCase.lower(name) %>/h-container
     - m-text-field:
         css:
           component:

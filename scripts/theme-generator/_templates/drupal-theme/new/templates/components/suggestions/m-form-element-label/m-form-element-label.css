@@ -16,7 +16,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
   padding-left: 1rem;
 }
 
-.m-form-element-label--required::after {
+.m-form-element-label.form-required::after {
   margin-left: 0.3em;
   content: '*';
 }

@@ -4,6 +4,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
 m_form_element_label:
   use: '@component/m-form-element-label/m-form-element-label.html.twig'
   label: Molecules / Form element label
+  base hook: 'form_element_label'
   libraries:
     - m-form-element-label:
         css:

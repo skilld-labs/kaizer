@@ -4,7 +4,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-
 a_input_text:
   use: '@component/a-input-text/a-input-text.html.twig'
   label: Atoms / Input text
-  hook theme: 'input__text'
+  hook theme: 'input__textfield'
   base hook: 'input'
 #  libraries:
 #    - a-input-text:

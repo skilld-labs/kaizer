@@ -1,9 +1,0 @@
-<div {{ create_attribute().addClass('a-input-search', 'h-text-input', 'h-text-input--leading-icon') }}>
-  <input{{ attributes.addClass('h-text-input__element') }} />
-  {% include '@component/a-icon/a-icon.html.twig' with {
-    attributes: create_attribute().addClass('h-text-input__icon', 'h-text-input__icon--leading'),
-    icon: 'search',
-    trololo_svg_sprite: trololo_svg_sprite,
-  } only %}
-  {{- children }}
-</div>

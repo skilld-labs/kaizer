@@ -10,7 +10,7 @@ import {
 } from '@story-handler';
 
 export default {
-  title: 'Atoms / Button',
+  title: 'Atoms / Link button',
   parameters: {
     // layout: 'fullscreen',
     // backgrounds: { default: 'grey' },

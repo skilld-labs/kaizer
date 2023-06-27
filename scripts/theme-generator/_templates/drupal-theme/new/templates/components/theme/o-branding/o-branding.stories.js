@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncategorized/o-branding/o-branding.stories.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/o-branding/o-branding.stories.js
 ---
 import {
   defRender,

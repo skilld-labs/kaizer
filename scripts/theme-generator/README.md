@@ -39,6 +39,7 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - [Third party libraries](#third-party-libraries)
 - [Methodology of doing Storybook](#methodology-of-doing-storybook)
 - - [How to split design system on components](#how-to-split-design-system-on-components)
+- [Debug](#debug)
 - [License](#license)
 
 ## About ECOSYSTEM_NAME initiative
@@ -836,6 +837,10 @@ Pages
 - - `t-homepage`
 - Footer
 - - `o-some-organisms`
+
+## Debug
+
+
 
 ## License
 

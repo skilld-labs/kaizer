@@ -74,10 +74,10 @@ const BasicRender = (args, context) => {
     useEffect(() => {
       // Simulation of ajax throbber.
       if (args.ajax) {
-        document.querySelector('.a-input-radio__element').insertAdjacentHTML(
+        document.querySelector('.h-boolean__element').insertAdjacentHTML(
           'afterend',
           `
-        <svg class="a-input-radio__icon a-input-radio__icon--throbber a-throbber a-throbber--circle" aria-hidden="true">
+        <svg class="h-boolean__icon h-boolean__icon--throbber a-throbber a-throbber--circle a-icon a-icon--throbber-circle" aria-hidden="true">
           <use xlink:href="${data.<%= h.changeCase.camelCase(name) %>SvgSprite}#svg-throbber-circle"></use>
         </svg>
       `,

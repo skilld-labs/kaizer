@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncategorized/o-branding/o-branding.src.js
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/o-branding/o-branding.src.js
 ---
 // (({ behaviors }) => {
 //   behaviors.<%= h.changeCase.camelCase(name) %>OrganismBranding = {

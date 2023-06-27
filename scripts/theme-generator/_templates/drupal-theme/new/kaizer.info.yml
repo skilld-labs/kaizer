@@ -38,6 +38,8 @@ libraries-extend:
     - <%= h.changeCase.lower(name) %>/a-throbber
   core/drupal.dialog:
     - <%= h.changeCase.lower(name) %>/o-dialog
+  core/drupal.states:
+    - <%= h.changeCase.lower(name) %>/states
   toolbar/toolbar:
     - <%= h.changeCase.lower(name) %>/toolbar
 

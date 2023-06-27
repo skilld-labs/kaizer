@@ -1,0 +1,41 @@
+{
+  "name": "ololo/ololo",
+  "description": "Description",
+  "type": "drupal-theme",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Skilld"
+    }
+  ],
+  "repositories": {
+    "choices": {
+      "type": "package",
+      "package": {
+        "name": "choices-js/choices",
+        "version": "10.2.0",
+        "type": "drupal-library",
+        "dist": {
+          "url": "https://github.com/Choices-js/Choices/archive/refs/tags/v10.2.0.zip",
+          "type": "zip"
+        }
+      }
+    },
+    "splide": {
+      "type": "package",
+      "package": {
+        "name": "splidejs/splide",
+        "version": "4.1.3",
+        "type": "drupal-library",
+        "dist": {
+          "url": "https://github.com/Splidejs/splide/archive/refs/tags/v4.1.3.zip",
+          "type": "zip"
+        }
+      }
+    }
+  },
+  "require": {
+    "choices-js/choices": "^10.2",
+    "splidejs/splide": "^4.1"
+  }
+}

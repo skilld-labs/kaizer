@@ -9,7 +9,7 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - [css](#css)
 - - [js](#js)
 - - [twig](#twig)
-- - [stories.js](#stories.js)
+- - [stories.js](#storiesjs)
 - - [yml](#yml)
 - [License](#license)
 
@@ -82,6 +82,35 @@ This file normally contains already everything you will potentially need for any
 - If you don't need white background (which is default in story) - uncomment `backgrounds` property and your background will be grey.
 - If you need to set custom `argTypes` - just uncomment it. By the way - all `settings` from `*.yml` file are automatically
 added into `argTypes`.
+
+If you want to call any component from any other component, use the following:
+
+```
+r('[atomic type]-[component name]', [args]);
+```
+
+For example: 
+
+```
+r('a-icon', {
+  icon: 'calendar'
+})
+```
+
+By default render function will search for `Basic` story. If you don't have `Basic` story or want to call
+another story of the component, use the following:
+
+```
+r(['[atomic type]-[component name]', '[story name]'], [args]);
+```
+
+For example:
+
+```
+r(['m-card', 'Second'], {
+  title: 'My title',
+})
+```
  
 ### yml
 

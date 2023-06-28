@@ -455,6 +455,8 @@ to support storybook on your project - you can just ignore this file.
 - `.html.twig` - twig of component. By the way `attributes` variable is always available in any component by default in Storybook. Other fields and settings you can declare in `.yml` file or describe them in `.stories.js`
 - `.yml` - configuration of component. [Read more](https://www.npmjs.com/package/@skilld/kaizer-component-generator) about how to write `yml` files and also explanation of every file inside component.
 
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/5.png?raw=true" width="200"/>
+
 Also here is the [link](https://www.npmjs.com/package/@skilld/kaizer-component-generator) to our [ECOSYSTEM_NAME] component generator
 where you can find more information about every file in component.
 

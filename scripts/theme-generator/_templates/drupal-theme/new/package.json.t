@@ -13,7 +13,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/package.json
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@originjs/vite-plugin-content": "^1.0.3",
-    "@skilld/kaizer-component-generator": "^0.0.1-alpha",
+    "@skilld/kaizer-component-generator": "^0.0.2-alpha",
     "@storybook/addon-essentials": "^7",
     "@storybook/addon-interactions": "^7",
     "@storybook/blocks": "^7",

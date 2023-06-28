@@ -78,9 +78,9 @@ But are these initiatives enough?
 Well, `SDC` initiative can't resolve next problems:
 1. It still requires an extra layer to connect your component via twig for example - where you have to override drupal's
 twig file just to include twig of your component and map the fields to 
-[SDC slots](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/using-your-new-single-directory-component#s-using-your-component-through-a-render-array).
-2. Second problem is an actually dangerous mapping of drupal's fields to component's 
-slots itself. We are not recommending to map entity machine names to component's slots, for example:
+[SDC props and slots](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/using-your-new-single-directory-component#s-using-your-component-through-a-render-array).
+2. Second problem is an actually dangerous mapping of drupal's fields. 
+We are not recommending to map entity machine names to component's props and slots, for example:
 
 ```
 {{ include('my-title', {
@@ -145,7 +145,8 @@ front-end state up-to-date on the project. It makes your customers happy since t
 beginning of project. Since front-end developer can build all pages with all html structure, styles and scripts 
 from your unique design system, spending only ~10-20% of the project's budget and customer can see already a lot of results
 in the beginning of its project. But that's not all, because with our integration almost all components from storybook will be 
-fully re-used by Drupal, so `Storybook` becomes not a standalone tool. Methodology of doing storybook is well described [below](Below).
+fully re-used by Drupal, so `Storybook` becomes not a standalone tool. Methodology of doing storybook is well described 
+[below](#methodology-of-doing-storybook).
 
 3. Fast growing drupal experience of drupal developers.
 
@@ -156,7 +157,7 @@ fully re-used by Drupal, so `Storybook` becomes not a standalone tool. Methodolo
 2. Well known tools in theme generator.
 
 All the well known features partially coming from drupal core under the hood: postCSS, Javascript ES6, linting processes.
-Also many other very helpful features: [read below](#features-your-generated-theme-will-have).
+Also many other very helpful features: [read below](#features-generated-theme-will-have).
 
 3. Familiar structure of theme, similar to drupal core themes.
 
@@ -171,13 +172,13 @@ How to use `Component generator` is described [below](#how-to-create-new-compone
 - [Vite](https://vitejs.dev/)
 - PostCSS v8.4
 - Javascript ES6+ (No need for ES5 anymore, because all major browsers already [supporting](https://caniuse.com/?search=es6) ES6)
-- Drupal's breakpoints in CSS and JS. [Read more](some_link)
+- Drupal's breakpoints in CSS and JS. [Read more](#drupals-breakpoints-in-css-and-js)
 - Rems everywhere. Write your source css styles in pixels, but on the `build` task it will be converted to `rems` automatically.
 - [Storybook](https://storybook.js.org/docs/react/builders/vite) v7.0
 - [ECOSYSTEM_NAME] component generator - [learn more](https://www.npmjs.com/package/@skilld/kaizer-component-generator)
 - Linting and auto-fixer of CSS, JS, YML files using Stylelint, Eslint and Prettier
 - SVG sprite generator and optimizer of SVG assets. [Why SVG sprite technology](#why-svg-sprite-technology)
-- [Favicon generator](https://www.npmjs.com/package/cli-real-favicon)
+- [Favicon generator](https://www.npmjs.com/package/cli-real-favicon). Check [below](#how-to-generate-favicon) how to use favicon generator.
 - Integration with [Color](https://www.drupal.org/project/color) module to be able to customize palette of colours on your web-site through admin back office.
 - Multiple base components pre-installed in theme with minimal styles and scripts.
 
@@ -429,7 +430,7 @@ In components we are using [Atomic design](https://bradfrost.com/blog/post/atomi
 
 Component folder and files inside has atomic prefixes:
 - `a` - Atom. Usually it's tiny undividable cells, like `a-icon`, `a-checkbox`, `a-radio`, `a-throbber`, etc.
-- `h` - Helper. Kinda softener, helps other components to get some universal functionality. [Read more]() about helpers.
+- `h` - Helper. Kinda softener, helps other components to get some universal functionality. [Read more](#pre-defined-components) about helpers.
 - `m` - Molecule. Can be some `m-card`, `m-banner`, or `m-checkboxes`. So it's a good-size components, with several "atoms" inside, but not big enough
 to be organisms.
 - `o` - Organism. Can be some `o-some-view` or `o-some-block`. Analogue in Drupal are blocks for example, or views, which contains several molecules.

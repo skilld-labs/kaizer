@@ -1,5 +1,7 @@
 # [ECOSYSTEM_NAME] Theme generator
 
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/1.png?raw=true" width="350"/>
+
 This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will help you to generate your custom theme for 
 [Drupal](https://www.drupal.org/).
 
@@ -36,15 +38,16 @@ This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will h
 - - - [Molecule "Responsive Image"](#molecule-responsive-image)
 - - - [Helper "Root variables"](#helper-root-variables)
 - - - [Helper "Wrapper as link"](#helper-wrapper-as-link)
+- - [Pre-defined Drupal javascript](#pre-defined-drupal-javascript)
 - - [Third party libraries](#third-party-libraries)
 - [Methodology of doing Storybook](#methodology-of-doing-storybook)
 - - [How to split design system on components](#how-to-split-design-system-on-components)
-- [Debug](#debug)
+- [Debug in Drupal](#debug-in-drupal)
 - [License](#license)
 
 ## About ECOSYSTEM_NAME initiative
 
-The process of delivering of modern component approach in Drupal is not so easy thing. Drupal 
+The process of delivering components in Drupal is not so easy thing. Drupal 
 is having own [Render API](https://www.drupal.org/docs/drupal-apis/render-api) which is a bit out of component approach. However, component approach
 turn out to be very popular and we want to promote delivering of front-end components in Drupal.
 
@@ -169,7 +172,7 @@ How to use `Component generator` is described [below](#how-to-create-new-compone
 - PostCSS v8.4
 - Javascript ES6+ (No need for ES5 anymore, because all major browsers already [supporting](https://caniuse.com/?search=es6) ES6)
 - Drupal's breakpoints in CSS and JS. [Read more](some_link)
-- Rems everywhere. Write your source css styles in pixels, but on the `build` it will be converted to `rems` automatically.
+- Rems everywhere. Write your source css styles in pixels, but on the `build` task it will be converted to `rems` automatically.
 - [Storybook](https://storybook.js.org/docs/react/builders/vite) v7.0
 - [ECOSYSTEM_NAME] component generator - [learn more](https://www.npmjs.com/package/@skilld/kaizer-component-generator)
 - Linting and auto-fixer of CSS, JS, YML files using Stylelint, Eslint and Prettier
@@ -708,6 +711,20 @@ use `wrapper-as-link-target-built` attribute to improve visual styling.
 
 Be careful, if in your entity you have several links with different `href`, probably you shouldn't use this script in that case.
 
+### Pre-defined Drupal javascript
+
+After theme generation you will find two javascript files in `/js` folder:
+
+1. `ajax-throbber.src.js` and its compiled version. This file is supposed to override ajax throbbers in Drupal.
+It's fully aligned with the pre-defined components so normally you will see all the same ajax throbbers in Drupal,
+just like in Storybook when you activating `Ajax` control in component. For now there is only 3 types of components
+where ajax throbber is reflecting: for buttons (there is different logic of throbber in case if button doesn't have icons,
+or have icon only before text or after), for radios and checkboxes. If `element` which is triggered ajax request is
+not in this list - fullscreen throbber will be added.
+2. `states.src.js` and its compiled version. Since we are using SVG sprite technology, we have switched
+`input` html tag on `button` in `a-input-submit` component. However, drupal's core `states.js` can't handle `button`
+html tags. So this file contains a fix for `disabled` state for `button` html tag for form submits.
+
 ### Third party libraries
 
 We want to follow drupal core principle in terms of third party libraries. So libraries should live in `/libraries/library-folder/`
@@ -838,9 +855,23 @@ Pages
 - Footer
 - - `o-some-organisms`
 
-## Debug
+## Debug in Drupal
 
+For debugging in Drupal you need to:
 
+1. Disable aggregation first on performance page `/admin/config/development/performance`
+
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/2.png?raw=true" width="400"/>
+
+2. Thanks to Drupal 10.1 we now have `Development settings` page `/admin/config/development/settings`. You have
+to enable everything on this page
+
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/3.png?raw=true" width="400"/>
+
+3. Then open DevTools in browser on the user page and there you will see a lot of useful information for every
+layer of render
+
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/4.png?raw=true" width="600"/>
 
 ## License
 

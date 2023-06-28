@@ -861,17 +861,17 @@ For debugging in Drupal you need to:
 
 1. Disable aggregation first on performance page `/admin/config/development/performance`
 
-<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/2.png?raw=true" width="400"/>
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/2.png?raw=true" width="500"/>
 
 2. Thanks to Drupal 10.1 we now have `Development settings` page `/admin/config/development/settings`. You have
 to enable everything on this page
 
-<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/3.png?raw=true" width="400"/>
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/3.png?raw=true" width="500"/>
 
 3. Then open DevTools in browser on the user page and there you will see a lot of useful information for every
 layer of render
 
-<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/4.png?raw=true" width="600"/>
+<img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/4.png?raw=true" width="700"/>
 
 ## License
 

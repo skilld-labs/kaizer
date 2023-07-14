@@ -1,6 +1,3 @@
----
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/vite.build.js
----
 const { build } = require('vite');
 const { sync } = require('glob');
 const { resolve, extname } = require('path');

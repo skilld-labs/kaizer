@@ -1,0 +1,7 @@
+{% set classes = [
+  'a-icon',
+  'a-icon--' ~ icon,
+] %}
+<svg {{ attributes.addClass(classes).setAttribute('aria-hidden', 'true') }}>
+  <use xlink:href="{{ my_custom_svg_sprite }}#svg-{{ icon }}"></use>
+</svg>

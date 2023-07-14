@@ -1,6 +1,3 @@
----
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/postcss.config.mjs
----
 import { parse } from 'yaml';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
@@ -15,7 +12,7 @@ import postcssDiscardEmpty from 'postcss-discard-empty';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const breakpoints = parse(
-  readFileSync(resolve(__dirname, './<%= h.changeCase.lower(name) %>.breakpoints.yml'), 'utf8'),
+  readFileSync(resolve(__dirname, './my_theme.breakpoints.yml'), 'utf8'),
 );
 
 const breakpointsLoaded = Object.keys(breakpoints).reduce(

@@ -1,0 +1,12 @@
+a_input_search:
+  use: '@component/a-input-search/a-input-search.html.twig'
+  label: Atoms / Input search
+  hook theme: 'input__search'
+  base hook: 'input'
+  libraries:
+    - a-input-search:
+        css:
+          component:
+            a-input-search.css: {}
+#        js:
+#          a-input-search.js: {}

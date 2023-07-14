@@ -1,0 +1,10 @@
+a_throbber:
+  use: '@component/a-throbber/a-throbber.html.twig'
+  label: Atoms / Throbber
+#  libraries:
+#    - a-throbber:
+#        css:
+#          component:
+#            a-throbber.css: {}
+#        js:
+#          a-throbber.js: {}

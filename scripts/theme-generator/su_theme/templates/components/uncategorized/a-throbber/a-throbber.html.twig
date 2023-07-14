@@ -1,0 +1,11 @@
+{% if circle %}
+  {% include '@component/a-icon/a-icon.html.twig' with {
+    attributes: create_attribute().addClass('a-throbber', 'a-throbber--circle'),
+    icon: 'throbber-circle',
+    su_theme_svg_sprite: su_theme_svg_sprite,
+  } only %}
+{% else %}
+  <div class="a-throbber a-throbber--fullscreen">
+    <div class="a-throbber__line"></div>
+  </div>
+{% endif %}

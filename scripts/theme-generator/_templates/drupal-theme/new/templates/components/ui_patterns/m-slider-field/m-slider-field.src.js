@@ -6,13 +6,11 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/ui_patte
  * This is component script template.
  */
 
-(({ behaviors }, Splide) => {
+import Splide from '@splidejs/splide';
+
+(({ behaviors }) => {
   behaviors.<%= h.changeCase.camelCase(name) %>MoleculeSliderField = {
     attach: (context) => {
-      if (!Splide) {
-        return;
-      }
-
       once('m-slider-field', '.m-slider-field', context).forEach((el) => {
         const sliderEl = el.querySelector('.m-slider-field__slider');
         if (sliderEl) {
@@ -64,4 +62,4 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/ui_patte
       slider.mount();
     },
   };
-})(Drupal, window.Splide);
+})(Drupal);

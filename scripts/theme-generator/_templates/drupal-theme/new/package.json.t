@@ -35,6 +35,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/package.json
   },
   "dependencies": {
     "@drupal/once": "^1.0.1",
+    "@splidejs/splide": "^4.1.4",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -65,8 +66,8 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/package.json
     "build:watch": "node vite.build.js --watch",
     "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "lint": "stylelint \"**/*.css\" --config='./.stylelintrc' & eslint --ext .yml . & eslint \"**/*.src.js\" --max-warnings 0 && prettier -c .",
-    "lint:fix": "stylelint \"**/*.css\" --config='./.stylelintrc' --fix & eslint --ext .yml . --fix & eslint \"**/*.src.js\" --fix --max-warnings 0 && prettier -w --cache .",
+    "lint": "stylelint \"**/*.src.css\" --config './.stylelintrc' --max-warnings '0' & eslint --ext .yml . & eslint \"**/*.src.js\" --max-warnings 0 && prettier -c .",
+    "lint:fix": "stylelint \"**/*.src.css\" --config './.stylelintrc' --fix --max-warnings '0' & eslint --ext .yml . --fix & eslint \"**/*.src.js\" --fix --max-warnings 0 && prettier -w --cache .",
     "favicon": "mkdir -p favicon && real-favicon generate favicon.config.json favicon.output.json favicon && rm favicon.output.json",
     "svg-fix": "oslllo-svg-fixer -s images/svg/${FILE} -d images/svg && svgo images/svg/${FILE} -o images/svg --final-newline --config svgo.config.js",
     "svg-fix:all": "oslllo-svg-fixer -s images/svg -d images/svg && svgo -f images/svg -o images/svg --final-newline --config svgo.config.js",

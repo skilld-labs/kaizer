@@ -1,0 +1,5 @@
+.a-input-radio {
+  &__icon {
+    border-radius: 50%;
+  }
+}

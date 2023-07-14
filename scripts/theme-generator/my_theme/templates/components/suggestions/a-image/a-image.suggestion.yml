@@ -1,0 +1,11 @@
+a_image:
+  use: '@component/a-image/a-image.html.twig'
+  label: Atom / Image
+  base hook: 'image'
+  libraries:
+    - a-image:
+        css:
+          component:
+            a-image.css: {}
+#        js:
+#          a-image.js: {}

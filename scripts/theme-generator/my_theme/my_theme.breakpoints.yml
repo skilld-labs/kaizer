@@ -1,0 +1,56 @@
+my_theme.xxs:
+  label: xxs
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.xs:
+  label: xs
+  mediaQuery: '(min-width: 361px)'
+  weight: 10
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.s:
+  label: s
+  mediaQuery: '(min-width: 481px)'
+  weight: 20
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.m:
+  label: m
+  mediaQuery: '(min-width: 769px)'
+  weight: 30
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.l:
+  label: l
+  mediaQuery: '(min-width: 1025px)'
+  weight: 40
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.xl:
+  label: xl
+  mediaQuery: '(min-width: 1441px)'
+  weight: 50
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x
+my_theme.xxl:
+  label: xxl
+  mediaQuery: '(min-width: 1921px)'
+  weight: 60
+  group: my_theme
+  multipliers:
+    - 1x
+    - 2x

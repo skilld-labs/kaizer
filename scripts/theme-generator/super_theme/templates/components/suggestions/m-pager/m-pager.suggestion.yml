@@ -1,0 +1,11 @@
+m_pager:
+  use: '@component/m-pager/m-pager.html.twig'
+  label: Molecules / Pager
+  base hook: 'pager'
+  libraries:
+    - m-pager:
+        css:
+          component:
+            m-pager.css: {}
+#        js:
+#           m-pager.js: {}

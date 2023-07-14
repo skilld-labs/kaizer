@@ -1,0 +1,12 @@
+a_input_checkbox:
+  use: '@component/a-input-checkbox/a-input-checkbox.html.twig'
+  label: Atoms / Input checkbox
+  hook theme: 'input__checkbox'
+  base hook: 'input'
+  libraries:
+    - a-input-checkbox:
+        css:
+          component:
+            a-input-checkbox.css: {}
+#        js:
+#          a-input-checkbox.js: {}

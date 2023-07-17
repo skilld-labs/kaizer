@@ -87,33 +87,41 @@ window.drupalSettings = {
 };
 
 ((Drupal, drupalSettings) => {
-  document.addEventListener('DOMContentLoaded', () => {
-    Drupal.t = function (str) {
-      return str;
-    };
+  Drupal.t = function (str) {
+    return str;
+  };
 
-    Drupal.throwError = function (error) {
-      setTimeout(function () {
-        throw error;
-      }, 0);
-    };
+  Drupal.throwError = function (error) {
+    setTimeout(function () {
+      throw error;
+    }, 0);
+  };
 
-    Drupal.attachBehaviors = function (context, settings) {
-      context = context || document;
-      settings = settings || drupalSettings;
-      const behaviors = Drupal.behaviors;
-      // Execute all of them.
-      Object.keys(behaviors || {}).forEach((i) => {
-        if (typeof behaviors[i].attach === 'function') {
-          // Don't stop the execution of behaviors in case of an error.
-          try {
-            behaviors[i].attach(context, settings);
-          } catch (e) {
-            Drupal.throwError(e);
-          }
+  Drupal.attachBehaviors = function (context, settings) {
+    context = context || document;
+    settings = settings || drupalSettings;
+    let behaviors = Drupal.behaviors;
+    Object.keys(behaviors || {}).forEach((i) => {
+      if (typeof behaviors[i].attach === 'function') {
+        // Don't stop the execution of behaviors in case of an error.
+        try {
+          behaviors[i].attach(context, settings);
+        } catch (e) {
+          Drupal.throwError(e);
         }
-      });
-    };
+      }
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
     Drupal.attachBehaviors(document, drupalSettings);
+    Drupal.behaviors = new Proxy(Drupal.behaviors, {
+      set(target, prop, value) {
+        // Drupal.attachBehaviors(document, drupalSettings, key);
+        target[prop] = value;
+        Drupal.attachBehaviors(document, drupalSettings);
+        return true;
+      },
+    });
   });
 })(Drupal, window.drupalSettings);

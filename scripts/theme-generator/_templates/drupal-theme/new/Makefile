@@ -42,11 +42,8 @@ install:
 build:
 	$(call frontexec, yarn build)
 
-build\:theme:
-	$(call frontexec, yarn build\:theme)
-
-build\:components:
-	$(call frontexec, yarn build\:components)
+build\:watch:
+	$(call frontexec, yarn build\:watch)
 
 build\:storybook:
 	$(call frontexec, yarn build\:storybook)

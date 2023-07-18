@@ -122,8 +122,6 @@ Yes, `UI patterns` already can provide you many different ways of connection you
 as a layout, as a view style, and so on. So potentially you can build ~60% of the web-site only by using `UI Patterns`
 and configuration of them via admin back-office.
 
-However, it's not a `native` integration. It's a large ecosystem with a lot of custom code.
-
 ### Our native integration
                 
 We wanted to get rid of all the extra layers to connect components in Drupal and stay native and flexible
@@ -225,32 +223,30 @@ should think first how this component will be integrated in Drupal - as a `theme
 way. If front-end developer sure its `my-selectbox` component should be applied to core theme hook `select` - there is
 no problem with it, so front-end developer can just move its component into `suggestions` folder ([Read again about our integration](some_link)
 if you don't clearly understand why `suggestions` folder). But if front-end developer can't guess what this component
-will be in Drupal - a component should be placed in `storybook` folder and wait for its usage. When back-end developer will 
-start to work on this subject - he can decide how component can be integrated in Drupal and move it from `storybook` folder 
+will be in Drupal - a component should be placed in `uncategorized` folder and wait for its usage. When back-end developer will 
+start to work on this subject - he can decide how component can be integrated in Drupal and move it from `uncategorized` folder 
 to the one of other folders.
 
 However, it was recommended usage. But you also may not use our integration at all. There is always available folders:
 - `templates/overrides` for your twig overrides
-- `css` for storing styles
-- `js` for javascript
+- `css/` for storing styles
+- `js/` for javascript
 - `theme_name.theme` for hooks
-
-So if you want you can use old-school ways of delivering front-end.
 
 ### Structure of generated theme
 
 - Source CSS and JS files have suffixes `.src` in filenames
 - Generated styles and scripts doesn't have `.src` suffix. Normally you should never touch generated assets since it's build affected
-- Styles and scripts required only by Drupal can be added in the root `css` or `js` folders. For example styles 
+- Styles and scripts required only by Drupal can be added in the root `css/` or `js/` folders. For example styles 
   for administrative toolbar - we don't want to take care about such components in storybook. So toolbar overrides 
-  can be done only for drupal - that's why `css` and `js` folders were created in the root of theme
-- `.storybook` folder for storing storybook stuff. If you don't use storybook on your project - feel free just ignore or remove this folder
-- `favicon` folder contains generated favicons for different browsers. You can generate your custom favicon [this way](#how-to-generate-favicon)
-- `fonts` folder for storing project fonts
-- `images/svg` folder for storing source SVG assets. Pay attention to `images/sprite.svg` - this file is auto-generated, 
+  can be done only for Drupal
+- `.storybook/` folder for storing storybook stuff. If you don't use storybook on your project - feel free just ignore or remove this folder
+- `favicon/` folder contains generated favicons for different browsers. You can generate your custom favicon [this way](#how-to-generate-favicon)
+- `fonts/` folder for storing project fonts
+- `images/svg/` folder for storing source SVG assets. Pay attention to `images/sprite.svg` - this file is auto-generated, 
 so you shouldn't modify it normally. [Read more](#svg-sprite) about SVG sprite
-- `templates` folder contains two sub-folders. One of them is `overrides` - this folder is for drupal's twig overrides. 
-And `components` folder for storing components required by our integration.
+- `templates/` folder contains two sub-folders. One of them is `overrides/` - this folder is for drupal's twig overrides. 
+And `components/` folder for storing components required by our integration.
 
 ## How to create new component
 
@@ -263,19 +259,17 @@ New component will be added in `templates/components/**` folder. Read more about
 
 Simply run `yarn build` or via docker `make build`
 
-It will compile all assets from `css`, `js` and `templates/components/**` folders. Compiled assets
+It will compile all assets from `css/`, `js/` and `templates/components/**` folders. Compiled assets
 are living near to sources. So we don't have `dist` or `app` folder in the root of theme.
 
-If you are not using storybook and storing your assets only in `css` and `js` folders in root of theme, 
-you can speed up build by using `yarn build:theme` command or via docker 
-`make build:theme`.
+`build` task contains subtask `lint:fix` which executes right after build - so linting with auto-fixer included.
 
-If you want to compile only components you can use command `yarn build:components` or via docker
-`make build:components`.
+There is Stylelint, ESlint and Prettier for the linting of code. Warnings are not allowed -> that's why any warning
+in console will be targeted as `error` type. Stylelint and ESlint are running in a parallel and once it's finished - Prettier 
+executes. If you got an error on Stylelint or ESlint steps - Prettier will not be executed. Note that <strong>you
+have to resolve all errors in console before making commit.</strong>
 
-But note that linter auto-fixer is included only in `build` command. So if you are using `build:theme`
-of `build:components` tasks - you also have to run `yarn lint:fix` or `make lint:fix` commands to fix
-linting warnings and errors.
+There is also watcher available, just run `yarn build:watch` or `make build:watch` to enable it.
 
 ## How to run and compile storybook
 
@@ -288,12 +282,12 @@ To create static storybook run `yarn build:storybook` or `make build:storybook`
 
 Linting and auto-fixers are already included in `build` command. So normally if you are using 
 `yarn build` or `make build`
-commands - it's already enough. But if for some reason you want to just lint assets without `build` task
+commands - it's already enough. But if you want to just lint assets without `build` task
 simply run `yarn lint` command (or via docker `make lint`).
 And if you want to auto-fix linting errors, run `yarn lint:fix` (or via docker 
 `make lint:fix`)
 
-All warnings are interpreting by all kind of linters as errors, because everyone want to have clear theme.
+All warnings are interpreting by all kind of linters as errors.
 So if you are using CI or some custom scripts before `git commit` for validation or something, you
 will get failed results even in case of `warnings`.
 
@@ -305,7 +299,7 @@ Drupal's responsive images.
 Based on [Breakpoints in Drupal](https://www.drupal.org/docs/theming-drupal/working-with-breakpoints-in-drupal)
 you have already pre-defined `theme_name.breakpoints.yml` file in theme with some pre-defined breakpoints after installation
 of your new theme. Of course your custom design system can have own breakpoints system, but if it's not - you can simply use 
-default breakpoints provided by our theme generator. You also can use breakpoints from CSS or JS.
+default breakpoints provided by our theme generator. And you can use those breakpoints from CSS or JS.
 
 Usage in CSS:
 ```
@@ -335,7 +329,7 @@ drupalSettings.yourThemeBreakpoints.xxl
 So you can simply check if window is matching specific media, like this for example:
 
 ```
-if (window.matchMedia(drupalSettings.yourThemeBreakpoints.l)) { ... }
+if (window.matchMedia(drupalSettings.yourThemeBreakpoints.xl).matches) { ... }
 ```
 
 All the default breakpoints you will get after theme installation are market and `mobile first` based. `Market based` means we did an 
@@ -343,7 +337,7 @@ analysis of market of world-spread electronic devices and default breakpoints ar
 
 Answering your questions why for example breakpoint `min-width: 1441px` and not `1440px` - it's logically justified.
 Well a big amount of laptops around the world have screens with the resolution `1440` pixels. Now guess any
-responsive image which is taking a whole width of viewport (for example some banner image) - it makes sense to `1440` pixels
+responsive image which is taking a whole width of viewport (for example some banner image) - it makes sense to load `1440` pixels
 image on such laptops, isn't? If there was a breakpoint `min-width: 1440px` - then on such screens the next breakpoint could be
 triggered.
 
@@ -730,16 +724,22 @@ html tags. So this file contains a fix for `disabled` state for `button` html ta
 
 ### Third party libraries
 
-We want to follow drupal core principle in terms of third party libraries. So libraries should live in `/libraries/library-folder/`
+We want to follow drupal core principle in terms of third party libraries. So libraries should live in `/libraries/your-library-folder/`
 in the root of project and been manageable via root `composer`. This is recommended process of managing and delivering 
 third party libraries in Drupal.
 
 However front-end world loves `package.json` and want to have control on used third party libraries in there. This topic is still
 WIP and there is no "good" solution at this moment. 
 
-What you can do today is:
-1. Declare assets of third party libraries in Storybook separately in `theme_name/.storybook/preview-head.html` file. 
-After theme installation you already have `jQuery` and `Splide` (for carousels) libraries declared out there.
+What you can do today is next:
+1. You can manage third party libraries in `package.json` of the theme and then `import` it normally right in your `my-component.src.js`,
+same to CSS - `@import "your-lib.css"`. Imported libraries are not affecting `build` task and will be compiled in every target files
+in every component where you did imports. <strong>We don't have chunks!</strong> - that means if you will import same library 10 times in 10
+different components - library will be compiled 10 times in 10 different files. So it's a question of your architecture. If you need to call
+same library several times -> create new component and put your library in there and then re-use it as a dependency in Drupal. The more times
+you are using libraries via `import`, the more weight of those libs - the more `build` becomes slower.
+2. Alternative way is to declare assets of third party libraries in Storybook separately in `theme_name/.storybook/preview-head.html` file. 
+After theme installation you already have `jQuery` library declared out there.
 So when you will run Storybook there will be already accessible libraries in DOM, and then in your javascript of components you
 have to write same code as it's done in Drupal core.
 
@@ -759,9 +759,10 @@ For example if we are talking about `Splide` library, then JS code in your compo
 })(Drupal, window.Splide);
 ```
 
-2. In the root `composer` you have to add `Splide` library again exclusively for Drupal. So once `composer require <some_library>`
+Then, in the root `composer` you have to add `Splide` package again exclusively for Drupal. So once `composer require <some_library>`
 will be executed - third party library will be downloaded into root `/libraries` folder.
-3. Declare a new drupal library in `theme_name.libraries.yml` with the paths to CSS and JS assets of your third party library, like:
+
+Then, declare a new Drupal library in `theme_name.libraries.yml` with the paths to CSS and JS of your third party library, like:
 
 ```
 splide:
@@ -772,9 +773,9 @@ splide:
     /libraries/splide/dist/js/splide.min.js: { minified: true }
 ```
 
-4. And then link this drupal library as a dependency in your `component-name.[type_of_integration].yml`
+And then link this drupal library as a dependency in your `component-name.[type_of_integration].yml`
 
-Other solutions are currently unstable.
+<strong>Other solutions are currently unstable.</strong>
 
 We are working on this subject and will try to find a good and simple solution which will make everyone happy.
 

@@ -733,7 +733,7 @@ WIP and there is no "good" solution at this moment.
 
 What you can do today is next:
 1. You can manage third party libraries in `package.json` of the theme and then `import` it normally right in your `my-component.src.js`,
-same to CSS - `@import "your-lib.css"`. Imported libraries are not affecting `build` task and will be compiled in every target files
+same to CSS - `@import "your-lib.css"`. Imported libraries are not affecting linters and it be compiled in every target files
 in every component where you did imports. <strong>We don't have chunks!</strong> - that means if you will import same library 10 times in 10
 different components - library will be compiled 10 times in 10 different files. So it's a question of your architecture. If you need to call
 same library several times -> create new component and put your library in there and then re-use it as a dependency in Drupal. The more times

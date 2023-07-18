@@ -71,7 +71,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/m-
   text-decoration: underline;
   color: var(--color-black);
 }
-
 @media (hover: hover) {
   .m-menu-main__list--level-1 > .m-menu-main__item:hover > .m-menu-main__link {
     color: var(--color-black);

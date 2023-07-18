@@ -14,7 +14,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/
 .h-container--hp-1 {
   padding-inline: 1rem;
 }
-
 @media (min-width: 1025px) {
   .h-container--hp-1 {
     padding-inline: 2.5rem;
@@ -23,7 +22,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/
 .h-container--vp-1 {
   padding-block: 1rem;
 }
-
 @media (min-width: 1025px) {
   .h-container--vp-1 {
     padding-block: 2.5rem;
@@ -32,7 +30,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/
 .h-container--hm-1 {
   margin-inline: 1rem;
 }
-
 @media (min-width: 1025px) {
   .h-container--hm-1 {
     margin-inline: 2.5rem;
@@ -41,7 +38,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/layouts/
 .h-container--vm-1 {
   margin-block: 1rem;
 }
-
 @media (min-width: 1025px) {
   .h-container--vm-1 {
     margin-block: 2.5rem;

@@ -50,13 +50,6 @@ color.preview:
   dependencies:
     - color/drupal.color
 
-slider-library:
-  css:
-    component:
-      /libraries/splide/dist/css/splide-core.min.css: { minified: true }
-  js:
-    /libraries/splide/dist/js/splide.min.js: { minified: true }
-
 states:
   js:
     js/states.js: {}

@@ -40,7 +40,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/js/ajax-throbber.js
       classes ? ` ${classes}` : ''
     }" aria-hidden="true">
       <use xlink:href="${
-        drupalSettings.ololoSvgSprite
+        drupalSettings.<%= h.changeCase.camelCase(name) %>SvgSprite
       }#svg-throbber-circle"></use>
     </svg>
   `;

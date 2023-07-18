@@ -38,7 +38,6 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncatego
   content: '';
   background-color: var(--color-black);
 }
-
 @media (min-width: 769px) {
   .a-throbber__line {
     width: 50%;

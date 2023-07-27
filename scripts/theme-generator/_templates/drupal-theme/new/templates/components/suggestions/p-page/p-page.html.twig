@@ -20,15 +20,15 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggesti
           </div>
         {% endif %}
         <div class="p-page__controls">
-          {% include '@component/a-input-submit/a-input-submit.html.twig' with {
+          {% include '@component/a-button/a-button.html.twig' with {
             attributes: create_attribute().addClass('p-page__control', 'p-page__control--menu-open'),
-            value: 'Open'|t,
+            content: 'Open'|t,
             trailing_icon: 'menu',
             <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
           } only %}
-          {% include '@component/a-input-submit/a-input-submit.html.twig' with {
+          {% include '@component/a-button/a-button.html.twig' with {
             attributes: create_attribute().addClass('p-page__control', 'p-page__control--menu-close'),
-            value: 'Close'|t,
+            content: 'Close'|t,
             trailing_icon: 'close',
             <%= h.changeCase.lower(name) %>_svg_sprite: <%= h.changeCase.lower(name) %>_svg_sprite,
           } only %}

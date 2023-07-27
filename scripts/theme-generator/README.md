@@ -352,7 +352,7 @@ There is a lot of benefits of using svg sprite instead of other technologies of 
 
 1. SVG sprite is cached by browser once user visited any page
 2. Possibility to customize colors for single color icons based on design system palette
-3. Technology suppoer by all major browsers
+3. Technology supported by all major browsers
 4. No blinking effects on hover of icon which happens to iconic CSS background images for example
 5. Weight of SVG sprite is tiny if to compare with CSS background images, or iconic fonts technologies
 6. No shred of quality degradation on resize, but also better anti aliasing than iconic fonts for example
@@ -445,7 +445,7 @@ twig suggestion is `select.html.twig` - twig in our component will never have sa
 Every component folder contains several files inside:
 - `.src.css` and it's compiled version `.css`
 - `.src.js` and it's compiled version `.js`. By the way in these js files we initially have code wrapped in Drupal's behavior. Drupal's `settings` and `context` are also available and it works in storybook.
-- `.stories.js` - for storybook needs. Initially such files contains everything you will need to build any component. If you don't want
+- `.stories.js` - for storybook needs. Initially such files contains everything you will need for preview any component in storybook. If you don't want
 to support storybook on your project - you can just ignore this file.
 - `.html.twig` - twig of component. By the way `attributes` variable is always available in any component by default in Storybook. Other fields and settings you can declare in `.yml` file or describe them in `.stories.js`
 - `.yml` - configuration of component. [Read more](https://www.npmjs.com/package/@skilld/kaizer-component-generator) about how to write `yml` files and also explanation of every file inside component.

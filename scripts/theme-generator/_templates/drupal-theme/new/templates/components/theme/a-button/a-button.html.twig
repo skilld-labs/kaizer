@@ -1,16 +1,12 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-link-button/a-link-button.html.twig
+to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-button/a-button.html.twig
 ---
 {% set classes = [
-  'a-link-button',
+  'a-button',
   'h-button',
   type and type != 'default' ? 'h-button--' ~ type : [],
 ] %}
-{% if href %}
-  {% set tag = 'a' %}
-  {% set attributes = attributes.setAttribute('href', href) %}
-{% endif %}
-<{{ tag|default('span') }} {{ attributes.addClass(classes) }}>
+<button {{ attributes.addClass(classes) }}>
   {% if leading_icon and leading_icon != 'default' %}
     <span class="h-button__icon-container h-button__icon-container--start">
       {% include '@component/a-icon/a-icon.html.twig' with {
@@ -37,4 +33,4 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-
      } only %}
    </span>
   {% endif %}
-</{{ tag|default('span') }}>
+</button>

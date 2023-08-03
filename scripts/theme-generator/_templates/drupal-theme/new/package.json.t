@@ -59,7 +59,7 @@ to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/package.json
     "yaml": "^2.2.2"
   },
   "resolutions": {
-    "file-system-cache": "2.3.0"
+    "jackspeak": "2.1.1"
   },
   "scripts": {
     "build": "node vite.build.js && yarn lint:fix",

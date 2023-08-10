@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-form-element-label/m-form-element-label.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/suggestions/m-form-element-label/m-form-element-label.stories.js` : null %>"
 ---
 import {
   defRender,

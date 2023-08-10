@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-input-submit/a-input-submit.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/theme/a-input-submit/a-input-submit.stories.js` : null %>"
 ---
 import {
   defRender,

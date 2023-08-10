@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/uncategorized/o-dialog/o-dialog.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/uncategorized/o-dialog/o-dialog.stories.js` : null %>"
 ---
 import {
   defRender,

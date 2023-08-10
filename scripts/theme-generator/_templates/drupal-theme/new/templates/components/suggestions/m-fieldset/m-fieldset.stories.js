@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-fieldset/m-fieldset.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/suggestions/m-fieldset/m-fieldset.stories.js` : null %>"
 ---
 import {
   defRender,

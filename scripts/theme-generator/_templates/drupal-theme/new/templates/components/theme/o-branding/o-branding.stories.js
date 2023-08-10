@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/o-branding/o-branding.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/theme/o-branding/o-branding.stories.js` : null %>"
 ---
 import {
   defRender,

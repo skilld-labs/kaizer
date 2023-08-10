@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/a-image/config.styles.yml
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/suggestions/a-image/config.styles.yml` : null %>"
 ---
 # This is yml configuration where all image styles should be defined from the
 # entire design system.

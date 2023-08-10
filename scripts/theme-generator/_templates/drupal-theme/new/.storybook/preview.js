@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/.storybook/preview.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/.storybook/preview.js` : null %>"
 ---
 import '../color/colors.css';
 import '../css/styles.src.css';

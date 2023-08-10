@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/ui_patterns/m-grid-field/m-grid-field.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/ui_patterns/m-grid-field/m-grid-field.stories.js` : null %>"
 ---
 import {
   defRender,

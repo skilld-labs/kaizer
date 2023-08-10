@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_way === 'layout' || connection_way === 'suggestion') { %>s<% } %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>/<%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.stories.js
+to: "<%= h.has_storybook === 'true' || typeof has_storybook != 'undefined' ? `${h.src()}/templates/components/${connection_way}${connection_way === 'layout' || connection_way === 'suggestion' ? 's' : ''}/${h.changeCase.lower(component_type).charAt(0)}-${h.changeCase.lower(h.inflection.dasherize(name))}/${h.changeCase.lower(component_type).charAt(0)}-${h.changeCase.lower(h.inflection.dasherize(name))}.stories.js` : null %>"
 ---
 import {
   defRender,

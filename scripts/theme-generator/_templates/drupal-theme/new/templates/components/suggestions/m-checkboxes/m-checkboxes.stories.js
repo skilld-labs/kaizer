@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-checkboxes/m-checkboxes.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/suggestions/m-checkboxes/m-checkboxes.stories.js` : null %>"
 ---
 import {
   defRender,

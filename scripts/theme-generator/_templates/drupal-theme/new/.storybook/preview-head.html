@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/.storybook/preview-head.html
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/.storybook/preview-head.html` : null %>"
 ---
 <script>
   window.global = window;

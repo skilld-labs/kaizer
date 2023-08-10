@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/.storybook/plugins/story-handler.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/.storybook/plugins/story-handler.js` : null %>"
 ---
 import { useParameter, useEffect } from '@storybook/client-api';
 import DrupalAttribute from 'drupal-attribute';

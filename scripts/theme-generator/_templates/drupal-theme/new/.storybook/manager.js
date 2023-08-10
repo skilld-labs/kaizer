@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/.storybook/manager.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/.storybook/manager.js` : null %>"
 ---
 import { addons } from '@storybook/addons';
 

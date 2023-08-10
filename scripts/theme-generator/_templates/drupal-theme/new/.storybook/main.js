@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/.storybook/main.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/.storybook/main.js` : null %>"
 ---
 import content from '@originjs/vite-plugin-content';
 

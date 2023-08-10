@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-responsive-image/config.groups.yml
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/suggestions/m-responsive-image/config.groups.yml` : null %>"
 ---
 # This is yml configuration where all responsive image groups should be defined
 # from the entire design system.

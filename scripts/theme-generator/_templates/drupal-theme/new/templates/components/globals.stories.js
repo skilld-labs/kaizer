@@ -1,5 +1,5 @@
 ---
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/globals.stories.js
+to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/templates/components/globals.stories.js` : null %>"
 ---
 import { useEffect, useState } from '@storybook/client-api';
 import parse from 'style-to-object';

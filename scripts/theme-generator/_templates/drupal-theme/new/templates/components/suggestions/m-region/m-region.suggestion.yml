@@ -5,10 +5,3 @@ m_region:
   use: '@component/m-region/m-region.html.twig'
   label: Molecules / Region
   base hook: 'region'
-#  libraries:
-#    - m-region:
-#        css:
-#          component:
-#            m-region.css: {}
-#        js:
-#           m-region.js: {}

@@ -110,5 +110,3 @@ m_text_field:
         css:
           component:
             m-text-field.css: {}
-#        js:
-#          m-text-field.js: {}

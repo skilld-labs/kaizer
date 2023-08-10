@@ -24,5 +24,3 @@ m_card:
         css:
           component:
             m-card.css: {}
-#        js:
-#           m-card.js: {}

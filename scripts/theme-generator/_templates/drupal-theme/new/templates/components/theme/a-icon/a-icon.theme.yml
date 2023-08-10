@@ -30,5 +30,3 @@ a_icon:
         css:
           component:
             a-icon.css: {}
-#        js:
-#          a-icon.js: {}

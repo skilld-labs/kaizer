@@ -6,10 +6,3 @@ a_input_text:
   label: Atoms / Input text
   hook theme: 'input__textfield'
   base hook: 'input'
-#  libraries:
-#    - a-input-text:
-#        css:
-#          component:
-#            a-input-text.css: {}
-#        js:
-#          a-input-text.js: {}

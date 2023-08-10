@@ -54,10 +54,3 @@ a_link_button:
         search: Search
         throbber-circle: Throbber circle
         warning: Warning
-#  libraries:
-#    - a-link-button:
-#        css:
-#          component:
-#            a-link-button.css: {}
-#        js:
-#          a-link-button.js: {}

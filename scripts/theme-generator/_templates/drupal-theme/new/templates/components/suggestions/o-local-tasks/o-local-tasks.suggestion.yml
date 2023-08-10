@@ -10,5 +10,3 @@ o_local_tasks:
         css:
           component:
             o-local-tasks.css: {}
-#        js:
-#           o-local-tasks.js: {}

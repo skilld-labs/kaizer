@@ -11,5 +11,3 @@ o_branding:
         css:
           component:
             o-branding.css: {}
-#        js:
-#           o-branding.js: {}

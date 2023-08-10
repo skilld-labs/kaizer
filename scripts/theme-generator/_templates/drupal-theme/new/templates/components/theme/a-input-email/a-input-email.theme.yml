@@ -6,10 +6,3 @@ a_input_email:
   label: Atoms / Input email
   hook theme: 'input__email'
   base hook: 'input'
-#  libraries:
-#    - a-input-email:
-#        css:
-#          component:
-#            a-input-email.css: {}
-#        js:
-#          a-input-email.js: {}

@@ -1,4 +1,0 @@
----
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/theme/a-input-submit/a-input-submit.src.css
----
-/* .a-input-submit {} */

@@ -9,7 +9,6 @@ m_flex_field:
       label: Label
     items:
       label: Items
-  # Uncomment settings if your component should have settings
   settings:
     gap:
       type: select
@@ -89,5 +88,3 @@ m_flex_field:
         css:
           component:
             m-flex-field.css: {}
-#        js:
-#          m-flex-field.js: {}

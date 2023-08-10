@@ -11,5 +11,3 @@ a_input_search:
         css:
           component:
             a-input-search.css: {}
-#        js:
-#          a-input-search.js: {}

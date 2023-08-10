@@ -46,10 +46,3 @@ h_container:
       options:
         default: No vertical margin
         vm-1: Vertical margin type 1
-#  libraries:
-#    - h-container:
-#        css:
-#          component:
-#            h-container.css: {}
-#        js:
-#          h-container.js: {}

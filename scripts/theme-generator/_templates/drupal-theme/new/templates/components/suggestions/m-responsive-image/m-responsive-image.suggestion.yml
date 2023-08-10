@@ -10,5 +10,3 @@ m_responsive_image:
         css:
           component:
             m-responsive-image.css: {}
-#        js:
-#          m-responsive-image.js: {}

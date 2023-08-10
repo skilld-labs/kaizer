@@ -10,5 +10,3 @@ m_checkboxes:
         css:
           component:
             m-checkboxes.css: {}
-#        js:
-#           m-checkboxes.js: {}

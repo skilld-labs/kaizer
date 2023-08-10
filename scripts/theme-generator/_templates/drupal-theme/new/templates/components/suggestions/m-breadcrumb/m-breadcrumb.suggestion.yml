@@ -10,5 +10,3 @@ m_breadcrumb:
         css:
           component:
             m-breadcrumb.css: {}
-#        js:
-#           m-breadcrumb.js: {}

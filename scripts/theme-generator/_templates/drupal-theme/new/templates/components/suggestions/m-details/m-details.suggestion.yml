@@ -10,5 +10,3 @@ m_details:
         css:
           component:
             m-details.css: {}
-#        js:
-#           m-details.js: {}

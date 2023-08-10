@@ -10,5 +10,3 @@ m_pager:
         css:
           component:
             m-pager.css: {}
-#        js:
-#           m-pager.js: {}

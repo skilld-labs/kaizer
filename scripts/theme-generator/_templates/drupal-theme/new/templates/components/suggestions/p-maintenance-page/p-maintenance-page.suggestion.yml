@@ -10,5 +10,3 @@ p_maintenance_page:
         css:
           component:
             p-maintenance-page.css: {}
-#        js:
-#           p-maintenance-page.js: {}

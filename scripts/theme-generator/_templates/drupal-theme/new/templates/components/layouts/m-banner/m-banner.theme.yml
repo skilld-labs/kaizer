@@ -18,5 +18,3 @@ m_banner:
         css:
           component:
             m-banner.css: {}
-#        js:
-#           m-banner.js: {}

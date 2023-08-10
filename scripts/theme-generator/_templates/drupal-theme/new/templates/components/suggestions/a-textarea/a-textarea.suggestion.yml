@@ -10,5 +10,3 @@ a_textarea:
         css:
           component:
             a-textarea.css: {}
-#        js:
-#          a-textarea.js: {}

@@ -20,18 +20,16 @@ to: <%= h.src() %>/templates/components/<%= connection_way %><% if (connection_w
 #    extra_classes:
 #      type: textfield
 #      label: Add extra CSS classes for <%= h.changeCase.lower(component_type) %> <%= h.changeCase.noCase(name) %> separated by spaces.
-<% if (connection_way === 'uncategorized') { -%>
-#  libraries:
-#    - <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>:
-#        css:
-#          component:
-#            <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.css: {}
-<% } else { -%>
-  libraries:
-    - <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>:
-        css:
-          component:
-            <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.css: {}
+<% if (connection_way !== 'uncategorized' && (css_required || js_required)) { -%>
+libraries:
+  - <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>:
+<% if (css_required) { -%>
+      css:
+        component:
+          <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.css: {}
 <% } -%>
-#        js:
-#          <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.js: {}
+<% if (js_required) { -%>
+      js:
+        <%= h.changeCase.lower(component_type).charAt(0) %>-<%= h.changeCase.lower(h.inflection.dasherize(name)) %>.js: {}
+<% } -%>
+<% } -%>

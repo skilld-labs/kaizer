@@ -10,5 +10,3 @@ m_fieldset:
         css:
           component:
             m-fieldset.css: {}
-#        js:
-#           m-fieldset.js: {}

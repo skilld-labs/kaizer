@@ -1,6 +1,9 @@
 const cliArgs = process.argv.slice(2);
 const themeName = cliArgs ? cliArgs.join(',').split('--theme_name=').pop().split(',')[0] : '';
 const hasStorybook = cliArgs ? cliArgs.join(',').split('--has_storybook=').pop().split(',')[0] : '';
+const { sync } = require('glob');
+
+const existingComponents = sync(`${process.cwd()}/templates/components/*/*`).map((e) => e.split('/').pop());
 
 module.exports = {
   prompt: ({ inquirer }) => {
@@ -17,20 +20,32 @@ module.exports = {
       required: true,
       initial: true,
     };
+    let componentType;
     const questions = [
       askForThemeName,
-      {
-        type: 'input',
-        name: 'name',
-        message: "What's your component name? (Use dash symbol to split words)",
-        required: true,
-      },
       {
         type: 'select',
         name: 'component_type',
         message: "What's your type of component?",
         choices: ['Atom', 'Helper', 'Molecule', 'Organism', 'Template', 'Page'],
         required: true,
+        validate(value) {
+          componentType = value.charAt(0).toLowerCase();
+          return true;
+        }
+      },
+      {
+        type: 'input',
+        name: 'name',
+        message: "What's your component name? (Use dash symbol to split words)",
+        required: true,
+        validate(value) {
+          if (existingComponents.length && existingComponents.includes(`${componentType}-${value}`)) {
+            console.log('\x1b[33m%s\x1b[0m', '\n\n✖ Component with such atomic type and name already exist!\n\n');
+            return false;
+          }
+          return value !== '';
+        }
       },
       {
         type: 'select',
@@ -42,15 +57,15 @@ module.exports = {
       askForStorybook,
       {
         type: 'confirm',
-        name: 'js_required',
-        message: 'Do you need JS in your component?',
+        name: 'css_required',
+        message: 'Do you need CSS in your component?',
         required: true,
         initial: true,
       },
       {
         type: 'confirm',
-        name: 'css_required',
-        message: 'Do you need CSS in your component?',
+        name: 'js_required',
+        message: 'Do you need JS in your component?',
         required: true,
         initial: true,
       },

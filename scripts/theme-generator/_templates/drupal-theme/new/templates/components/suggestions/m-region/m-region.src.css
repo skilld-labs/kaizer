@@ -1,4 +1,0 @@
----
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-region/m-region.src.css
----
-/* .m-region {} */

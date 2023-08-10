@@ -10,5 +10,3 @@ m_status_messages:
         css:
           component:
             m-status-messages.css: {}
-#        js:
-#           m-status-messages.js: {}

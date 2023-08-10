@@ -1,4 +1,0 @@
----
-to: <%= h.src() %>/<%= h.changeCase.lower(name) %>/templates/components/suggestions/m-page-title/m-page-title.src.css
----
-/* .m-page-title {} */

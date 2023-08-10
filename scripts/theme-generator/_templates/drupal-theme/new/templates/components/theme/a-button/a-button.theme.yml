@@ -51,10 +51,3 @@ a_button:
         search: Search
         throbber-circle: Throbber circle
         warning: Warning
-#  libraries:
-#    - a-button:
-#        css:
-#          component:
-#            a-button.css: {}
-#        js:
-#          a-button.js: {}

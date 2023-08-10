@@ -11,5 +11,3 @@ a_input_radio:
         css:
           component:
             a-input-radio.css: {}
-#        js:
-#          a-input-radio.js: {}

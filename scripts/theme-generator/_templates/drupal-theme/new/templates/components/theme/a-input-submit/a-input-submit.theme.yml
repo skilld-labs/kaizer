@@ -48,10 +48,3 @@ a_input_submit:
         search: Search
         throbber-circle: Throbber circle
         warning: Warning
-#  libraries:
-#    - a-input-submit:
-#        css:
-#          component:
-#            a-input-submit.css: {}
-#        js:
-#          a-input-submit.js: {}

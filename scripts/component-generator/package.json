@@ -1,6 +1,6 @@
 {
   "name": "@skilld/kaizer-component-generator",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "Kaizer component generator",
   "keywords": [
     "Skilld",
@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/skilld-labs/kaizer#readme",
   "dependencies": {
+    "glob": "^10.3.3",
     "hygen": "^6.2.11"
   }
 }

@@ -48,5 +48,3 @@ a_text:
         css:
           component:
             a-text.css: {}
-#        js:
-#          a-text.js: {}

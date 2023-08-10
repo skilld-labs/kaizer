@@ -93,5 +93,3 @@ m_cta_field:
         css:
           component:
             m-cta-field.css: {}
-#        js:
-#          m-cta-field.js: {}

@@ -10,5 +10,3 @@ m_radios:
         css:
           component:
             m-radios.css: {}
-#        js:
-#           m-radios.js: {}

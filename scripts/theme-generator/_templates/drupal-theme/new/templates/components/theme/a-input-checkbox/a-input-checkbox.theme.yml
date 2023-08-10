@@ -6,10 +6,3 @@ a_input_checkbox:
   label: Atoms / Input checkbox
   hook theme: 'input__checkbox'
   base hook: 'input'
-  libraries:
-    - a-input-checkbox:
-        css:
-          component:
-            a-input-checkbox.css: {}
-#        js:
-#          a-input-checkbox.js: {}

@@ -9,7 +9,6 @@ m_grid_field:
       label: Label
     items:
       label: Items
-  # Uncomment settings if your component should have settings
   settings:
     type:
       type: select
@@ -96,5 +95,3 @@ m_grid_field:
         css:
           component:
             m-grid-field.css: {}
-#        js:
-#          m-grid-field.js: {}

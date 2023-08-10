@@ -10,5 +10,3 @@ a_select:
         css:
           component:
             a-select.css: {}
-        js:
-          a-select.js: {}

@@ -2087,10 +2087,10 @@ to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/yarn.lock` : nu
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@skilld/kaizer-component-generator@^0.0.2-alpha":
-  version "0.0.2-alpha.2"
-  resolved "https://registry.yarnpkg.com/@skilld/kaizer-component-generator/-/kaizer-component-generator-0.0.2-alpha.2.tgz#13472890a72ee33b54deb462b8ce0067f3108d22"
-  integrity sha512-iM3N5F6+JDt+FDPeDOjVjoqy07IXsh5CISNbM5eIvoOJoDt481fPCYUCTs+pVPjntXpKWK+zJSFa5eKfZdcH8A==
+"@skilld/kaizer-component-generator@^0.0.2-alpha.3":
+  version "0.0.2-alpha.3"
+  resolved "https://registry.yarnpkg.com/@skilld/kaizer-component-generator/-/kaizer-component-generator-0.0.2-alpha.3.tgz#1f942318f87a15a5b377765b013495a334ce5ffc"
+  integrity sha512-D6ddKwipL2TxZUFB0CC1lSm3NwB1JkXS6TusACYWiGan4qE1njVUm+I+qiCCJaiuNH649GTOSSalcMXMgAlLzQ==
   dependencies:
     hygen "^6.2.11"
 

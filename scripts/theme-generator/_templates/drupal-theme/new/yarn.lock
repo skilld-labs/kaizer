@@ -2087,11 +2087,12 @@ to: "<%= has_storybook ? `${h.src()}/${h.changeCase.lower(name)}/yarn.lock` : nu
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@skilld/kaizer-component-generator@^0.0.2-alpha.3":
-  version "0.0.2-alpha.3"
-  resolved "https://registry.yarnpkg.com/@skilld/kaizer-component-generator/-/kaizer-component-generator-0.0.2-alpha.3.tgz#1f942318f87a15a5b377765b013495a334ce5ffc"
-  integrity sha512-D6ddKwipL2TxZUFB0CC1lSm3NwB1JkXS6TusACYWiGan4qE1njVUm+I+qiCCJaiuNH649GTOSSalcMXMgAlLzQ==
+"@skilld/kaizer-component-generator@^0.0.2-alpha.4":
+  version "0.0.2-alpha.4"
+  resolved "https://registry.yarnpkg.com/@skilld/kaizer-component-generator/-/kaizer-component-generator-0.0.2-alpha.4.tgz#69a9d427139ca8b6c16b115e511fc60da1e63188"
+  integrity sha512-9+Ymp74hingdXmJNZEm5sGeuaLJSOdQxqXResJoAtH0+dmzZIFU5fQjPQlFl8st/tZZ4YIGnbzrt8+QpsIafbA==
   dependencies:
+    glob "^10.3.3"
     hygen "^6.2.11"
 
 "@splidejs/splide@^4.1.4":
@@ -5455,7 +5456,7 @@ glob-to-regexp@^0.4.1:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
 
-glob@^10.0.0:
+glob@^10.0.0, glob@^10.3.3:
   version "10.3.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-10.3.3.tgz#8360a4ffdd6ed90df84aa8d52f21f452e86a123b"
   integrity sha512-92vPiMb/iqpmEgsOoIDvTjc50wf9CCCvMzsi6W0JLPeUKE8TWP1a73PgqSrqy7iAZxaSD1YdzU7QZR5LF51MJw==

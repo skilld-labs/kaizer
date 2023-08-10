@@ -10,8 +10,11 @@ module.exports = {
     const askForThemeName = themeName ? '' : {
       type: 'input',
       name: 'theme_name',
-      message: "What's your theme name?",
+      message: "Enter theme name",
       required: true,
+      result(value) {
+        return value.replace(/[.:-]/g, '_');
+      },
     };
     const askForStorybook = hasStorybook ? true : {
       type: 'confirm',
@@ -37,15 +40,18 @@ module.exports = {
       {
         type: 'input',
         name: 'name',
-        message: "What's your component name? (Use dash symbol to split words)",
+        message: "What's your component name?",
         required: true,
+        result(value) {
+          return value.replace(/[.:_]/g, '-');
+        },
         validate(value) {
           if (existingComponents.length && existingComponents.includes(`${componentType}-${value}`)) {
             console.log('\x1b[33m%s\x1b[0m', '\n\n✖ Component with such atomic type and name already exist!\n\n');
             return false;
           }
           return value !== '';
-        }
+        },
       },
       {
         type: 'select',

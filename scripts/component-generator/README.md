@@ -1,5 +1,6 @@
-# [ECOSYSTEM_NAME] Component generator
+# This package is abandoned
 
+<<<<<<< Updated upstream
 This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will help you to generate component.
 
 #### Navigation
@@ -139,3 +140,6 @@ Read [here](some_link) about our integration to understand.
 ## License
 
 This project is licensed under the MIT open source license.
+=======
+Instead please use [Drupal component generator](https://www.npmjs.com/package/@skilld/drupal-component-generator) package.
+>>>>>>> Stashed changes

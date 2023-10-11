@@ -1,5 +1,6 @@
-# [ECOSYSTEM_NAME] Theme generator
+# This package is abandoned
 
+<<<<<<< Updated upstream
 <img src="https://raw.githubusercontent.com/skilld-labs/kaizer/images/images/1.png?raw=true" width="350"/>
 
 This is a part of [ECOSYSTEM_NAME](some_link) initiative and this package will help you to generate your custom theme for 
@@ -880,3 +881,6 @@ layer of render
 ## License
 
 This project is licensed under the MIT open source license.
+=======
+Instead please use [Drupal theme generator](https://www.npmjs.com/package/@skilld/drupal-theme-generator) package.
+>>>>>>> Stashed changes

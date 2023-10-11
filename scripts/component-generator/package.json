@@ -1,6 +1,10 @@
 {
   "name": "@skilld/kaizer-component-generator",
+<<<<<<< Updated upstream
   "version": "0.0.2-alpha.6",
+=======
+  "version": "0.0.1",
+>>>>>>> Stashed changes
   "description": "Kaizer component generator",
   "keywords": [
     "Skilld",
